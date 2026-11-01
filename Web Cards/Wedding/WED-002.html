@@ -1198,6 +1198,33 @@
                 transform: none !important;
             }
         }
+
+        /* Fix for couple-card plates on small phones (320px - 480px) */
+        @media (max-width: 480px) {
+            .person .plate {
+                left: 10px !important;
+                right: 10px !important;
+                bottom: 10px !important;
+                padding: 12px 14px !important;
+                transform: translateY(4px) !important;
+            }
+
+            .person .plate .text-\[\.58rem\] {
+                font-size: 0.5rem !important;
+                letter-spacing: 0.2em !important;
+            }
+
+            .person .plate .serif {
+                font-size: 1.15rem !important;
+                margin-top: 0.25rem !important;
+            }
+
+            .person .plate .text-\[\.78rem\] {
+                font-size: 0.7rem !important;
+                line-height: 1.4 !important;
+                margin-top: 0.25rem !important;
+            }
+        }
     </style>
 </head>
 
