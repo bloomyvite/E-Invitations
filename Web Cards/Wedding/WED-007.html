@@ -3,9 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Isabella & Alexander — Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Isabella &amp; Alexander — Luxury Wedding E-Invitation | Rosewood Manor 2027</title>
+    <meta name="description"
+        content="You are cordially invited to the wedding of Isabella & Alexander on June 12th, 2027, at the beautiful Rosewood Manor Gardens in Napa Valley. Discover our story, venue details, and RSVP online for this elegant celebration." />
+    <meta name="keywords"
+        content="wedding invitation, e-invitation, digital wedding invite, online wedding invitation, interactive wedding invitation, 3D wedding invite, Isabella and Alexander wedding, Rosewood Manor wedding, Napa Valley wedding, 2027 wedding, wedding website, RSVP online, wedding ceremony, wedding reception, wedding countdown, wedding gallery, wedding details, modern wedding invite, classic wedding invite, romantic wedding invitation, bride and groom, wedding celebration, marriage invitation, virtual wedding invite, save the date, elegant wedding, luxury wedding, wedding design, wedding inspiration, wedding planner, wedding venue, wedding RSVP, luxury e-invite, wedding invitation suite, digital save the date, wedding announcement, wedding website design, wedding story timeline, wedding details template, June 2027 wedding, summer wedding, garden wedding, estate wedding, manor wedding, wedding aesthetic, wedding typography, wedding fonts, Great Vibes font, Cormorant Garamond, Montserrat font, wedding color palette, blush pink wedding, gold wedding, emerald wedding, romantic wedding, dream wedding, fairytale wedding, destination wedding, local wedding, intimate wedding, grand wedding, wedding inspiration board, wedding moodboard, wedding planning, wedding ideas, wedding invitation wording, wedding etiquette, wedding countdown timer, interactive 3D card, confetti animation, web design, HTML5 wedding invite, responsive wedding invite, mobile friendly wedding invite, modern web invite, best wedding invite, top wedding invite, unique wedding invite, creative wedding invite, Napa Valley estate wedding, California wedding, wedding vendors, wedding rings, wedding vows, first dance, wedding dinner, grand ballroom, garden pavilion, wedding guests, RSVP deadline, wedding registry, wedding gifts, wedding photography, wedding memories, our story, the couple, wedding timeline, ceremony details, wedding transport, wedding accommodation, wedding day, marriage celebration, love story, engaged couple, wedding bells, wedding ceremony details, wedding schedule, wedding itinerary, wedding map, directions to wedding, luxury wedding venue, estate wedding venue, wedding decor, wedding flowers, wedding music, wedding playlist, wedding food, wedding catering, wedding cake, wedding toast, wedding speeches, bridal party, groomsmen, maid of honor, best man, wedding officiant, marriage license, wedding planning tips, wedding checklist, wedding budget, wedding dress, wedding suit, wedding bands, wedding jewelry, wedding shoes, wedding hair, wedding makeup, wedding photographer, wedding videographer, wedding DJ, wedding band, wedding florist, wedding coordinator, wedding designer, wedding stationery, wedding invitations, wedding save the dates, wedding programs, wedding menus, wedding place cards, wedding favors, wedding guestbook, wedding signs, wedding lighting, wedding dance floor, wedding tent, wedding chairs, wedding tables, wedding linens, wedding tableware, wedding centerpieces, wedding backdrop, wedding arch, wedding aisle, wedding altar, wedding candles, wedding lanterns, wedding fairy lights, wedding string lights, wedding sparklers, wedding confetti, wedding bubbles, wedding petals, wedding exit, wedding send-off, wedding after party, wedding brunch, wedding welcome party, wedding rehearsal dinner, wedding weekend, wedding festivities, wedding traditions, wedding customs, wedding blessings, wedding wishes, wedding quotes, wedding poems, wedding readings, wedding songs, wedding first dance songs, wedding father daughter dance, wedding mother son dance, wedding party songs, wedding ceremony music, wedding cocktail hour music, wedding dinner music, wedding reception music, wedding dance music, wedding exit music" />
+    <meta name="author" content="Bloomyvite" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://isabellaandalexander.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://isabellaandalexander.com/" />
+    <meta property="og:title" content="Isabella &amp; Alexander — Luxury Wedding E-Invitation" />
+    <meta property="og:description"
+        content="Join us on June 12th, 2027, at Rosewood Manor to celebrate the marriage of Isabella & Alexander. RSVP online!" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Isabella &amp; Alexander — Wedding E-Invitation" />
+    <meta name="twitter:description"
+        content="You're invited to our wedding on June 12th, 2027 at Rosewood Manor. RSVP now!" />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
@@ -820,7 +846,9 @@
         .hero-card-wrap {
             position: relative;
             display: flex;
-            justify-content: center
+            justify-content: center;
+            padding: 20px;
+            /* Prevents 3D tilt from clipping on edges */
         }
 
         .invitation-card {
@@ -1325,6 +1353,51 @@
             }
         }
 
+        /* ---------- Watermark (Perfect Fit) ---------- */
+        .watermark {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(0.55rem, 2vw, 0.7rem);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #FFF3D6;
+            background: rgba(43, 26, 46, 0.85);
+            /* Plum background */
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border: 1px solid rgba(201, 168, 106, 0.6);
+            /* Gold border */
+            max-width: 90vw;
+            white-space: nowrap;
+        }
+
+        .watermark:hover {
+            color: #FFF;
+            background: var(--gold);
+            color: #2b1a12;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(201, 168, 106, 0.8);
+        }
+
+        @media (max-width: 767px) {
+            .watermark {
+                bottom: 12px;
+                right: 12px;
+                padding: 8px 14px;
+            }
+        }
+
         @media(max-width:920px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -1576,12 +1649,34 @@
 
     <div id="toast">♥ Thank you! ♥</div>
 
+    <!-- WATERMARK / WEBSITE LINK -->
+    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        made with bloomyvite
+    </a>
+
     <script type="module">
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
         /* ---------- LOADER ---------- */
         setTimeout(() => document.getElementById('loader').classList.add('hide'), 1400);
+
+        /* ---------- FORCE HERO VISIBILITY ---------- */
+        // Fallback to ensure hero text is never invisible if GSAP fails to trigger
+        setTimeout(() => {
+            document.querySelectorAll('.hero-text > *').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+            document.getElementById('mainCard').style.opacity = '1';
+            document.getElementById('mainCard').style.transform = 'none';
+        }, 1500);
 
         /* ---------- THREE SCENE ---------- */
         const canvas = document.getElementById('webgl');
@@ -1778,6 +1873,11 @@
                 window.gsap.fromTo('.hero-text > *', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, stagger: 0.08, ease: 'power3.out', delay: 0.2 });
                 window.gsap.fromTo('#mainCard', { y: 80, opacity: 0, rotationY: 25 }, { y: 0, opacity: 1, rotationY: 0, duration: 1.2, ease: 'power3.out', delay: 0.4 });
             }
+
+            // Trigger Canvas Confetti burst on open
+            if (typeof confetti === 'function') {
+                confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 }, colors: ['#c9a86a', '#ff8fb3', '#fffaf4'] });
+            }
             if (window.triggerHeartBurst3D) window.triggerHeartBurst3D();
             domConfetti();
             showToast('♥ Welcome! Drag the glowing background to explore in 3D ♥');
@@ -1835,6 +1935,17 @@
             const yes = document.querySelector('input[name=attend]:checked').value === 'yes';
             if (window.triggerHeartBurst3D) window.triggerHeartBurst3D();
             domConfetti(); try { chime(); } catch (err) { }
+
+            // Trigger Canvas Confetti burst on RSVP
+            if (typeof confetti === 'function') {
+                var duration = 2.5 * 1000;
+                var end = Date.now() + duration;
+                (function frame() {
+                    confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#c9a86a', '#ff8fb3'] });
+                    confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#c9a86a', '#ff8fb3'] });
+                    if (Date.now() < end) { requestAnimationFrame(frame); }
+                }());
+            }
             showToast(yes ? `♥ Thank you, ${name}! We can't wait to celebrate with you! ♥` : `${name}, you will be dearly missed — thank you for your love ♥`);
             e.target.reset();
         });

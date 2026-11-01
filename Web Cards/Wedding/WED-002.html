@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amelia &amp; Oliver — The Wedding Invitation</title>
+    <title>Amelia &amp; Oliver — Luxury Wedding E-Invitation | Willowmere Estate 2030</title>
     <meta name="description"
-        content="Amelia & Oliver invite you to celebrate their wedding on the 12th of September, 2026, at Willowmere Estate." />
+        content="You are cordially invited to the wedding of Amelia & Oliver on October 1st, 2030, at the beautiful Willowmere Estate in the Cotswolds. Discover our story, event details, gallery, and RSVP online for this elegant black-tie celebration." />
+    <meta name="keywords"
+        content="wedding invitation, e-invitation, digital wedding invite, online wedding invitation, interactive wedding invitation, wedding e-card, Amelia and Oliver wedding, Willowmere Estate wedding, Cotswolds wedding, 2030 wedding, wedding website, RSVP online, wedding ceremony, wedding reception, black tie wedding, garden florals wedding, wedding countdown, wedding gallery, wedding details, modern wedding invite, classic wedding invite, romantic wedding invitation, bride and groom, wedding celebration, marriage invitation, virtual wedding invite, save the date, elegant wedding, luxury wedding, wedding design, wedding inspiration, wedding planner, wedding venue, wedding RSVP, scratch card invitation, scratch to reveal, wedding date reveal, luxury e-invite, wedding invitation suite, digital save the date, wedding announcement, wedding website design, wedding story timeline, wedding details template, Amelia Hartley, Oliver Bennett, October 2030 wedding, autumn wedding, fall wedding, wedding in England, UK wedding, countryside wedding, estate wedding, manor wedding, wedding aesthetic, wedding typography, wedding fonts, Parisienne font, Cormorant Garamond, Jost font, wedding color palette, cream and gold wedding, sage and clay wedding, rustic wedding, romantic wedding, dream wedding, fairytale wedding, destination wedding, local wedding, intimate wedding, grand wedding, wedding inspiration board, wedding moodboard, wedding planning, wedding ideas, wedding invitation wording, wedding etiquette, wedding countdown timer, interactive scratch card, confetti animation, web design, HTML5 wedding invite, responsive wedding invite, mobile friendly wedding invite, modern web invite, best wedding invite, top wedding invite, unique wedding invite, creative wedding invite, wedding invite 2030, Willowmere Estate Cotswolds, Chipping Lane wedding, Gloucestershire wedding, wedding vendors, wedding rings, wedding vows, first dance, wedding dinner, grand marquee, rose garden, willow chapel, wedding guests, RSVP deadline, wedding registry, wedding gifts, wedding photography, wedding memories, our story, the couple, wedding timeline, ceremony details, dress code, stay over, wedding transport, wedding shuttle, wedding accommodation, wedding day, marriage celebration, love story, engaged couple, wedding bells, wedding ceremony details, wedding schedule, wedding itinerary, wedding map, directions to wedding, wedding accommodations, luxury wedding venue, English countryside wedding, estate wedding venue, manor house wedding, wedding decor, wedding flowers, wedding music, wedding playlist, wedding food, wedding catering, wedding cake, wedding toast, wedding speeches, bridal party, groomsmen, maid of honor, best man, wedding officiant, wedding vows renewal, marriage license, wedding planning tips, wedding checklist, wedding budget, wedding dress, wedding suit, wedding rings, wedding bands, wedding jewelry, wedding shoes, wedding hair, wedding makeup, wedding beauty, wedding photographer, wedding videographer, wedding DJ, wedding band, wedding florist, wedding decorator, wedding coordinator, wedding designer, wedding stationery, wedding invitations, wedding save the dates, wedding programs, wedding menus, wedding place cards, wedding favors, wedding guestbook, wedding signs, wedding lighting, wedding dance floor, wedding tent, wedding marquee, wedding chairs, wedding tables, wedding linens, wedding tableware, wedding centerpieces, wedding backdrop, wedding arch, wedding aisle, wedding altar, wedding pews, wedding candles, wedding lanterns, wedding fairy lights, wedding string lights, wedding sparklers, wedding confetti, wedding bubbles, wedding petals, wedding rice, wedding exit, wedding send-off, wedding after party, wedding brunch, wedding welcome party, wedding rehearsal dinner, wedding weekend, wedding festivities, wedding traditions, wedding customs, wedding superstitions, wedding blessings, wedding wishes, wedding quotes, wedding poems, wedding readings, wedding songs, wedding first dance songs, wedding father daughter dance, wedding mother son dance, wedding party songs, wedding ceremony music, wedding cocktail hour music, wedding dinner music, wedding reception music, wedding dance music, wedding exit music" />
+    <meta name="author" content="Bloomyvite" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ameliaandoliver.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ameliaandoliver.com/" />
+    <meta property="og:title" content="Amelia &amp; Oliver — Luxury Wedding E-Invitation" />
+    <meta property="og:description"
+        content="Join us on October 1st, 2030, at Willowmere Estate to celebrate the marriage of Amelia & Oliver. Scratch to reveal the date and RSVP online!" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Amelia &amp; Oliver — Wedding E-Invitation" />
+    <meta name="twitter:description"
+        content="You're invited to our wedding on October 1st, 2030 at Willowmere Estate. RSVP now!" />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Parisienne&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <style>
         :root {
             --cream: #FAF6F0;
@@ -450,6 +474,41 @@
             mix-blend-mode: soft-light;
             background: radial-gradient(60% 45% at var(--gx, 30%) var(--gy, 20%), rgba(255, 255, 255, .9), transparent 70%);
             opacity: .75;
+        }
+
+        /* ---------- Scratch Card ---------- */
+        .scratch-wrapper {
+            position: relative;
+            width: min(95vw, 560px, 65vh);
+            aspect-ratio: 2.5 / 1;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px -15px rgba(76, 52, 30, .35);
+            background: radial-gradient(120% 100% at 20% 10%, #FFFCF8 0%, #F7EDE0 55%, #EFE0CB 100%);
+            border: 1px solid rgba(176, 141, 87, .3);
+            margin: 0 auto;
+        }
+
+        .scratch-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #scratchCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+            touch-action: none;
+            /* Prevents page scrolling while scratching on mobile */
+            z-index: 10;
         }
 
         /* ---------- Petals ---------- */
@@ -1081,6 +1140,46 @@
             }
         }
 
+        /* ---------- Watermark ---------- */
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #FAF6F0;
+            background: rgba(42, 37, 33, 0.85);
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .watermark:hover {
+            color: #fff;
+            background: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(176, 141, 87, 0.6);
+        }
+
+        @media (max-width: 767px) {
+            .watermark {
+                bottom: 12px;
+                right: 12px;
+                font-size: 0.6rem;
+                padding: 8px 14px;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: .001ms !important;
@@ -1113,7 +1212,7 @@
                 <div class="brand-mark">A<span class="opacity-70">&nbsp;&amp;&nbsp;</span>O</div>
                 <div class="hidden sm:block leading-tight">
                     <div class="serif text-[1.02rem] tracking-[.16em] uppercase">Amelia &amp; Oliver</div>
-                    <div class="text-[.58rem] tracking-[.36em] uppercase text-[var(--ink-soft)] mt-[3px]">12 . 09 . 2026
+                    <div class="text-[.58rem] tracking-[.36em] uppercase text-[var(--ink-soft)] mt-[3px]">01 . 10 . 2030
                     </div>
                 </div>
             </a>
@@ -1188,7 +1287,7 @@
                             <div>
                                 <div class="text-[.6rem] tracking-[.34em] uppercase text-[var(--ink-soft)]">The Date
                                 </div>
-                                <div class="serif text-[1.32rem] mt-1.5">Saturday, September 12</div>
+                                <div class="serif text-[1.32rem] mt-1.5">Tuesday, October 1</div>
                             </div>
                             <div class="w-px h-10 bg-[var(--line)] hidden sm:block"></div>
                             <div>
@@ -1199,132 +1298,24 @@
                         </div>
                     </div>
 
-                    <!-- 3D Card -->
+                    <!-- Scratch Card -->
                     <div class="flex justify-center lg:justify-end fade-up" style="transition-delay:.5s">
-                        <div class="tilt-stage" id="tiltStage">
-                            <div class="tilt" id="tiltCard">
-                                <div class="flipper">
-                                    <!-- FRONT -->
-                                    <div class="face card-shell card-front">
-                                        <div class="card-frame"></div>
-                                        <div class="corner tl"></div>
-                                        <div class="corner tr"></div>
-                                        <div class="corner bl"></div>
-                                        <div class="corner br"></div>
-                                        <div class="glare" id="glare"></div>
-
-                                        <div
-                                            class="card-inner relative h-full flex flex-col items-center justify-between text-center px-8 py-11">
-                                            <div>
-                                                <div class="monogram-ring mx-auto">
-                                                    <div class="serif text-[1.28rem] text-[#8A6234] tracking-[.06em]">
-                                                        A<span class="opacity-60">&nbsp;&amp;&nbsp;</span>O</div>
-                                                </div>
-                                                <div
-                                                    class="mt-5 text-[.55rem] tracking-[.42em] uppercase text-[#96704A]">
-                                                    The Wedding Of</div>
-                                            </div>
-
-                                            <div>
-                                                <div class="script text-[2.62rem] leading-[1.12] text-[#7A5632]">Amelia
-                                                </div>
-                                                <div class="flex items-center gap-3 my-2.5">
-                                                    <div class="h-px w-9 bg-[rgba(176,141,87,.65)]"></div>
-                                                    <div class="serif italic text-[1.15rem] text-[#A67B49]">&amp;</div>
-                                                    <div class="h-px w-9 bg-[rgba(176,141,87,.65)]"></div>
-                                                </div>
-                                                <div class="script text-[2.62rem] leading-[1.12] text-[#7A5632]">Oliver
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="hairline w-[190px] mx-auto"></div>
-                                                <div
-                                                    class="mt-4 text-[.66rem] tracking-[.42em] uppercase text-[#8B6640]">
-                                                    12 . 09 . 2026</div>
-                                                <div
-                                                    class="mt-2 text-[.72rem] tracking-[.22em] uppercase text-[#A2825D]">
-                                                    Willowmere Estate</div>
-                                                <button class="card-btn mt-6" id="openCard">Open Invitation</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- BACK -->
-                                    <div class="face card-shell card-back">
-                                        <div class="card-frame"></div>
-                                        <div class="corner tl"></div>
-                                        <div class="corner tr"></div>
-                                        <div class="corner bl"></div>
-                                        <div class="corner br"></div>
-
-                                        <div class="card-inner relative h-full flex flex-col px-9 py-10 text-[#6B4B2C]">
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-[.55rem] tracking-[.42em] uppercase text-[#96704A]">
-                                                Order of the Day</div>
-                                            <div class="serif text-[1.62rem] mt-2 leading-tight">The Celebration
-                                            </div>
-                                            <div class="hairline w-[130px] mx-auto mt-4"></div>
-                                        </div>
-
-                                        <div class="flex-1 flex flex-col justify-center gap-[18px] mt-5">
-                                            <div class="flex items-baseline gap-4">
-                                                <div
-                                                    class="text-[.62rem] tracking-[.28em] uppercase text-[#9A7448] w-[74px] shrink-0">
-                                                    4:00 PM</div>
-                                                <div class="flex-1">
-                                                    <div class="serif text-[1.06rem] leading-snug">The Ceremony
-                                                    </div>
-                                                    <div
-                                                        class="text-[.72rem] tracking-[.13em] uppercase text-[#A2825D] mt-[3px]">
-                                                        Willow Chapel</div>
-                                                </div>
-                                            </div>
-                                            <div class="h-px bg-[rgba(176,141,87,.32)]"></div>
-                                            <div class="flex items-baseline gap-4">
-                                                <div
-                                                    class="text-[.62rem] tracking-[.28em] uppercase text-[#9A7448] w-[74px] shrink-0">
-                                                    5:30 PM</div>
-                                                <div class="flex-1">
-                                                    <div class="serif text-[1.06rem] leading-snug">Cocktails &amp;
-                                                        Canapés</div>
-                                                    <div
-                                                        class="text-[.72rem] tracking-[.13em] uppercase text-[#A2825D] mt-[3px]">
-                                                        The Rose Garden</div>
-                                                </div>
-                                            </div>
-                                            <div class="h-px bg-[rgba(176,141,87,.32)]"></div>
-                                            <div class="flex items-baseline gap-4">
-                                                <div
-                                                    class="text-[.62rem] tracking-[.28em] uppercase text-[#9A7448] w-[74px] shrink-0">
-                                                    7:00 PM</div>
-                                                <div class="flex-1">
-                                                    <div class="serif text-[1.06rem] leading-snug">Dinner &amp;
-                                                        Dancing</div>
-                                                    <div
-                                                        class="text-[.72rem] tracking-[.13em] uppercase text-[#A2825D] mt-[3px]">
-                                                        The Grand Marquee</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-center">
-                                            <div class="hairline w-[130px] mx-auto mb-4"></div>
-                                            <div class="text-[.58rem] tracking-[.32em] uppercase text-[#96704A]">
-                                                Dress Code</div>
-                                            <div class="serif italic text-[1.02rem] mt-1.5">Black Tie &amp; Garden
-                                                Florals</div>
-                                            <button class="card-btn mt-5" id="closeCard">Back to Cover</button>
-                                        </div>
-                                    </div>
+                        <div class="scratch-wrapper" id="scratchWrapper">
+                            <!-- Hidden Content underneath (Only Date) -->
+                            <div class="scratch-content">
+                                <div class="text-[1.2rem] sm:text-[1.6rem] tracking-[.42em] uppercase text-[#8B6640] font-medium"
+                                    style="font-family: 'Cormorant Garamond', serif;">
+                                    01 . 10 . 2030
                                 </div>
                             </div>
+                            <!-- Scratchable Canvas Overlay -->
+                            <canvas id="scratchCanvas"></canvas>
                         </div>
                     </div>
                 </div>
-
             </div>
+
+        </div>
         </div>
         </div>
     </section>
@@ -1334,7 +1325,7 @@
         <div class="ribbon-track" id="ribbonTrack">
             <div class="ribbon-item">
                 <span>Save the Date</span><span class="dot-sep"></span>
-                <span>12 September 2026</span><span class="dot-sep"></span>
+                <span>1 October 2030</span><span class="dot-sep"></span>
                 <span>Willowmere Estate</span><span class="dot-sep"></span>
                 <span class="script normal-case tracking-normal text-[1.5em] leading-none">Amelia &amp;
                     Oliver</span><span class="dot-sep"></span>
@@ -1342,7 +1333,7 @@
             </div>
             <div class="ribbon-item">
                 <span>Save the Date</span><span class="dot-sep"></span>
-                <span>12 September 2026</span><span class="dot-sep"></span>
+                <span>1 October 2030</span><span class="dot-sep"></span>
                 <span>Willowmere Estate</span><span class="dot-sep"></span>
                 <span class="script normal-case tracking-normal text-[1.5em] leading-none">Amelia &amp;
                     Oliver</span><span class="dot-sep"></span>
@@ -1528,7 +1519,7 @@
                     <div class="tl-item relative reveal md:grid md:grid-cols-2 md:gap-14 items-center">
                         <div class="tl-dot" style="top:26px;"></div>
                         <div class="pl-10 md:pl-0 md:order-2">
-                            <div class="text-[.62rem] tracking-[.34em] uppercase text-[var(--clay)]">September 2026
+                            <div class="text-[.62rem] tracking-[.34em] uppercase text-[var(--clay)]">October 2030
                             </div>
                             <h3 class="serif text-[1.72rem] mt-2.5 leading-snug">The wedding day</h3>
                             <p class="text-[var(--ink-soft)] mt-3 leading-[1.85] font-light">
@@ -1729,7 +1720,7 @@
                         </h2>
                         <p class="mt-6 text-[1.02rem] leading-[1.9] font-light" style="color:rgba(244,233,220,.76)">
                             We'd be honoured to have you with us. Please let us know by
-                            <span class="text-[var(--gold-light)]">1st July 2026</span> so we can prepare
+                            <span class="text-[var(--gold-light)]">1st July 2030</span> so we can prepare
                             your seat, your menu, and a very good glass of champagne.
                         </p>
 
@@ -1750,7 +1741,7 @@
                                 <div>
                                     <div class="text-[.62rem] tracking-[.3em] uppercase"
                                         style="color:rgba(244,233,220,.55)">RSVP Deadline</div>
-                                    <div class="serif text-[1.22rem] mt-1">Wednesday, 1 July 2026</div>
+                                    <div class="serif text-[1.22rem] mt-1">Wednesday, 1 July 2030</div>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
@@ -1850,7 +1841,7 @@
                 </h2>
                 <p class="mt-6 max-w-[520px] mx-auto leading-[1.95] font-light reveal"
                     style="color:rgba(237,225,210,.68)">
-                    12 September 2026 · Willowmere Estate, Cotswolds<br>
+                    1 October 2030 · Willowmere Estate, Cotswolds<br>
                     Ceremony at 4:00 PM · Dinner &amp; dancing until late
                 </p>
 
@@ -1876,7 +1867,7 @@
             <div class="mt-14 pt-8 flex flex-col md:flex-row items-center justify-between gap-6"
                 style="border-top:1px solid rgba(237,225,210,.14)">
                 <div class="text-[.72rem] tracking-[.18em] uppercase" style="color:rgba(237,225,210,.52)">
-                    © 2026 Amelia &amp; Oliver · Made with love
+                    © 2030 Amelia &amp; Oliver · Made with love
                 </div>
                 <div class="flex flex-wrap items-center justify-center gap-5 sm:gap-8">
                     <a href="#story" class="nav-link" style="color:#EDE1D2">Story</a>
@@ -1887,6 +1878,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- WATERMARK / WEBSITE LINK -->
+    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        made with bloomyvite
+    </a>
 
     <script>
         (function () {
@@ -1966,7 +1968,7 @@
             }
 
             /* ---------- Countdown ---------- */
-            const target = new Date('2026-09-12T16:00:00').getTime();
+            const target = new Date('2030-10-01T16:00:00').getTime();
             const cdDays = document.getElementById('cdDays');
             const cdHours = document.getElementById('cdHours');
             const cdMinutes = document.getElementById('cdMinutes');
@@ -2154,6 +2156,130 @@
                         }, 3200);
                     }, 900);
                 });
+            }
+
+            /* ---------- Scratch Card & Confetti ---------- */
+            const canvas = document.getElementById('scratchCanvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                const wrapper = document.getElementById('scratchWrapper');
+                let isDrawing = false;
+                let celebrationTriggered = false;
+
+                function resizeCanvas() {
+                    const rect = wrapper.getBoundingClientRect();
+                    const dpr = window.devicePixelRatio || 1;
+                    canvas.width = rect.width * dpr;
+                    canvas.height = rect.height * dpr;
+                    ctx.scale(dpr, dpr);
+                    canvas.style.width = rect.width + 'px';
+                    canvas.style.height = rect.height + 'px';
+
+                    // Draw scratch overlay
+                    ctx.globalCompositeOperation = 'source-over';
+
+                    // Metallic gold gradient
+                    const grad = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+                    grad.addColorStop(0, '#C79B60');
+                    grad.addColorStop(0.5, '#B08D57');
+                    grad.addColorStop(1, '#9C7842');
+                    ctx.fillStyle = grad;
+                    ctx.fillRect(0, 0, rect.width, rect.height);
+
+                    // Add texture/pattern
+                    ctx.fillStyle = 'rgba(255,255,255,0.05)';
+                    for (let i = 0; i < 200; i++) {
+                        ctx.beginPath();
+                        ctx.arc(Math.random() * rect.width, Math.random() * rect.height, Math.random() * 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    // Add text
+                    ctx.fillStyle = '#FAF6F0';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+
+                    ctx.font = '500 15px "Jost", sans-serif';
+                    ctx.letterSpacing = '4px';
+                    ctx.fillText('SCRATCH TO REVEAL', rect.width / 2, rect.height / 2 - 14);
+
+                    ctx.font = '300 13px "Jost", sans-serif';
+                    ctx.fillStyle = 'rgba(250, 246, 240, 0.7)';
+                    ctx.fillText('THE DATE', rect.width / 2, rect.height / 2 + 18);
+                }
+
+                window.addEventListener('resize', () => {
+                    // Only redraw if not scratched yet
+                    if (!celebrationTriggered) resizeCanvas();
+                });
+                // Initial draw
+                setTimeout(resizeCanvas, 100);
+
+                function getPos(e) {
+                    const rect = canvas.getBoundingClientRect();
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                    return { x: clientX - rect.left, y: clientY - rect.top };
+                }
+
+                function scratch(e) {
+                    if (!isDrawing || celebrationTriggered) return;
+                    e.preventDefault();
+
+                    const pos = getPos(e);
+                    const brush = Math.max(18, canvas.getBoundingClientRect().width * 0.07);
+                    ctx.globalCompositeOperation = 'destination-out';
+                    ctx.beginPath();
+                    ctx.arc(pos.x, pos.y, brush, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    checkPercentage();
+                }
+
+                let checkCount = 0;
+                function checkPercentage() {
+                    checkCount++;
+                    if (checkCount % 15 !== 0) return; // Check every 15 movements for performance
+
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    let cleared = 0;
+                    for (let i = 3; i < imageData.data.length; i += 4) {
+                        if (imageData.data[i] === 0) cleared++;
+                    }
+                    const percent = cleared / (imageData.data.length / 4);
+
+                    if (percent > 0.45 && !celebrationTriggered) {
+                        celebrationTriggered = true;
+
+                        // Fade out remaining canvas
+                        canvas.style.transition = 'opacity 0.8s ease';
+                        canvas.style.opacity = '0';
+                        setTimeout(() => { canvas.style.display = 'none'; }, 800);
+
+                        // Trigger Confetti
+                        const duration = 3 * 1000;
+                        const animationEnd = Date.now() + duration;
+                        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+
+                        function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+
+                        const interval = setInterval(function () {
+                            const timeLeft = animationEnd - Date.now();
+                            if (timeLeft <= 0) { return clearInterval(interval); }
+                            const particleCount = 50 * (timeLeft / duration);
+                            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                        }, 250);
+                    }
+                }
+
+                canvas.addEventListener('mousedown', (e) => { isDrawing = true; scratch(e); });
+                canvas.addEventListener('mousemove', scratch);
+                window.addEventListener('mouseup', () => isDrawing = false);
+
+                canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); }, { passive: false });
+                canvas.addEventListener('touchmove', scratch, { passive: false });
+                window.addEventListener('touchend', () => isDrawing = false);
             }
 
             /* ---------- Init ---------- */

@@ -4,7 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarav ❋ Diya | A Royal Hindu Wedding in 3D</title>
+    <title>Aarav & Diya — Royal Hindu Wedding E-Invitation | 3D Interactive Mandap 2027</title>
+    <meta name="description"
+        content="You are cordially invited to the royal Hindu wedding of Aarav & Diya on February 12th, 2027, at City Palace, Jaipur. Discover our story, 3D interactive mandap, scratch card, and RSVP online." />
+    <meta name="keywords"
+        content="wedding invitation, e-invitation, digital wedding invite, interactive wedding invitation, scratch card invitation, luxury wedding, Indian wedding, Hindu wedding, Jaipur wedding, Aarav and Diya wedding, 2027 wedding, wedding website, RSVP online, wedding ceremony, wedding reception, wedding countdown, wedding gallery, wedding details, romantic wedding invitation, bride and groom, wedding celebration, save the date, elegant wedding, destination wedding, palace wedding, wedding aesthetic, wedding typography, wedding fonts, Great Vibes font, Cormorant Garamond, Jost font, wedding color palette, gold wedding, romantic wedding, dream wedding, fairytale wedding, wedding inspiration, wedding moodboard, wedding planning, interactive scratch card, confetti animation, web design, HTML5 wedding invite, responsive wedding invite, mobile friendly wedding invite, modern web invite, best wedding invite, top wedding invite, unique wedding invite, creative wedding invite, wedding vendors, wedding rings, wedding vows, first dance, wedding dinner, wedding guests, RSVP deadline, wedding registry, wedding gifts, wedding photography, wedding memories, our story, the couple, wedding timeline, ceremony details, wedding schedule, wedding itinerary, wedding map, directions to wedding, luxury wedding venue, wedding decor, wedding flowers, wedding music, wedding food, wedding cake, wedding speeches, wedding officiant, wedding dress, wedding suit, wedding photographer, wedding videographer, wedding DJ, wedding band, wedding florist, wedding coordinator, wedding designer, wedding stationery, wedding invitations, wedding programs, wedding favors, wedding guestbook, wedding lighting, wedding centerpieces, wedding backdrop, wedding arch, wedding altar, wedding candles, wedding sparklers, wedding confetti, wedding bubbles, wedding exit, wedding after party, wedding brunch, wedding welcome party, wedding weekend, wedding traditions, wedding blessings, wedding wishes, wedding quotes, wedding poems, wedding readings, wedding songs, first dance songs, wedding party songs, wedding ceremony music, wedding reception music, 3D mandap, 3D wedding invite" />
+    <meta name="author" content="Bloomyvite" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://aaravanddiya.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aaravanddiya.com/" />
+    <meta property="og:title" content="Aarav & Diya — Royal Hindu Wedding E-Invitation" />
+    <meta property="og:description"
+        content="Join us on February 12th, 2027, at City Palace, Jaipur to celebrate the marriage of Aarav & Diya. RSVP online!" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aarav & Diya — Royal Wedding E-Invitation" />
+    <meta name="twitter:description"
+        content="You're invited to our wedding on February 12th, 2027 at City Palace, Jaipur. RSVP now!" />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -120,6 +146,7 @@
             z-index: 0;
             width: 100%;
             height: 100%;
+            display: block !important;
             /* let vertical scroll pass through, keep horizontal drag for orbit */
             touch-action: pan-y;
         }
@@ -266,7 +293,7 @@
 
         /* hero title cap for small phones */
         #home h1.font-script {
-            font-size: clamp(2.6rem, 11vw, 7.5rem);
+            font-size: clamp(2.8rem, 11vw, 7.5rem);
             line-height: .98;
             word-break: break-word;
             padding: 0 .25rem;
@@ -274,7 +301,8 @@
 
         @media (max-width: 400px) {
             #home h1.font-script {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
+                line-height: 1.1;
             }
         }
 
@@ -626,6 +654,32 @@
             animation: diyaGlow 2s infinite;
         }
 
+        /* Immersive 3D Mode */
+        body.immersive {
+            overflow: hidden !important;
+        }
+
+        body.immersive .content-layer,
+        body.immersive #nav,
+        body.immersive .fixed.bottom-5.left-5,
+        body.immersive .fixed.bottom-5.right-5 {
+            opacity: 0 !important;
+            pointer-events: none !important;
+            transition: opacity 0.5s ease;
+        }
+
+        #return-btn {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        body.immersive #return-btn {
+            opacity: 1;
+            pointer-events: auto;
+            display: flex;
+        }
+
         #scrollProgress {
             position: fixed;
             top: 0;
@@ -692,6 +746,11 @@
 </head>
 
 <body class="mandala-bg">
+
+    <!-- FULL SCREEN RETURN BUTTON -->
+    <button id="return-btn" onclick="exitImmersive()"
+        class="btn-gold fixed top-6 left-6 z-[1000] px-6 py-2.5 rounded-full text-sm tracking-widest shadow-2xl"><i
+            class="fa-solid fa-arrow-left mr-2"></i> RETURN TO INVITATION</button>
 
     <div id="scrollProgress"></div>
     <div id="cursor"></div>
@@ -792,30 +851,34 @@
                     one sacred fire.<br>Join us beneath the marigold mandap of Jaipur.</p>
 
                 <!-- Countdown -->
-                <div class="mt-8 grid grid-cols-4 gap-2 md:gap-4 max-w-xl mx-auto">
-                    <div class="glass gold-border rounded-2xl py-4">
-                        <p id="cdD" class="font-serif text-3xl md:text-4xl font-bold text-goldlight">00</p>
-                        <p class="text-[10px] tracking-[.3em] text-cream/50 mt-1">DAYS</p>
+                <div class="mt-8 grid grid-cols-4 gap-1.5 md:gap-4 max-w-xl mx-auto">
+                    <div class="glass gold-border rounded-xl md:rounded-2xl py-3 md:py-4">
+                        <p id="cdD" class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-goldlight">00</p>
+                        <p class="text-[8px] md:text-[10px] tracking-[.2em] md:tracking-[.3em] text-cream/50 mt-1">DAYS
+                        </p>
                     </div>
-                    <div class="glass gold-border rounded-2xl py-4">
-                        <p id="cdH" class="font-serif text-3xl md:text-4xl font-bold text-goldlight">00</p>
-                        <p class="text-[10px] tracking-[.3em] text-cream/50 mt-1">HOURS</p>
+                    <div class="glass gold-border rounded-xl md:rounded-2xl py-3 md:py-4">
+                        <p id="cdH" class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-goldlight">00</p>
+                        <p class="text-[8px] md:text-[10px] tracking-[.2em] md:tracking-[.3em] text-cream/50 mt-1">HOURS
+                        </p>
                     </div>
-                    <div class="glass gold-border rounded-2xl py-4">
-                        <p id="cdM" class="font-serif text-3xl md:text-4xl font-bold text-goldlight">00</p>
-                        <p class="text-[10px] tracking-[.3em] text-cream/50 mt-1">MINS</p>
+                    <div class="glass gold-border rounded-xl md:rounded-2xl py-3 md:py-4">
+                        <p id="cdM" class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-goldlight">00</p>
+                        <p class="text-[8px] md:text-[10px] tracking-[.2em] md:tracking-[.3em] text-cream/50 mt-1">MINS
+                        </p>
                     </div>
-                    <div class="glass gold-border rounded-2xl py-4">
-                        <p id="cdS" class="font-serif text-3xl md:text-4xl font-bold text-goldlight">00</p>
-                        <p class="text-[10px] tracking-[.3em] text-cream/50 mt-1">SECS</p>
+                    <div class="glass gold-border rounded-xl md:rounded-2xl py-3 md:py-4">
+                        <p id="cdS" class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-goldlight">00</p>
+                        <p class="text-[8px] md:text-[10px] tracking-[.2em] md:tracking-[.3em] text-cream/50 mt-1">SECS
+                        </p>
                     </div>
                 </div>
                 <p class="mt-4 text-sm tracking-[.25em] text-goldlight/90">FRIDAY • 12 FEBRUARY 2027 • 7 PM • CITY
                     PALACE, JAIPUR</p>
 
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a href="#mandap3d" class="btn-gold px-8 py-3.5 rounded-full text-sm"><i
-                            class="fa-solid fa-cube mr-2"></i>EXPLORE 3D MANDAP</a>
+                    <button onclick="enterImmersive()" class="btn-gold px-8 py-3.5 rounded-full text-sm"><i
+                            class="fa-solid fa-cube mr-2"></i>EXPLORE 3D MANDAP</button>
                     <a href="#story" class="btn-outline px-8 py-3.5 rounded-full text-sm">OUR STORY <i
                             class="fa-solid fa-arrow-down ml-2"></i></a>
                 </div>
@@ -847,6 +910,8 @@
             </div>
         </div>
 
+
+
         <!-- INVITATION -->
         <section class="relative py-20 px-4">
             <div class="max-w-4xl mx-auto glass gold-border rounded-[2rem] p-8 md:p-14 text-center reveal">
@@ -860,9 +925,9 @@
                     <div class="rounded-2xl p-6 border border-gold/25 bg-gradient-to-b from-gold/10 to-transparent">
                         <div
                             class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-gold shadow-[0_0_30px_rgba(212,175,55,.4)]">
-                            <img src="https://images.unsplash.com/photo-1617551307570-94414fa9827b?q=80&w=400&auto=format&fit=crop"
+                            <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=400&auto=format&fit=crop"
                                 onerror="this.src='https://picsum.photos/seed/groom22/400/400'"
-                                class="w-full h-full object-cover" alt="Groom">
+                                class="w-full h-full object-cover object-top" alt="Groom">
                         </div>
                         <h3 class="font-script text-4xl text-goldlight mt-3">Aarav Sharma</h3>
                         <p class="text-xs tracking-[.3em] text-cream/50 mt-1">S/O RAJESH & MEENA • JAIPUR</p>
@@ -870,9 +935,9 @@
                     <div class="rounded-2xl p-6 border border-gold/25 bg-gradient-to-b from-gold/10 to-transparent">
                         <div
                             class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-gold shadow-[0_0_30px_rgba(212,175,55,.4)]">
-                            <img src="https://images.unsplash.com/photo-1610173827043-9ad5998c0f7d?q=80&w=400&auto=format&fit=crop"
+                            <img src="https://images.unsplash.com/photo-1610173826608-bd1f53a52db1?q=80&w=400&auto=format&fit=crop"
                                 onerror="this.src='https://picsum.photos/seed/bride22/400/400'"
-                                class="w-full h-full object-cover" alt="Bride">
+                                class="w-full h-full object-cover object-top" alt="Bride">
                         </div>
                         <h3 class="font-script text-4xl text-goldlight mt-3">Diya Iyer</h3>
                         <p class="text-xs tracking-[.3em] text-cream/50 mt-1">D/O VIKRAM & LAKSHMI • CHENNAI</p>
@@ -894,49 +959,55 @@
                 <div class="relative mt-12">
                     <div class="timeline-line"></div>
                     <div class="space-y-10">
+                        <!-- Story Item 1 -->
                         <div class="reveal grid md:grid-cols-2 gap-6 items-center">
-                            <div class="md:text-right md:pr-12 pl-12 md:pl-0"><span
+                            <div class="md:text-right md:pr-12 pl-8 md:pl-0"><span
                                     class="text-gold text-xs tracking-[.3em]">2019 • DIWALI MELA, DELHI</span>
                                 <h3 class="font-serif text-3xl text-goldlight mt-1">First Nazar</h3>
                                 <p class="text-cream/70 mt-2 font-light">Amidst a thousand diyas, Aarav helped Diya
                                     relight her diya that the wind blew out. The priest smiled — “Shubh sanket hai.” It
                                     was indeed auspicious.</p>
                             </div>
-                            <div class="pl-12 md:pl-12">
-                                <div class="tilt rounded-2xl overflow-hidden gold-border"><img
-                                        src="https://images.unsplash.com/photo-1604423043492-41303788de4d?q=80&w=800&auto=format&fit=crop"
+                            <div class="pl-8 md:pl-12">
+                                <div class="tilt rounded-2xl overflow-hidden gold-border">
+                                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop"
                                         onerror="this.src='https://picsum.photos/seed/diya1/800/600'"
-                                        class="w-full h-64 object-cover" alt=""></div>
+                                        class="w-full h-64 object-cover" alt="">
+                                </div>
                             </div>
                         </div>
+                        <!-- Story Item 2 -->
                         <div class="reveal grid md:grid-cols-2 gap-6 items-center">
-                            <div class="pl-12 md:pl-0 md:pr-12 order-2 md:order-1 md:text-right"><span
+                            <div class="pl-8 md:pl-0 md:pr-12 order-2 md:order-1 md:text-right"><span
                                     class="text-gold text-xs tracking-[.3em]">2022 • VARANASI GHATS</span>
                                 <h3 class="font-serif text-3xl text-goldlight mt-1">Ganga Aarti Promise</h3>
                                 <p class="text-cream/70 mt-2 font-light">As bells rang and flames danced on the Ganga,
                                     Aarav promised to stand by Diya through seven janmas. She tied a red kalava on his
                                     wrist.</p>
                             </div>
-                            <div class="pl-12 md:pl-12 order-1 md:order-2">
-                                <div class="tilt rounded-2xl overflow-hidden gold-border"><img
-                                        src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=800&auto=format&fit=crop"
+                            <div class="pl-8 md:pl-12 order-1 md:order-2">
+                                <div class="tilt rounded-2xl overflow-hidden gold-border">
+                                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop"
                                         onerror="this.src='https://picsum.photos/seed/varanasi1/800/600'"
-                                        class="w-full h-64 object-cover" alt=""></div>
+                                        class="w-full h-64 object-cover" alt="">
+                                </div>
                             </div>
                         </div>
+                        <!-- Story Item 3 -->
                         <div class="reveal grid md:grid-cols-2 gap-6 items-center">
-                            <div class="md:text-right md:pr-12 pl-12 md:pl-0"><span
+                            <div class="md:text-right md:pr-12 pl-8 md:pl-0"><span
                                     class="text-gold text-xs tracking-[.3em]">2025 • ROKA, JAIPUR</span>
                                 <h3 class="font-serif text-3xl text-goldlight mt-1">Two Families, One Heart</h3>
                                 <p class="text-cream/70 mt-2 font-light">Marwari meets Tamil — dhol met nadaswaram.
                                     Sweets were exchanged, elders blessed, and the wedding date was fixed by the pandit
                                     ji.</p>
                             </div>
-                            <div class="pl-12 md:pl-12">
-                                <div class="tilt rounded-2xl overflow-hidden gold-border"><img
-                                        src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop"
+                            <div class="pl-8 md:pl-12">
+                                <div class="tilt rounded-2xl overflow-hidden gold-border">
+                                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
                                         onerror="this.src='https://picsum.photos/seed/roka1/800/600'"
-                                        class="w-full h-64 object-cover" alt=""></div>
+                                        class="w-full h-64 object-cover" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -978,17 +1049,20 @@
                             diya to light it.</span></p>
                     <div class="flex flex-wrap gap-2 mt-5">
                         <button data-view="front"
-                            class="viewBtn control-pill active px-5 py-2 rounded-full text-xs tracking-widest transition">MANDAP
+                            class="viewBtn control-pill active px-3 md:px-5 py-2 rounded-full text-[10px] md:text-xs tracking-widest transition">MANDAP
                             FRONT</button>
                         <button data-view="top"
-                            class="viewBtn control-pill px-5 py-2 rounded-full text-xs tracking-widest transition">AERIAL
+                            class="viewBtn control-pill px-3 md:px-5 py-2 rounded-full text-[10px] md:text-xs tracking-widest transition">AERIAL
                             / RANGOLI</button>
                         <button data-view="fire"
-                            class="viewBtn control-pill px-5 py-2 rounded-full text-xs tracking-widest transition">HAVAN
+                            class="viewBtn control-pill px-3 md:px-5 py-2 rounded-full text-[10px] md:text-xs tracking-widest transition">HAVAN
                             CLOSE-UP</button>
                         <button data-view="wide"
-                            class="viewBtn control-pill px-5 py-2 rounded-full text-xs tracking-widest transition">GRAND
+                            class="viewBtn control-pill px-3 md:px-5 py-2 rounded-full text-[10px] md:text-xs tracking-widest transition">GRAND
                             WIDE</button>
+                        <button onclick="enterImmersive()"
+                            class="control-pill px-3 md:px-5 py-2 rounded-full text-[10px] md:text-xs tracking-widest text-goldlight border border-gold/50 hover:bg-gold/20 transition"><i
+                                class="fa-solid fa-expand mr-1"></i> FULL SCREEN</button>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
                         <button id="togglePetals" class="control-pill active rounded-xl py-3 text-xs tracking-widest"><i
@@ -1027,7 +1101,8 @@
                 <div class="lg:col-span-2 glass gold-border rounded-[1.8rem] p-6 md:p-8 reveal">
                     <p class="text-xs tracking-[.4em] text-gold">SAPTAPADI • SEVEN VOWS</p>
                     <h3 class="section-title text-3xl font-semibold text-cream mt-1">Walk the <span
-                            class="gold-text">Seven Pheras</span></h3>
+                            class="gold-text">Seven
+                            Pheras</span></h3>
                     <div class="flex gap-2 mt-5 flex-wrap" id="pheraDots"></div>
                     <div
                         class="mt-5 rounded-2xl border border-gold/25 bg-gradient-to-b from-gold/10 to-transparent p-6 min-h-[210px]">
@@ -1063,7 +1138,8 @@
                         <button data-f="all"
                             class="gf control-pill active px-5 py-2 rounded-full text-xs tracking-widest">ALL</button>
                         <button data-f="decor"
-                            class="gf control-pill px-5 py-2 rounded-full text-xs tracking-widest">MANDAP &
+                            class="gf control-pill px-5 py-2 rounded-full text-xs tracking-widest">MANDAP
+                            &
                             DECOR</button>
                         <button data-f="couple"
                             class="gf control-pill px-5 py-2 rounded-full text-xs tracking-widest">COUPLE</button>
@@ -1144,7 +1220,8 @@
                         <div><label class="text-[11px] tracking-[.25em] text-gold/80">MESSAGE / DIETARY
                                 NEEDS</label><textarea id="rMsg" rows="2"
                                 placeholder="Any blessing, song request or veg/jain preference..."
-                                class="mt-1"></textarea></div>
+                                class="mt-1"></textarea>
+                        </div>
                         <button class="btn-gold w-full py-4 rounded-xl text-sm tracking-[.2em]">SEND RSVP & GET SHAGUN
                             PASS <i class="fa-solid fa-ticket ml-2"></i></button>
                     </form>
@@ -1211,8 +1288,9 @@
                                     class="text-cream/70">Jaimala</span><span class="text-goldlight">6:30 PM</span>
                             </div>
                             <div class="flex justify-between border-b border-gold/15 pb-2"><span
-                                    class="text-cream/70">Shubh Muhurat — Pheras</span><span
-                                    class="text-goldlight font-semibold">7:42 PM</span></div>
+                                    class="text-cream/70">Shubh
+                                    Muhurat — Pheras</span><span class="text-goldlight font-semibold">7:42 PM</span>
+                            </div>
                             <div class="flex justify-between"><span class="text-cream/70">Vidaai</span><span
                                     class="text-goldlight">11:30 PM</span></div>
                         </div>
@@ -1282,6 +1360,18 @@
     </div>
     <button id="blessShower" class="hidden"></button>
 
+    <!-- WATERMARK -->
+    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-5 left-5 z-[60] flex items-center gap-2 bg-black/80 text-white px-4 py-2 rounded-full text-[10px] tracking-widest uppercase font-sans shadow-lg hover:-translate-y-1 transition-transform duration-300 border border-gold/30">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        made with bloomyvite
+    </a>
+
     <!-- LIGHTBOX -->
     <div id="lightbox"><button id="lbClose"
             class="absolute top-5 right-5 w-12 h-12 rounded-full border border-gold text-gold text-xl hover:bg-gold hover:text-black transition">×</button><button
@@ -1345,13 +1435,13 @@
         ];
         const GALLERY = [
             { src: "https://images.unsplash.com/photo-1587271407852-7d438ca9fdf6?q=80&w=800&auto=format&fit=crop", cat: "decor", cap: "MARIGOLD MANDAP CONCEPT", seed: "g1" },
-            { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop", cat: "couple", cap: "THE ROYAL COUPLE", seed: "g2" },
-            { src: "https://images.unsplash.com/photo-1610173827043-9ad5998c0f7d?q=80&w=800&auto=format&fit=crop", cat: "couple", cap: "BRIDAL GLOW", seed: "g3" },
+            { src: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop", cat: "couple", cap: "THE ROYAL COUPLE", seed: "g2" },
+            { src: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=800&auto=format&fit=crop", cat: "couple", cap: "BRIDAL GLOW", seed: "g3" },
             { src: "https://images.unsplash.com/photo-1604423043492-41303788de4d?q=80&w=800&auto=format&fit=crop", cat: "ritual", cap: "DIYAS OF BLESSING", seed: "g4" },
             { src: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?q=80&w=800&auto=format&fit=crop", cat: "ritual", cap: "MEHNDI ARTISTRY", seed: "g5" },
             { src: "https://images.unsplash.com/photo-1604608672516-f1b9b1d37076?q=80&w=800&auto=format&fit=crop", cat: "decor", cap: "TORAN & MARIGOLD", seed: "g6" },
-            { src: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?q=80&w=800&auto=format&fit=crop", cat: "couple", cap: "LEHENGA DREAMS", seed: "g7" },
-            { src: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=800&auto=format&fit=crop", cat: "ritual", cap: "GANGA AARTI VOW", seed: "g8" },
+            { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop", cat: "couple", cap: "LEHENGA DREAMS", seed: "g7" },
+            { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop", cat: "couple", cap: "A PROMISE MADE", seed: "g8" },
         ];
         const PHERAS = [
             { s: "॥ पहला फेरा — अन्न ॥", t: "1. Nourishment", d: "Together we shall provide food, prosperity and a home filled with abundance. Groom promises to care; bride promises to nurture." },
@@ -1364,6 +1454,15 @@
         ];
         const FAM_G = [["Rajesh Sharma", "Father of Groom • Business"], ["Meena Sharma", "Mother of Groom"], ["Aditya Sharma", "Brother • Best Man"], ["Kavya Sharma", "Sister • Sangeet Lead"]];
         const FAM_B = [["Vikram Iyer", "Father of Bride • Professor"], ["Lakshmi Iyer", "Mother of Bride"], ["Arjun Iyer", "Brother"], ["Sneha Iyer", "Sister • Maid of Honour"]];
+        /* ============ IMMERSIVE MODE ============ */
+        window.enterImmersive = function () {
+            document.body.classList.add('immersive');
+            const wideBtn = document.querySelector('[data-view="wide"]');
+            if (wideBtn) wideBtn.click(); // Resets camera to grand wide view
+        }
+        window.exitImmersive = function () {
+            document.body.classList.remove('immersive');
+        }
 
         /* ============ PRELOADER ============ */
         let lp = 0; const loadInt = setInterval(() => { lp += Math.random() * 14; if (lp >= 100) { lp = 100; clearInterval(loadInt); setTimeout(() => { document.getElementById('preloader').classList.add('hidden'); startReveals(); }, 600); } document.getElementById('loadBar').style.width = lp + '%'; document.getElementById('loadPct').textContent = Math.floor(lp) + '%'; }, 160);
@@ -1474,7 +1573,8 @@
         ============================================================ */
         (function () {
             const canvas = document.getElementById('webgl');
-            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+            renderer.setClearColor(0x120402, 1);
             renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
             renderer.setSize(innerWidth, innerHeight);
             renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;

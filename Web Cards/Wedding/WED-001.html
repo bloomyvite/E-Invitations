@@ -4,8 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sophia & James — Wedding Invitation</title>
+    <title>Sophia & James — Luxury Wedding E-Invitation | Rosewood Garden Estate 2030</title>
+    <meta name="description"
+        content="You are cordially invited to the wedding of Sophia & James on October 1st, 2030, at the beautiful Rosewood Garden Estate in Napa Valley. Discover our story, venue details, and RSVP online for this elegant celebration." />
+    <meta name="keywords"
+        content="wedding invitation, e-invitation, digital wedding invite, online wedding invitation, interactive wedding invitation, wedding e-card, Sophia and James wedding, Rosewood Garden Estate wedding, Napa Valley wedding, 2030 wedding, wedding website, RSVP online, wedding ceremony, wedding reception, wedding countdown, wedding gallery, wedding details, modern wedding invite, classic wedding invite, romantic wedding invitation, bride and groom, wedding celebration, marriage invitation, virtual wedding invite, save the date, elegant wedding, luxury wedding, wedding design, wedding inspiration, wedding planner, wedding venue, wedding RSVP, scratch card invitation, scratch to reveal, wedding date reveal, luxury e-invite, wedding invitation suite, digital save the date, wedding announcement, wedding website design, wedding story timeline, wedding details template, October 2030 wedding, autumn wedding, fall wedding, wedding in California, USA wedding, vineyard wedding, garden wedding, estate wedding, manor wedding, wedding aesthetic, wedding typography, wedding fonts, Great Vibes font, Playfair Display, Cormorant Garamond, wedding color palette, cream and gold wedding, blush wedding, rustic wedding, romantic wedding, dream wedding, fairytale wedding, destination wedding, local wedding, intimate wedding, grand wedding, wedding inspiration board, wedding moodboard, wedding planning, wedding ideas, wedding invitation wording, wedding etiquette, wedding countdown timer, interactive scratch card, confetti animation, web design, HTML5 wedding invite, responsive wedding invite, mobile friendly wedding invite, modern web invite, best wedding invite, top wedding invite, unique wedding invite, creative wedding invite, wedding invite 2030, Rosewood Garden Estate Napa, Vineyard Lane wedding, California wedding, wedding vendors, wedding rings, wedding vows, first dance, wedding dinner, grand ballroom, garden pavilion, wedding guests, RSVP deadline, wedding registry, wedding gifts, wedding photography, wedding memories, our story, the couple, wedding timeline, ceremony details, wedding transport, wedding accommodation, wedding day, marriage celebration, love story, engaged couple, wedding bells, wedding ceremony details, wedding schedule, wedding itinerary, wedding map, directions to wedding, luxury wedding venue, vineyard wedding venue, estate wedding venue, wedding decor, wedding flowers, wedding music, wedding playlist, wedding food, wedding catering, wedding cake, wedding toast, wedding speeches, bridal party, groomsmen, maid of honor, best man, wedding officiant, marriage license, wedding planning tips, wedding checklist, wedding budget, wedding dress, wedding suit, wedding bands, wedding jewelry, wedding shoes, wedding hair, wedding makeup, wedding photographer, wedding videographer, wedding DJ, wedding band, wedding florist, wedding coordinator, wedding designer, wedding stationery, wedding invitations, wedding save the dates, wedding programs, wedding menus, wedding place cards, wedding favors, wedding guestbook, wedding signs, wedding lighting, wedding dance floor, wedding tent, wedding chairs, wedding tables, wedding linens, wedding tableware, wedding centerpieces, wedding backdrop, wedding arch, wedding aisle, wedding altar, wedding candles, wedding lanterns, wedding fairy lights, wedding string lights, wedding sparklers, wedding confetti, wedding bubbles, wedding petals, wedding exit, wedding send-off, wedding after party, wedding brunch, wedding welcome party, wedding rehearsal dinner, wedding weekend, wedding festivities, wedding traditions, wedding customs, wedding blessings, wedding wishes, wedding quotes, wedding poems, wedding readings, wedding songs, wedding first dance songs, wedding father daughter dance, wedding mother son dance, wedding party songs, wedding ceremony music, wedding cocktail hour music, wedding dinner music, wedding reception music, wedding dance music, wedding exit music" />
+    <meta name="author" content="Bloomyvite" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sophiaandjames.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sophiaandjames.com/" />
+    <meta property="og:title" content="Sophia &amp; James — Luxury Wedding E-Invitation" />
+    <meta property="og:description"
+        content="Join us on October 1st, 2030, at Rosewood Garden Estate to celebrate the marriage of Sophia & James. Scratch to reveal the date and RSVP online!" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sophia &amp; James — Wedding E-Invitation" />
+    <meta name="twitter:description"
+        content="You're invited to our wedding on October 1st, 2030 at Rosewood Garden Estate. RSVP now!" />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Great+Vibes&display=swap"
@@ -282,6 +308,80 @@
         .venue-card:hover .venue-img {
             transform: scale(1.08);
         }
+
+        /* ---------- Scratch Card ---------- */
+        .scratch-wrapper {
+            position: relative;
+            width: min(95vw, 560px, 65vh);
+            aspect-ratio: 2.5 / 1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(46, 42, 38, .15);
+            background: #fff;
+            border: 1px solid #eadfce;
+            margin: 0 auto;
+        }
+
+        .scratch-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #scratchCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+            touch-action: none;
+            z-index: 10;
+        }
+
+        /* ---------- Watermark ---------- */
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #FAF6F0;
+            background: rgba(46, 42, 38, 0.85);
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .watermark:hover {
+            color: #fff;
+            background: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(176, 141, 87, 0.6);
+        }
+
+        @media (max-width: 767px) {
+            .watermark {
+                bottom: 12px;
+                right: 12px;
+                font-size: 0.65rem;
+                padding: 8px 14px;
+            }
+        }
     </style>
 </head>
 
@@ -301,7 +401,7 @@
             <p class="font-display italic text-lg md:text-2xl mt-6 opacity-95">request the pleasure of your company<br
                     class="hidden sm:block"> as they say “I do”</p>
             <div class="mt-8 inline-block border-t border-b border-white/60 py-3 px-4 sm:px-8">
-                <p class="font-display text-lg sm:text-xl md:text-3xl tracking-widest">SEPTEMBER 20, 2025</p>
+                <p class="font-display text-lg sm:text-xl md:text-3xl tracking-widest">OCTOBER 1, 2030</p>
             </div>
             <p class="mt-4 tracking-wideish text-xs sm:text-sm uppercase opacity-90 px-2">Rosewood Garden Estate · Napa
                 Valley, CA</p>
@@ -320,6 +420,21 @@
                 Two hearts, one love, forever entwined. Join us as we begin our new chapter
                 surrounded by the people who mean the most. Your presence would make our day complete.
             </p>
+
+            <!-- Scratch Card -->
+            <div class="mt-12 flex justify-center">
+                <div class="scratch-wrapper" id="scratchWrapper">
+                    <!-- Hidden Content underneath (Only Date) -->
+                    <div class="scratch-content">
+                        <div class="text-[1.1rem] sm:text-[1.5rem] tracking-[.25em] sm:tracking-[.35em] whitespace-nowrap text-[#a9814b] font-medium"
+                            style="font-family: 'Playfair Display', serif;">
+                            01 . 10 . 2030
+                        </div>
+                    </div>
+                    <!-- Scratchable Canvas Overlay -->
+                    <canvas id="scratchCanvas"></canvas>
+                </div>
+            </div>
         </div>
 
         <div class="max-w-3xl mx-auto mt-14 reveal">
@@ -519,7 +634,7 @@
         style="background:linear-gradient(rgba(30,22,14,.72),rgba(30,22,14,.72)), url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1600&q=80') center/cover;">
         <div class="max-w-xl mx-auto text-center text-white reveal">
             <p class="font-script text-5xl">RSVP</p>
-            <p class="mt-4 text-xl text-white/90">Kindly respond by <span class="italic">August 15, 2025</span></p>
+            <p class="mt-4 text-xl text-white/90">Kindly respond by <span class="italic">July 1, 2030</span></p>
 
             <form id="rsvpForm"
                 class="mt-10 bg-white/95 backdrop-blur rounded-2xl p-5 sm:p-8 md:p-10 text-left text-neutral-800 shadow-2xl">
@@ -565,13 +680,24 @@
         <p class="font-script text-4xl gold">Sophia & James</p>
         <div class="divider my-5"><span class="line"></span><span class="diamond"></span><span class="line r"></span>
         </div>
-        <p class="uppercase tracking-wideish text-sm text-neutral-500">09 · 20 · 2025 — Napa Valley, California</p>
+        <p class="uppercase tracking-wideish text-sm text-neutral-500">10 · 01 · 2030 — Napa Valley, California</p>
         <p class="mt-3 text-neutral-400 italic">#SophiaSaysYesToJames</p>
     </footer>
 
+    <!-- WATERMARK / WEBSITE LINK -->
+    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        made with bloomyvite
+    </a>
+
     <script>
         // ---- Countdown ----
-        const target = new Date('2025-09-20T16:00:00-07:00').getTime();
+        const target = new Date('2030-10-01T16:00:00-07:00').getTime();
         function pad(n) { return String(n).padStart(2, '0'); }
         function tick() {
             let diff = target - Date.now();
@@ -606,6 +732,126 @@
             p.style.animationDelay = (Math.random() * 12) + 's';
             p.style.fontSize = (12 + Math.random() * 16) + 'px';
             petalsWrap.appendChild(p);
+        }
+
+        // ---- Scratch Card & Confetti ----
+        const canvas = document.getElementById('scratchCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            const wrapper = document.getElementById('scratchWrapper');
+            let isDrawing = false;
+            let celebrationTriggered = false;
+
+            function resizeCanvas() {
+                const rect = wrapper.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                ctx.scale(dpr, dpr);
+                canvas.style.width = rect.width + 'px';
+                canvas.style.height = rect.height + 'px';
+
+                // Draw scratch overlay
+                ctx.globalCompositeOperation = 'source-over';
+
+                // Metallic gold gradient
+                const grad = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+                grad.addColorStop(0, '#c6a165');
+                grad.addColorStop(0.5, '#a9814b');
+                grad.addColorStop(1, '#b08d57');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, rect.width, rect.height);
+
+                // Add texture/pattern
+                ctx.fillStyle = 'rgba(255,255,255,0.05)';
+                for (let i = 0; i < 200; i++) {
+                    ctx.beginPath();
+                    ctx.arc(Math.random() * rect.width, Math.random() * rect.height, Math.random() * 2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                // Add text
+                ctx.fillStyle = '#FAF6F0';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                ctx.font = '500 15px "Cormorant Garamond", serif';
+                ctx.letterSpacing = '4px';
+                ctx.fillText('SCRATCH TO REVEAL', rect.width / 2, rect.height / 2 - 14);
+
+                ctx.font = '300 13px "Cormorant Garamond", serif';
+                ctx.fillStyle = 'rgba(250, 246, 240, 0.7)';
+                ctx.fillText('THE DATE', rect.width / 2, rect.height / 2 + 18);
+            }
+
+            window.addEventListener('resize', () => {
+                if (!celebrationTriggered) resizeCanvas();
+            });
+            setTimeout(resizeCanvas, 100);
+
+            function getPos(e) {
+                const rect = canvas.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                return { x: clientX - rect.left, y: clientY - rect.top };
+            }
+
+            function scratch(e) {
+                if (!isDrawing || celebrationTriggered) return;
+                e.preventDefault();
+
+                const pos = getPos(e);
+                const brush = Math.max(18, canvas.getBoundingClientRect().width * 0.07);
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, brush, 0, Math.PI * 2);
+                ctx.fill();
+
+                checkPercentage();
+            }
+
+            let checkCount = 0;
+            function checkPercentage() {
+                checkCount++;
+                if (checkCount % 15 !== 0) return;
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                let cleared = 0;
+                for (let i = 3; i < imageData.data.length; i += 4) {
+                    if (imageData.data[i] === 0) cleared++;
+                }
+                const percent = cleared / (imageData.data.length / 4);
+
+                if (percent > 0.45 && !celebrationTriggered) {
+                    celebrationTriggered = true;
+
+                    canvas.style.transition = 'opacity 0.8s ease';
+                    canvas.style.opacity = '0';
+                    setTimeout(() => { canvas.style.display = 'none'; }, 800);
+
+                    const duration = 3 * 1000;
+                    const animationEnd = Date.now() + duration;
+                    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+
+                    function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+
+                    const interval = setInterval(function () {
+                        const timeLeft = animationEnd - Date.now();
+                        if (timeLeft <= 0) { return clearInterval(interval); }
+                        const particleCount = 50 * (timeLeft / duration);
+                        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                    }, 250);
+                }
+            }
+
+            canvas.addEventListener('mousedown', (e) => { isDrawing = true; scratch(e); });
+            canvas.addEventListener('mousemove', scratch);
+            window.addEventListener('mouseup', () => isDrawing = false);
+
+            canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); }, { passive: false });
+            canvas.addEventListener('touchmove', scratch, { passive: false });
+            window.addEventListener('touchend', () => isDrawing = false);
         }
 
         // ---- RSVP form ----

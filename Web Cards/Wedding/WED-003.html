@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elena &amp; James — A Wedding Invitation</title>
+    <title>Elena &amp; James — Luxury Wedding E-Invitation | Rosewood Hall</title>
+    <meta name="description"
+        content="You are cordially invited to the wedding of Elena & James at the beautiful Rosewood Hall in Willow Creek Valley. Discover our story, venue details, and RSVP online for this elegant celebration." />
+    <meta name="keywords"
+        content="wedding invitation, e-invitation, digital wedding invite, online wedding invitation, interactive wedding invitation, wedding e-card, Elena and James wedding, Rosewood Hall wedding, Willow Creek Valley wedding, 2026 wedding, wedding website, RSVP online, wedding ceremony, wedding reception, wedding countdown, wedding gallery, wedding details, modern wedding invite, classic wedding invite, romantic wedding invitation, bride and groom, wedding celebration, marriage invitation, virtual wedding invite, save the date, elegant wedding, luxury wedding, wedding design, wedding inspiration, wedding planner, wedding venue, wedding RSVP, scratch card invitation, scratch to reveal, wedding date reveal, luxury e-invite, wedding invitation suite, digital save the date, wedding announcement, wedding website design, wedding story timeline, wedding details template, autumn wedding, fall wedding, wedding in California, USA wedding, vineyard wedding, garden wedding, estate wedding, manor wedding, wedding aesthetic, wedding typography, wedding fonts, Great Vibes font, Playfair Display, Cormorant Garamond, wedding color palette, pine green wedding, gold wedding, rustic wedding, romantic wedding, dream wedding, fairytale wedding, destination wedding, local wedding, intimate wedding, grand wedding, wedding inspiration board, wedding moodboard, wedding planning, wedding ideas, wedding invitation wording, wedding etiquette, wedding countdown timer, interactive scratch card, confetti animation, web design, HTML5 wedding invite, responsive wedding invite, mobile friendly wedding invite, modern web invite, best wedding invite, top wedding invite, unique wedding invite, creative wedding invite, Rosewood Hall, Willow Creek Valley, California wedding, wedding vendors, wedding rings, wedding vows, first dance, wedding dinner, grand ballroom, garden pavilion, wedding guests, RSVP deadline, wedding registry, wedding gifts, wedding photography, wedding memories, our story, the couple, wedding timeline, ceremony details, wedding transport, wedding accommodation, wedding day, marriage celebration, love story, engaged couple, wedding bells, wedding ceremony details, wedding schedule, wedding itinerary, wedding map, directions to wedding, luxury wedding venue, vineyard wedding venue, estate wedding venue, wedding decor, wedding flowers, wedding music, wedding playlist, wedding food, wedding catering, wedding cake, wedding toast, wedding speeches, bridal party, groomsmen, maid of honor, best man, wedding officiant, marriage license, wedding planning tips, wedding checklist, wedding budget, wedding dress, wedding suit, wedding bands, wedding jewelry, wedding shoes, wedding hair, wedding makeup, wedding photographer, wedding videographer, wedding DJ, wedding band, wedding florist, wedding coordinator, wedding designer, wedding stationery, wedding invitations, wedding save the dates, wedding programs, wedding menus, wedding place cards, wedding favors, wedding guestbook, wedding signs, wedding lighting, wedding dance floor, wedding tent, wedding chairs, wedding tables, wedding linens, wedding tableware, wedding centerpieces, wedding backdrop, wedding arch, wedding aisle, wedding altar, wedding candles, wedding lanterns, wedding fairy lights, wedding string lights, wedding sparklers, wedding confetti, wedding bubbles, wedding petals, wedding exit, wedding send-off, wedding after party, wedding brunch, wedding welcome party, wedding rehearsal dinner, wedding weekend, wedding festivities, wedding traditions, wedding customs, wedding blessings, wedding wishes, wedding quotes, wedding poems, wedding readings, wedding songs, wedding first dance songs, wedding father daughter dance, wedding mother son dance, wedding party songs, wedding ceremony music, wedding cocktail hour music, wedding dinner music, wedding reception music, wedding dance music, wedding exit music" />
+    <meta name="author" content="Bloomyvite" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://elenaandjames.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://elenaandjames.com/" />
+    <meta property="og:title" content="Elena &amp; James — Luxury Wedding E-Invitation" />
+    <meta property="og:description"
+        content="Join us at Rosewood Hall to celebrate the marriage of Elena & James. Scratch to reveal the date and RSVP online!" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Elena &amp; James — Wedding E-Invitation" />
+    <meta name="twitter:description" content="You're invited to our wedding at Rosewood Hall. RSVP now!" />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap"
@@ -1739,6 +1764,89 @@
                 transform: none
             }
         }
+
+        /* ---------- Scratch Card (Matching Elena & James Theme) ---------- */
+        .scratch-wrapper {
+            position: relative;
+            width: min(95vw, 560px, 65vh);
+            aspect-ratio: 2.5 / 1;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--gold-dim);
+            background: linear-gradient(170deg, rgba(26, 68, 54, .4), rgba(8, 24, 18, .6));
+            box-shadow: 0 26px 60px rgba(0, 0, 0, .4);
+            margin: 0 auto;
+        }
+
+        .scratch-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .scratch-content span {
+            font-family: var(--serif);
+            font-size: clamp(18px, 3vw, 26px);
+            letter-spacing: .22em;
+            color: var(--gold-bright);
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(240, 212, 145, 0.3);
+        }
+
+        #scratchCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+            touch-action: none;
+            z-index: 10;
+        }
+
+        /* ---------- Watermark ---------- */
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #1d1508;
+            background: var(--gold);
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .watermark:hover {
+            color: #1d1508;
+            background: var(--gold-bright);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(240, 212, 145, 0.6);
+        }
+
+        @media (max-width: 767px) {
+            .watermark {
+                bottom: 12px;
+                right: 12px;
+                font-size: 0.6rem;
+                padding: 8px 14px;
+            }
+        }
     </style>
 </head>
 
@@ -1814,6 +1922,23 @@
                 <p class="hero-place" data-st style="--i:4">Rosewood Hall · Willow Creek Valley</p>
             </div>
             <div class="scroll-cue"><span>unveil</span><span class="bar"></span></div>
+        </section>
+
+        <!-- ======== SCRATCH CARD ======== -->
+        <section class="section" style="padding-bottom: 0; padding-top: 40px;">
+            <div class="center reveal">
+                <span class="kicker">A little surprise</span>
+                <h2>Scratch to Reveal</h2>
+                <div class="rule"><i>◆</i></div>
+            </div>
+            <div class="scratch-wrapper reveal" id="scratchWrapper" style="--rd:.1s; margin-top: 40px;">
+                <!-- Hidden Content (Dynamic Date) -->
+                <div class="scratch-content">
+                    <span data-date-long>...</span>
+                </div>
+                <!-- Scratchable Canvas Overlay -->
+                <canvas id="scratchCanvas"></canvas>
+            </div>
         </section>
 
         <!-- ======== COUNTDOWN ======== -->
@@ -2085,6 +2210,17 @@
 
     <div id="burst-layer" aria-hidden="true"></div>
     <div id="toast" role="status"></div>
+
+    <!-- WATERMARK / WEBSITE LINK -->
+    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        made with bloomyvite
+    </a>
 
     <noscript>
         <style>
@@ -2387,6 +2523,126 @@
                     requestAnimationFrame(loop);
                 }
             } catch (e) { /* graceful static fallback */ }
+
+            /* ---------- Scratch Card & Confetti ---------- */
+            var canvas = byId('scratchCanvas');
+            if (canvas) {
+                var ctx = canvas.getContext('2d');
+                var wrapper = byId('scratchWrapper');
+                var isDrawing = false;
+                var celebrationTriggered = false;
+
+                function resizeCanvas() {
+                    var rect = wrapper.getBoundingClientRect();
+                    var dpr = window.devicePixelRatio || 1;
+                    canvas.width = rect.width * dpr;
+                    canvas.height = rect.height * dpr;
+                    ctx.scale(dpr, dpr);
+                    canvas.style.width = rect.width + 'px';
+                    canvas.style.height = rect.height + 'px';
+
+                    // Draw scratch overlay
+                    ctx.globalCompositeOperation = 'source-over';
+
+                    // Metallic gold gradient to match theme
+                    var grad = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+                    grad.addColorStop(0, '#efd49b');
+                    grad.addColorStop(0.5, '#c49a55');
+                    grad.addColorStop(1, '#a97f3f');
+                    ctx.fillStyle = grad;
+                    ctx.fillRect(0, 0, rect.width, rect.height);
+
+                    // Add texture/pattern
+                    ctx.fillStyle = 'rgba(255,255,255,0.08)';
+                    for (var i = 0; i < 200; i++) {
+                        ctx.beginPath();
+                        ctx.arc(Math.random() * rect.width, Math.random() * rect.height, Math.random() * 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    // Add text
+                    ctx.fillStyle = '#2e2a26'; // Dark text for gold background
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+
+                    ctx.font = '500 15px "Jost", sans-serif';
+                    ctx.letterSpacing = '4px';
+                    ctx.fillText('SCRATCH TO REVEAL', rect.width / 2, rect.height / 2 - 14);
+
+                    ctx.font = '300 13px "Jost", sans-serif';
+                    ctx.fillStyle = 'rgba(46, 42, 38, 0.7)';
+                    ctx.fillText('THE DATE', rect.width / 2, rect.height / 2 + 18);
+                }
+
+                window.addEventListener('resize', function () {
+                    if (!celebrationTriggered) resizeCanvas();
+                });
+                setTimeout(resizeCanvas, 100);
+
+                function getPos(e) {
+                    var rect = canvas.getBoundingClientRect();
+                    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                    return { x: clientX - rect.left, y: clientY - rect.top };
+                }
+
+                function scratch(e) {
+                    if (!isDrawing || celebrationTriggered) return;
+                    e.preventDefault();
+
+                    var pos = getPos(e);
+                    var brush = Math.max(18, canvas.getBoundingClientRect().width * 0.07);
+                    ctx.globalCompositeOperation = 'destination-out';
+                    ctx.beginPath();
+                    ctx.arc(pos.x, pos.y, brush, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    checkPercentage();
+                }
+
+                var checkCount = 0;
+                function checkPercentage() {
+                    checkCount++;
+                    if (checkCount % 15 !== 0) return;
+
+                    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    var cleared = 0;
+                    for (var i = 3; i < imageData.data.length; i += 4) {
+                        if (imageData.data[i] === 0) cleared++;
+                    }
+                    var percent = cleared / (imageData.data.length / 4);
+
+                    if (percent > 0.45 && !celebrationTriggered) {
+                        celebrationTriggered = true;
+
+                        canvas.style.transition = 'opacity 0.8s ease';
+                        canvas.style.opacity = '0';
+                        setTimeout(function () { canvas.style.display = 'none'; }, 800);
+
+                        var duration = 3 * 1000;
+                        var animationEnd = Date.now() + duration;
+                        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+
+                        function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+
+                        var interval = setInterval(function () {
+                            var timeLeft = animationEnd - Date.now();
+                            if (timeLeft <= 0) { return clearInterval(interval); }
+                            var particleCount = 50 * (timeLeft / duration);
+                            confetti(Object.assign({}, defaults, { particleCount: particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                            confetti(Object.assign({}, defaults, { particleCount: particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                        }, 250);
+                    }
+                }
+
+                canvas.addEventListener('mousedown', function (e) { isDrawing = true; scratch(e); });
+                canvas.addEventListener('mousemove', scratch);
+                window.addEventListener('mouseup', function () { isDrawing = false; });
+
+                canvas.addEventListener('touchstart', function (e) { isDrawing = true; scratch(e); }, { passive: false });
+                canvas.addEventListener('touchmove', scratch, { passive: false });
+                window.addEventListener('touchend', function () { isDrawing = false; });
+            }
 
             /* ---------- RSVP ---------- */
             var guests = 2, gNum = byId('guest-num');

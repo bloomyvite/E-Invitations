@@ -2,9 +2,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amelia &amp; Sebastian — Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Amelia &amp; Sebastian — Luxury Wedding E-Invitation | The Rosewood Estate 2026</title>
+    <meta name="description"
+        content="You are cordially invited to the wedding of Amelia & Sebastian on September 20th, 2026, at the beautiful The Rosewood Estate in Napa Valley. Discover our story, venue details, and RSVP online for this elegant celebration." />
+    <meta name="keywords"
+        content="wedding invitation, e-invitation, digital wedding invite, online wedding invitation, interactive wedding invitation, wedding e-card, Amelia and Sebastian wedding, Rosewood Estate wedding, Napa Valley wedding, 2026 wedding, wedding website, RSVP online, wedding ceremony, wedding reception, wedding countdown, wedding gallery, wedding details, modern wedding invite, classic wedding invite, romantic wedding invitation, bride and groom, wedding celebration, marriage invitation, virtual wedding invite, save the date, elegant wedding, luxury wedding, wedding design, wedding inspiration, wedding planner, wedding venue, wedding RSVP, 3D card invitation, luxury e-invite, wedding invitation suite, digital save the date, wedding announcement, wedding website design, wedding story timeline, wedding details template, September 2026 wedding, autumn wedding, fall wedding, wedding in California, USA wedding, vineyard wedding, garden wedding, estate wedding, manor wedding, wedding aesthetic, wedding typography, wedding fonts, Cormorant Garamond, Jost font, wedding color palette, sage green wedding, champagne gold wedding, rustic wedding, romantic wedding, dream wedding, fairytale wedding, destination wedding, local wedding, intimate wedding, grand wedding, wedding inspiration board, wedding moodboard, wedding planning, wedding ideas, wedding invitation wording, wedding etiquette, wedding countdown timer, interactive 3D card, confetti animation, web design, HTML5 wedding invite, responsive wedding invite, mobile friendly wedding invite, modern web invite, best wedding invite, top wedding invite, unique wedding invite, creative wedding invite, Rosewood Estate, Napa Valley, California wedding, wedding vendors, wedding rings, wedding vows, first dance, wedding dinner, grand ballroom, wedding guests, RSVP deadline, wedding registry, wedding gifts, wedding photography, wedding memories, our story, the couple, wedding timeline, ceremony details, wedding transport, wedding accommodation, wedding day, marriage celebration, love story, engaged couple, wedding bells, wedding ceremony details, wedding schedule, wedding itinerary, wedding map, directions to wedding, luxury wedding venue, vineyard wedding venue, estate wedding venue, wedding decor, wedding flowers, wedding music, wedding playlist, wedding food, wedding catering, wedding cake, wedding toast, wedding speeches, bridal party, groomsmen, maid of honor, best man, wedding officiant, marriage license, wedding planning tips, wedding checklist, wedding budget, wedding dress, wedding suit, wedding bands, wedding jewelry, wedding shoes, wedding hair, wedding makeup, wedding photographer, wedding videographer, wedding DJ, wedding band, wedding florist, wedding coordinator, wedding designer, wedding stationery, wedding invitations, wedding save the dates, wedding programs, wedding menus, wedding place cards, wedding favors, wedding guestbook, wedding signs, wedding lighting, wedding dance floor, wedding tent, wedding chairs, wedding tables, wedding linens, wedding tableware, wedding centerpieces, wedding backdrop, wedding arch, wedding aisle, wedding altar, wedding candles, wedding lanterns, wedding fairy lights, wedding string lights, wedding sparklers, wedding confetti, wedding bubbles, wedding petals, wedding exit, wedding send-off, wedding after party, wedding brunch, wedding welcome party, wedding rehearsal dinner, wedding weekend, wedding festivities, wedding traditions, wedding customs, wedding blessings, wedding wishes, wedding quotes, wedding poems, wedding readings, wedding songs, wedding first dance songs, wedding father daughter dance, wedding mother son dance, wedding party songs, wedding ceremony music, wedding cocktail hour music, wedding dinner music, wedding reception music, wedding dance music, wedding exit music" />
+    <meta name="author" content="Bloomyvite" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ameliaandsebastian.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ameliaandsebastian.com/" />
+    <meta property="og:title" content="Amelia &amp; Sebastian — Luxury Wedding E-Invitation" />
+    <meta property="og:description"
+        content="Join us on September 20th, 2026, at The Rosewood Estate to celebrate the marriage of Amelia & Sebastian. RSVP online!" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Amelia &amp; Sebastian — Wedding E-Invitation" />
+    <meta name="twitter:description"
+        content="You're invited to our wedding on September 20th, 2026 at The Rosewood Estate. RSVP now!" />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
@@ -1882,6 +1908,48 @@
                 transform: none;
             }
         }
+
+        /* ---------- Watermark (Perfect Fit) ---------- */
+        .watermark {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            font-family: 'Jost', sans-serif;
+            font-size: clamp(0.55rem, 2vw, 0.7rem);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #FFFBF3;
+            background: rgba(47, 61, 51, 0.85);
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border: 1px solid rgba(176, 141, 87, 0.4);
+            max-width: 90vw;
+            white-space: nowrap;
+        }
+
+        .watermark:hover {
+            color: #FFF;
+            background: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(176, 141, 87, 0.6);
+        }
+
+        @media (max-width: 767px) {
+            .watermark {
+                bottom: 12px;
+                right: 12px;
+                padding: 8px 14px;
+            }
+        }
     </style>
 </head>
 
@@ -2403,6 +2471,17 @@
         </div>
     </footer>
 
+    <!-- WATERMARK / WEBSITE LINK -->
+    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        made with bloomyvite
+    </a>
+
     <script>
         (function () {
             "use strict";
@@ -2818,6 +2897,21 @@
                         successName.textContent = fname.value.trim();
                         form.style.display = 'none';
                         successBlock.classList.add('show');
+
+                        // Trigger Confetti Celebration
+                        if (typeof confetti === 'function') {
+                            var duration = 3 * 1000;
+                            var animationEnd = Date.now() + duration;
+                            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+                            function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+                            var interval = setInterval(function () {
+                                var timeLeft = animationEnd - Date.now();
+                                if (timeLeft <= 0) { return clearInterval(interval); }
+                                var particleCount = 50 * (timeLeft / duration);
+                                confetti(Object.assign({}, defaults, { particleCount: particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                                confetti(Object.assign({}, defaults, { particleCount: particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                            }, 250);
+                        }
                     }, 700);
                 });
 
