@@ -3,8 +3,37 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ava's 7th Birthday Bash! 🎉 You're Invited</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#100722" />
+    <title>Ava's 7th Birthday Bash! 🎉 You're Invited | Interactive 3D Kids Party Invitation</title>
+    <meta name="description"
+        content="You're invited to Ava's magical 7th birthday bash! An interactive 3D party invitation with unicorns, cake, family memories, and confetti. RSVP online today.">
+    <meta name="keywords"
+        content="7th birthday invitation, kids birthday party, birthday e-invitation, interactive 3D invitation, unicorn birthday party, bubblegum birthday theme, birthday invitation for kids, digital party invite, online RSVP birthday, family birthday celebration, magical birthday party, kids party invite, birthday bash, birthday party website, balloon party, cake party, girl birthday invitation, fantasy birthday party, birthday party RSVP, ava birthday party">
+    <meta name="author" content="Bloomyvite" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://bloomyvite.de5.net/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bloomyvite.de5.net/" />
+    <meta property="og:title" content="Ava's 7th Birthday Bash! 🎉 You're Invited" />
+    <meta property="og:description"
+        content="A magical interactive 3D invitation — cake, unicorns, family memories, and confetti. RSVP online!" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&h=630&q=85" />
+    <meta property="og:site_name" content="PartyPop Invites" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ava's 7th Birthday Bash! 🎉 You're Invited" />
+    <meta name="twitter:description"
+        content="A magical interactive 3D invitation — cake, unicorns, family memories, and confetti." />
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&h=630&q=85" />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1057,7 +1086,134 @@
             background: #ff5e8a;
         }
 
+        /* ═══════════════════════════════════════════════════════════
+   BLOOMYVITE WATERMARK — 5-SCREEN RESPONSIVE
+   Mobile 320–480 / Tablet 481–768 / Laptop 769–1024
+   Desktop 1025–1440 / Large Desktop & TV 1441+
+   ═══════════════════════════════════════════════════════════ */
+        .bloomy-watermark {
+            position: fixed;
+            right: calc(env(safe-area-inset-right, 0px) + 10px);
+            bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+            z-index: 9999;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 12px;
+            max-width: calc(100vw - 20px);
+            border-radius: 999px;
+            background: rgba(8, 8, 8, .85);
+            border: 1px solid rgba(255, 255, 255, .14);
+            color: #f7e7c8;
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .05em;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .08);
+            transition: transform .35s cubic-bezier(.19, .86, .28, 1), background .35s ease, border-color .35s ease, box-shadow .35s ease;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .bloomy-watermark:hover {
+            transform: translateY(-2px);
+            background: rgba(14, 14, 14, .95);
+            border-color: rgba(227, 201, 143, .55);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .62), inset 0 1px 0 rgba(255, 255, 255, .1);
+        }
+
+        .bloomy-watermark:active {
+            transform: translateY(0) scale(.97);
+        }
+
+        .bloomy-watermark:focus-visible {
+            outline: 2px solid #ffea00;
+            outline-offset: 3px;
+        }
+
+        .bloomy-watermark svg {
+            width: 11px;
+            height: 11px;
+            flex-shrink: 0;
+            opacity: .85;
+        }
+
+        .bloomy-watermark .heart {
+            font-size: 1em;
+            line-height: 1;
+            filter: drop-shadow(0 0 4px rgba(255, 160, 190, .55));
+        }
+
+        @media (min-width: 481px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 14px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+                font-size: 12px;
+                padding: 8px 14px;
+                gap: 6px;
+            }
+
+            .bloomy-watermark svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 16px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+                font-size: 13px;
+                padding: 9px 16px;
+                gap: 7px;
+            }
+
+            .bloomy-watermark svg {
+                width: 13px;
+                height: 13px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 20px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+                font-size: 14px;
+                padding: 10px 18px;
+                gap: 8px;
+            }
+
+            .bloomy-watermark svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        @media (min-width: 1441px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 28px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 28px);
+                font-size: 16px;
+                padding: 12px 22px;
+                gap: 9px;
+            }
+
+            .bloomy-watermark svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
         @media print {
+            .bloomy-watermark {
+                display: none !important;
+                visibility: hidden !important;
+            }
+
             body * {
                 visibility: hidden;
             }
@@ -1094,7 +1250,7 @@
     <!-- LOADER -->
     <div id="loader">
         <div class="cake-bounce">🎂</div>
-        <h1 class="font-bubbly font-extrabold text-3xl mt-2">Preparing the Party...</h1>
+        <h2 class="font-bubbly font-extrabold text-3xl mt-2">Preparing the Party...</h2>
         <p class="opacity-70 text-sm mt-1 font-body">Inflating balloons & baking cake</p>
         <div class="load-bar">
             <div></div>
@@ -1166,8 +1322,7 @@
         <!-- HERO / 3D STAGE -->
         <section id="invite" class="pt-28 md:pt-32 pb-10 px-4 md:px-6 max-w-[1400px] mx-auto">
             <div class="text-center mb-8 reveal visible">
-                <span class="ribbon"><i class="fa fa-sparkles"></i> INTERACTIVE 3D INVITATION <i
-                        class="fa fa-sparkles"></i></span>
+                <span class="ribbon">✨ INTERACTIVE 3D INVITATION ✨</span>
                 <h1 class="section-title mt-4">A Magical Birthday <span class="grad-text">Awaits You!</span></h1>
                 <p class="opacity-70 mt-2 text-sm md:text-base">🖱️ Move to tilt • Click card to flip • Drag to spin ✨
                 </p>
@@ -1566,6 +1721,21 @@
                 id="toastMsg">Yay!</span></div>
     </div>
 
+    <!-- ══════════════════════════════════════════════════════════
+     BLOOMYVITE WATERMARK — BOTTOM RIGHT CORNER
+     ══════════════════════════════════════════════════════════ -->
+    <a class="bloomy-watermark" href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer"
+        aria-label="Made by Bloomyvite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        <span>Made by Bloomyvite</span>
+        <span class="heart">🩷</span>
+    </a>
+
     <script>
         /* ============ FIXED PARTY DETAILS (edit these to change the invite) ============ */
         const DETAILS = {
@@ -1742,7 +1912,7 @@
             $("venueTitle").textContent = v; $("countLabel").textContent = "Until " + f.full;
             const url = PHOTOS[state.cover].url;
             $("cardCoverImg").src = url; $("backAvatar").src = url; $("envPreviewImg").src = url;
-            document.title = `${state.name}'s ${state.age}th Birthday Bash! 🎉 You're Invited`;
+            document.title = `${state.name}'s ${state.age}th Birthday Bash! 🎉 You're Invited | PartyPop Invites`;
             // avatars
             const av = $("cardAvatars"); av.innerHTML = "";
             [state.cover, (state.cover + 4) % PHOTOS.length, (state.cover + 6) % PHOTOS.length].forEach(i => {
@@ -1912,6 +2082,38 @@
 
         /* Entrance */
         gsap.from("nav", { y: -70, opacity: 0, duration: .8, ease: "power3.out", delay: 1.5 });
+    </script>
+
+    <!-- JSON-LD Structured Data for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Ava's 7th Birthday Bash",
+      "description": "A magical 7th birthday celebration with unicorns, cake, family memories, and confetti at the Sunshine Garden Party Hall.",
+      "startDate": "2026-09-27T16:00:00-07:00",
+      "endDate": "2026-09-27T19:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Sunshine Garden Party Hall",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Rainbow Street",
+          "addressLocality": "Sunnyvale",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Bloomyvite",
+        "url": "https://bloomyvite.de5.net/"
+      },
+      "url": "https://bloomyvite.de5.net/",
+      "inLanguage": "en"
+    }
     </script>
 </body>
 

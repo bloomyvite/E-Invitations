@@ -5,7 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <meta name="theme-color" content="#010a07" />
-    <title>The Letter — A Royal Nikah Proposal</title>
+    <title>The Letter — A Royal Nikah Proposal | Luxury Digital Letter for Marriage Proposal 2030</title>
+    <meta name="description"
+        content="A beautifully crafted digital letter for a sincere marriage proposal. Share your intentions with elegance, respect, and Islamic tradition. Perfect for Nikah proposals and heartfelt confessions." />
+    <meta name="keywords"
+        content="nikah proposal, marriage proposal letter, islamic proposal, digital proposal letter, marriage proposal website, halal proposal, nikah invitation, love letter, marriage proposal, romantic proposal, islamic wedding, muslim proposal, proposal card, digital letter, personal letter, custom proposal, wedding proposal, digital nikah, islamic marriage proposal, proposal website" />
+    <meta name="author" content="Bloomyvite" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://bloomyvite.de5.net/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bloomyvite.de5.net/" />
+    <meta property="og:title" content="The Letter — A Royal Nikah Proposal" />
+    <meta property="og:description"
+        content="A beautifully crafted digital letter for a sincere marriage proposal. Share your intentions with elegance, respect, and Islamic tradition." />
+    <meta property="og:image" content="https://picsum.photos/seed/her-eyes/1200/630" />
+    <meta property="og:site_name" content="Bloomyvite" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Letter — A Royal Nikah Proposal" />
+    <meta name="twitter:description" content="A beautifully crafted digital letter for a sincere marriage proposal." />
+    <meta name="twitter:image" content="https://picsum.photos/seed/her-eyes/1200/630" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -1804,6 +1822,138 @@
         }
 
         /* ═══════════════════════════════════════════════════════════
+   BLOOMYVITE WATERMARK — BOTTOM RIGHT CORNER
+   ═══════════════════════════════════════════════════════════ */
+        /* Mobile baseline 320–480px */
+        .bloomy-watermark {
+            position: fixed;
+            right: calc(env(safe-area-inset-right, 0px) + 10px);
+            bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+            z-index: 9999;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 12px;
+            max-width: calc(100vw - 20px);
+            border-radius: 999px;
+            background: rgba(8, 8, 8, .85);
+            border: 1px solid rgba(255, 255, 255, .14);
+            color: #f7e7c8;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+            box-shadow:
+                0 8px 22px rgba(0, 0, 0, .55),
+                inset 0 1px 0 rgba(255, 255, 255, .08);
+            transition: transform .35s cubic-bezier(.19, .86, .28, 1),
+                background .35s ease,
+                border-color .35s ease,
+                box-shadow .35s ease;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .bloomy-watermark:hover {
+            transform: translateY(-2px);
+            background: rgba(14, 14, 14, .95);
+            border-color: rgba(227, 201, 143, .55);
+            box-shadow:
+                0 12px 28px rgba(0, 0, 0, .62),
+                inset 0 1px 0 rgba(255, 255, 255, .1);
+        }
+
+        .bloomy-watermark:active {
+            transform: translateY(0) scale(.97);
+        }
+
+        .bloomy-watermark:focus-visible {
+            outline: 2px solid var(--brass-lite);
+            outline-offset: 3px;
+        }
+
+        .bloomy-watermark svg {
+            width: 11px;
+            height: 11px;
+            flex-shrink: 0;
+            opacity: .85;
+        }
+
+        .bloomy-watermark .heart {
+            font-size: 1em;
+            line-height: 1;
+            filter: drop-shadow(0 0 4px rgba(255, 160, 190, .55));
+        }
+
+        /* Tablet 481–768px */
+        @media (min-width: 481px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 14px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+                font-size: 12px;
+                padding: 8px 14px;
+                gap: 6px;
+            }
+
+            .bloomy-watermark svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        /* Laptop 769–1024px */
+        @media (min-width: 769px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 16px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+                font-size: 13px;
+                padding: 9px 16px;
+                gap: 7px;
+            }
+
+            .bloomy-watermark svg {
+                width: 13px;
+                height: 13px;
+            }
+        }
+
+        /* Desktop 1025–1440px */
+        @media (min-width: 1025px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 20px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+                font-size: 14px;
+                padding: 10px 18px;
+                gap: 8px;
+            }
+
+            .bloomy-watermark svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        /* Large Desktop & TV 1441px+ */
+        @media (min-width: 1441px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 28px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 28px);
+                font-size: 16px;
+                padding: 12px 22px;
+                gap: 9px;
+            }
+
+            .bloomy-watermark svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════ */
         @media (max-width:520px) {
@@ -1849,229 +1999,256 @@
 
     <canvas id="fx" aria-hidden="true"></canvas>
 
-    <!-- ══════════════════════════════════════════════════════════
+    <main id="main-content">
+
+        <!-- ══════════════════════════════════════════════════════════
      SCENE 1 — PALACE OF EMERALD
      ══════════════════════════════════════════════════════════ -->
-    <section class="scene active" id="s-intro">
-        <div class="j-wall"></div>
-        <div class="bg-glow"></div>
-        <div class="floor"></div>
+        <section class="scene active" id="s-intro">
+            <div class="j-wall"></div>
+            <div class="bg-glow"></div>
+            <div class="floor"></div>
 
-        <div class="moon"></div>
-        <div class="lantern l1"></div>
-        <div class="lantern l2"></div>
-        <div class="lantern l3"></div>
-        <div class="lantern l4"></div>
+            <div class="moon"></div>
+            <div class="lantern l1"></div>
+            <div class="lantern l2"></div>
+            <div class="lantern l3"></div>
+            <div class="lantern l4"></div>
 
-        <div class="hero">
-            <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-            <p class="bismillah-en">In the name of Allah, the Most Compassionate, the Most Merciful.</p>
-            <p class="tagline">A sincere intention. A question from the heart.</p>
+            <div class="hero">
+                <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                <p class="bismillah-en">In the name of Allah, the Most Compassionate, the Most Merciful.</p>
+                <p class="tagline">A sincere intention. A question from the heart.</p>
 
-            <div class="envelope-stage" id="envelopeStage">
-                <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open the letter">
-                    <div class="env-halo"></div>
+                <div class="envelope-stage" id="envelopeStage">
+                    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open the letter">
+                        <div class="env-halo"></div>
 
-                    <!-- back -->
-                    <div class="env-back"></div>
+                        <!-- back -->
+                        <div class="env-back"></div>
 
-                    <!-- letter inside -->
-                    <div class="env-letter">
-                        <div class="env-letter-inner">
-                            <p class="env-letter-title">Assalamu Alaikum</p>
-                            <p class="env-letter-name">Fatima</p>
-                            <p class="env-letter-line">A letter written for you</p>
+                        <!-- letter inside -->
+                        <div class="env-letter">
+                            <div class="env-letter-inner">
+                                <p class="env-letter-title">Assalamu Alaikum</p>
+                                <p class="env-letter-name">Fatima</p>
+                                <p class="env-letter-line">A letter written for you</p>
+                            </div>
+                        </div>
+
+                        <!-- front triangles -->
+                        <svg class="env-front" viewBox="0 0 360 248" preserveAspectRatio="none" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="triL" x1="0" y1="0" x2="1" y2="0">
+                                    <stop offset="0" stop-color="#0e5a41" />
+                                    <stop offset="1" stop-color="#072e21" />
+                                </linearGradient>
+                                <linearGradient id="triR" x1="1" y1="0" x2="0" y2="0">
+                                    <stop offset="0" stop-color="#0e5a41" />
+                                    <stop offset="1" stop-color="#072e21" />
+                                </linearGradient>
+                                <linearGradient id="triB" x1="0" y1="1" x2="0" y2="0">
+                                    <stop offset="0" stop-color="#0b4c37" />
+                                    <stop offset="1" stop-color="#105c43" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M0,0 L180,124 L0,248 Z" fill="url(#triL)" stroke="rgba(212,175,55,.3)"
+                                stroke-width="1" vector-effect="non-scaling-stroke" />
+                            <path d="M360,0 L180,124 L360,248 Z" fill="url(#triR)" stroke="rgba(212,175,55,.3)"
+                                stroke-width="1" vector-effect="non-scaling-stroke" />
+                            <path d="M0,248 L180,124 L360,248 Z" fill="url(#triB)" stroke="rgba(212,175,55,.38)"
+                                stroke-width="1" vector-effect="non-scaling-stroke" />
+                        </svg>
+
+                        <!-- top flap -->
+                        <div class="env-flap" id="envFlap">
+                            <svg viewBox="0 0 360 130" preserveAspectRatio="none" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="flapG" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#0f5f45" />
+                                        <stop offset="0.55" stop-color="#0a4230" />
+                                        <stop offset="1" stop-color="#062a1e" />
+                                    </linearGradient>
+                                    <pattern id="geo" width="26" height="26" patternUnits="userSpaceOnUse">
+                                        <path d="M13,1 L25,13 L13,25 L1,13 Z" fill="none" stroke="rgba(212,175,55,.18)"
+                                            stroke-width=".9" />
+                                        <circle cx="13" cy="13" r="2.4" fill="none" stroke="rgba(212,175,55,.16)"
+                                            stroke-width=".8" />
+                                    </pattern>
+                                </defs>
+                                <path d="M0,0 H360 L180,130 Z" fill="url(#flapG)" stroke="rgba(212,175,55,.55)"
+                                    stroke-width="1.4" vector-effect="non-scaling-stroke" />
+                                <path d="M0,0 H360 L180,130 Z" fill="url(#geo)" />
+                            </svg>
+                        </div>
+
+                        <!-- wax seal -->
+                        <div class="env-seal"><span id="sealInitial">F</span></div>
+                    </div>
+                </div>
+
+                <div class="intro-copy" id="introCopy">
+                    <button class="btn-brass" id="btnOpen">Open My Letter</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════════════════════════
+     SCENE 2 — THE MANUSCRIPT LETTER
+     ══════════════════════════════════════════════════════════ -->
+        <section class="scene" id="s-letter">
+            <div class="chamber-lattice"></div>
+            <div class="chamber-glow"></div>
+
+            <div class="letter-shell" id="letterShell">
+                <figure class="letter-photo photo-tl">
+                    <img src="https://picsum.photos/seed/her-eyes/500/500"
+                        alt="Her gentle eyes — a portrait of kindness and warmth" width="500" height="500"
+                        loading="lazy" decoding="async">
+                </figure>
+
+                <figure class="letter-photo photo-br">
+                    <img src="https://picsum.photos/seed/memory-b/500/500"
+                        alt="A cherished photograph capturing a tender memory between us" width="500" height="500"
+                        loading="lazy" decoding="async">
+                </figure>
+
+                <article class="letter" id="letter">
+                    <span class="gild tl"></span>
+                    <span class="gild tr"></span>
+                    <span class="gild bl"></span>
+                    <span class="gild br"></span>
+
+                    <h1 class="salaam" data-line>Assalamu Alaikum, <em id="nameSlot">Fatima</em>.</h1>
+
+                    <p data-line>There is something about your eyes and your smile that feels like peace to my heart.
+                    </p>
+
+                    <p data-line>Your smile is gentle and beautiful, and your eyes carry a kindness I could never
+                        ignore.
+                    </p>
+
+                    <p data-line>I wanted to share something with you sincerely and respectfully. I have come to admire
+                        you
+                        as a person, and I would like to express my intentions honestly rather than leave them unspoken.
+                    </p>
+
+                    <p data-line>I created this letter because what I want to ask you deserves more care than an
+                        ordinary
+                        message.</p>
+
+                    <p class="closing-line" data-line>There is something important I would like to ask you.</p>
+                    <!-- silk ribbon + wax seal -->
+                    <div class="ribbon" id="ribbon"></div>
+                    <div class="seal" id="seal"><span id="sealInitialLetter">F</span></div>
+                </article>
+            </div>
+
+            <button class="btn-brass" id="btnRead">Read My Question →</button>
+        </section>
+
+
+        <!-- ══════════════════════════════════════════════════════════
+     SCENE 3 — THE QUESTION
+     ══════════════════════════════════════════════════════════ -->
+        <section class="scene" id="s-question">
+            <div class="frame"></div>
+
+            <div class="card-stage" id="cardStage">
+                <div class="card-3d" id="card">
+
+                    <div class="card-base"></div>
+
+                    <div class="card-inside">
+                        <h2>One Question. From My Heart.</h2>
+
+                        <p class="q-line emph">
+                            I genuinely want to explore the possibility of a future with you,
+                            with sincere intentions and marriage in mind.
+                        </p>
+
+                        <p class="q-line">
+                            Would you be open to giving us a chance to talk about this respectfully,
+                            and, if you feel comfortable, involve our families?
+                        </p>
+
+                        <div class="choices">
+                            <button class="btn-yes" id="btnYes" type="button">Yes, I'd like that ♡</button>
+                            <button class="btn-no" id="btnNo" type="button">No, I don't feel the same</button>
+                            <button class="btn-time" id="btnTime" type="button">I need some time to think.</button>
+                        </div>
+
+                        <p class="hint">Take your time. Your answer matters.</p>
+
+                        <div class="time-note" id="timeNote">
+                            Of course — please take all the time you need. There is no rush,
+                            and no pressure. Whenever you feel ready, I'll be here.
                         </div>
                     </div>
 
-                    <!-- front triangles -->
-                    <svg class="env-front" viewBox="0 0 360 248" preserveAspectRatio="none" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="triL" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0" stop-color="#0e5a41" />
-                                <stop offset="1" stop-color="#072e21" />
-                            </linearGradient>
-                            <linearGradient id="triR" x1="1" y1="0" x2="0" y2="0">
-                                <stop offset="0" stop-color="#0e5a41" />
-                                <stop offset="1" stop-color="#072e21" />
-                            </linearGradient>
-                            <linearGradient id="triB" x1="0" y1="1" x2="0" y2="0">
-                                <stop offset="0" stop-color="#0b4c37" />
-                                <stop offset="1" stop-color="#105c43" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M0,0 L180,124 L0,248 Z" fill="url(#triL)" stroke="rgba(212,175,55,.3)" stroke-width="1"
-                            vector-effect="non-scaling-stroke" />
-                        <path d="M360,0 L180,124 L360,248 Z" fill="url(#triR)" stroke="rgba(212,175,55,.3)"
-                            stroke-width="1" vector-effect="non-scaling-stroke" />
-                        <path d="M0,248 L180,124 L360,248 Z" fill="url(#triB)" stroke="rgba(212,175,55,.38)"
-                            stroke-width="1" vector-effect="non-scaling-stroke" />
-                    </svg>
-
-                    <!-- top flap -->
-                    <div class="env-flap" id="envFlap">
-                        <svg viewBox="0 0 360 130" preserveAspectRatio="none" aria-hidden="true">
-                            <defs>
-                                <linearGradient id="flapG" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0" stop-color="#0f5f45" />
-                                    <stop offset="0.55" stop-color="#0a4230" />
-                                    <stop offset="1" stop-color="#062a1e" />
-                                </linearGradient>
-                                <pattern id="geo" width="26" height="26" patternUnits="userSpaceOnUse">
-                                    <path d="M13,1 L25,13 L13,25 L1,13 Z" fill="none" stroke="rgba(212,175,55,.18)"
-                                        stroke-width=".9" />
-                                    <circle cx="13" cy="13" r="2.4" fill="none" stroke="rgba(212,175,55,.16)"
-                                        stroke-width=".8" />
-                                </pattern>
-                            </defs>
-                            <path d="M0,0 H360 L180,130 Z" fill="url(#flapG)" stroke="rgba(212,175,55,.55)"
-                                stroke-width="1.4" vector-effect="non-scaling-stroke" />
-                            <path d="M0,0 H360 L180,130 Z" fill="url(#geo)" />
-                        </svg>
+                    <div class="card-door left">
+                        <div class="door-orn">❖</div>
+                    </div>
+                    <div class="card-door right">
+                        <div class="door-orn">❖</div>
                     </div>
 
-                    <!-- wax seal -->
-                    <div class="env-seal"><span id="sealInitial">F</span></div>
                 </div>
             </div>
-
-            <div class="intro-copy" id="introCopy">
-                <button class="btn-brass" id="btnOpen">Open My Letter</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- ══════════════════════════════════════════════════════════
-     SCENE 2 — THE MANUSCRIPT LETTER
-     ══════════════════════════════════════════════════════════ -->
-    <section class="scene" id="s-letter">
-        <div class="chamber-lattice"></div>
-        <div class="chamber-glow"></div>
-
-        <div class="letter-shell" id="letterShell">
-            <figure class="letter-photo photo-tl">
-                <img src="https://picsum.photos/seed/her-eyes/500/500" alt="Her eyes">
-            </figure>
-
-            <figure class="letter-photo photo-br">
-                <img src="https://picsum.photos/seed/memory-b/500/500" alt="A cherished memory">
-            </figure>
-
-            <article class="letter" id="letter">
-                <span class="gild tl"></span>
-                <span class="gild tr"></span>
-                <span class="gild bl"></span>
-                <span class="gild br"></span>
-
-                <h2 class="salaam" data-line>Assalamu Alaikum, <em id="nameSlot">Fatima</em>.</h2>
-
-                <p data-line>There is something about your eyes and your smile that feels like peace to my heart.</p>
-
-                <p data-line>Your smile is gentle and beautiful, and your eyes carry a kindness I could never ignore.
-                </p>
-
-                <p data-line>I wanted to share something with you sincerely and respectfully. I have come to admire you
-                    as a person, and I would like to express my intentions honestly rather than leave them unspoken.</p>
-
-                <p data-line>I created this letter because what I want to ask you deserves more care than an ordinary
-                    message.</p>
-
-                <p class="closing-line" data-line>There is something important I would like to ask you.</p>
-                <!-- silk ribbon + wax seal -->
-                <div class="ribbon" id="ribbon"></div>
-                <div class="seal" id="seal"><span id="sealInitialLetter">F</span></div>
-            </article>
-        </div>
-
-        <button class="btn-brass" id="btnRead">Read My Question →</button>
-    </section>
-
-
-    <!-- ══════════════════════════════════════════════════════════
-     SCENE 3 — THE QUESTION
-     ══════════════════════════════════════════════════════════ -->
-    <section class="scene" id="s-question">
-        <div class="frame"></div>
-
-        <div class="card-stage" id="cardStage">
-            <div class="card-3d" id="card">
-
-                <div class="card-base"></div>
-
-                <div class="card-inside">
-                    <h2>One Question. From My Heart.</h2>
-
-                    <p class="q-line emph">
-                        I genuinely want to explore the possibility of a future with you,
-                        with sincere intentions and marriage in mind.
-                    </p>
-
-                    <p class="q-line">
-                        Would you be open to giving us a chance to talk about this respectfully,
-                        and, if you feel comfortable, involve our families?
-                    </p>
-
-                    <div class="choices">
-                        <button class="btn-yes" id="btnYes" type="button">Yes, I'd like that ♡</button>
-                        <button class="btn-no" id="btnNo" type="button">No, I don't feel the same</button>
-                        <button class="btn-time" id="btnTime" type="button">I need some time to think.</button>
-                    </div>
-
-                    <p class="hint">Take your time. Your answer matters.</p>
-
-                    <div class="time-note" id="timeNote">
-                        Of course — please take all the time you need. There is no rush,
-                        and no pressure. Whenever you feel ready, I'll be here.
-                    </div>
-                </div>
-
-                <div class="card-door left">
-                    <div class="door-orn">❖</div>
-                </div>
-                <div class="card-door right">
-                    <div class="door-orn">❖</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ══════════════════════════════════════════════════════════
+        <!-- ══════════════════════════════════════════════════════════
      SCENE 4 — RESPONSE
      ══════════════════════════════════════════════════════════ -->
-    <section class="scene" id="s-response">
-        <div class="response-wrap">
-            <div class="gold-card">
-                <span class="gild tl"></span>
-                <span class="gild tr"></span>
-                <span class="gild bl"></span>
-                <span class="gild br"></span>
-                <h2 id="responseTitle">Thank you.</h2>
-                <div class="gold-rule"></div>
-                <p id="responseBody">Your answer matters.</p>
-                <div id="responseActions"></div>
+        <section class="scene" id="s-response">
+            <div class="response-wrap">
+                <div class="gold-card">
+                    <span class="gild tl"></span>
+                    <span class="gild tr"></span>
+                    <span class="gild bl"></span>
+                    <span class="gild br"></span>
+                    <h2 id="responseTitle">Thank you.</h2>
+                    <div class="gold-rule"></div>
+                    <p id="responseBody">Your answer matters.</p>
+                    <div id="responseActions"></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- ══════════════════════════════════════════════════════════
+        <!-- ══════════════════════════════════════════════════════════
      SCENE 5 — CLOSING COURTYARD
      ══════════════════════════════════════════════════════════ -->
-    <section class="scene" id="s-closing">
-        <div class="closing-jaali"></div>
-        <div class="bg-glow" style="opacity:.5;"></div>
+        <section class="scene" id="s-closing">
+            <div class="closing-jaali"></div>
+            <div class="bg-glow" style="opacity:.5;"></div>
 
-        <div class="closing-frame">
-            <h2 class="closing-title">May Every Intention Be Met<br>With Honesty and Respect.</h2>
-            <div class="closing-rule"></div>
-            <p>Thank you for reading my letter. There is no pressure to answer immediately. Your feelings and your
-                decision matter.</p>
-            <button class="btn-ghost" id="btnAgain">Read the Letter Again</button>
-        </div>
-    </section>
+            <div class="closing-frame">
+                <h2 class="closing-title">May Every Intention Be Met<br>With Honesty and Respect.</h2>
+                <div class="closing-rule"></div>
+                <p>Thank you for reading my letter. There is no pressure to answer immediately. Your feelings and your
+                    decision matter.</p>
+                <button class="btn-ghost" id="btnAgain">Read the Letter Again</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ══════════════════════════════════════════════════════════
+     BLOOMYVITE WATERMARK — BOTTOM RIGHT CORNER
+     ══════════════════════════════════════════════════════════ -->
+    <a class="bloomy-watermark" href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer"
+        aria-label="Made by Bloomyvite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        <span>Made by Bloomyvite</span>
+        <span class="heart">🩷</span>
+    </a>
 
 
     <script>
@@ -2317,10 +2494,14 @@
             setTimeout(() => card.classList.add('choices-in'), 3450);
         });
 
+        let timeNoteClicked = false;
         btnTime.addEventListener('click', () => {
-            timeNote.classList.toggle('show');
-            if (timeNote.classList.contains('show')) {
+            if (!timeNoteClicked) {
+                timeNoteClicked = true;
+                timeNote.classList.add('show');
                 setTimeout(() => timeNote.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 420);
+            } else {
+                handleAnswer('time');
             }
         });
 
@@ -2395,10 +2576,6 @@
 
         btnYes.addEventListener('click', () => handleAnswer('yes'));
         btnNo.addEventListener('click', () => handleAnswer('no'));
-        btnTime.addEventListener('click', () => {
-            /* only advance to response if the note is already visible */
-            if (timeNote.classList.contains('show')) handleAnswer('time');
-        });
 
 
         /* ═══════════════════════════════════════════════════════════
@@ -2419,11 +2596,13 @@
             card.classList.remove('entered', 'open', 'reveal', 'choices-in');
             cardStage.classList.remove('in');
             timeNote.classList.remove('show');
+            timeNoteClicked = false;
             sceneResponse.classList.remove('mood-quiet');
 
             /* reset intro */
             opened = false;
             envelope.classList.remove('opening');
+            document.getElementById('envelopeStage').classList.remove('opening');
             introCopy.classList.remove('leaving');
 
             goTo('s-letter');
@@ -2438,6 +2617,23 @@
             if (e.key !== 'Enter') return;
             if (currentScene === 's-letter' && btnRead.classList.contains('show')) btnRead.click();
         });
+    </script>
+
+    <!-- JSON-LD Structured Data for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "The Letter — A Royal Nikah Proposal",
+      "description": "A beautifully crafted digital letter for a sincere marriage proposal. Share your intentions with elegance, respect, and Islamic tradition.",
+      "url": "https://bloomyvite.de5.net/",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bloomyvite",
+        "url": "https://bloomyvite.de5.net/"
+      }
+    }
     </script>
 </body>
 

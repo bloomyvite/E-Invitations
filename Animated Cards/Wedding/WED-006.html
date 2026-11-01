@@ -3,8 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternal Bonds — Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0612">
+    <title>Eternal Bonds — Wedding Invitation | Sophia & James · Tuscany 2025</title>
+    <meta name="description"
+        content="You're cordially invited to Eternal Bonds — an interactive 3D wedding invitation for Sophia & James with a gold-ribboned card, drifting rose petals, floating gold particles, and a hand-painted scroll. June 14, 2025 at Villa Belle Époque, Tuscany, Italy.">
+    <meta name="keywords"
+        content="eternal bonds wedding, sophia james wedding, 3d wedding invitation, interactive wedding invitation, digital wedding invite, villa belle époque, tuscany italy wedding, luxury wedding invitation, animated wedding card, wedding rsvp online, wedding website, wedding countdown, wax seal invitation, romantic wedding invite, wedding e-invitation, personalized wedding invitation, elegant wedding invite, italian garden wedding, wedding invitation template, sophia and james">
+    <meta name="author" content="Bloomyvite">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://bloomyvite.de5.net/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloomyvite.de5.net/">
+    <meta property="og:title" content="Eternal Bonds — Wedding Invitation">
+    <meta property="og:description"
+        content="An interactive 3D wedding invitation for Sophia & James at Villa Belle Époque, Tuscany — June 14, 2025.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
+    <meta property="og:site_name" content="Bloomyvite">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eternal Bonds — Wedding Invitation">
+    <meta name="twitter:description"
+        content="An interactive 3D wedding invitation for Sophia & James at Villa Belle Époque, Tuscany.">
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap');
 
@@ -158,6 +187,128 @@
             opacity: .04;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
         }
+
+        /* ═══════════════════════════════════════════════════════════
+   BLOOMYVITE WATERMARK — 5-SCREEN RESPONSIVE
+   Mobile 320–480 / Tablet 481–768 / Laptop 769–1024
+   Desktop 1025–1440 / Large Desktop & TV 1441+
+   ═══════════════════════════════════════════════════════════ */
+        .bloomy-watermark {
+            position: fixed;
+            right: calc(env(safe-area-inset-right, 0px) + 10px);
+            bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+            z-index: 9999;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 12px;
+            max-width: calc(100vw - 20px);
+            border-radius: 999px;
+            background: rgba(8, 8, 8, .85);
+            border: 1px solid rgba(255, 255, 255, .14);
+            color: #f7e7c8;
+            font-family: 'Montserrat', system-ui, sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: .05em;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .08);
+            transition: transform .35s cubic-bezier(.19, .86, .28, 1), background .35s ease, border-color .35s ease, box-shadow .35s ease;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .bloomy-watermark:hover {
+            transform: translateY(-2px);
+            background: rgba(14, 14, 14, .95);
+            border-color: rgba(227, 201, 143, .55);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .62), inset 0 1px 0 rgba(255, 255, 255, .1);
+        }
+
+        .bloomy-watermark:active {
+            transform: translateY(0) scale(.97);
+        }
+
+        .bloomy-watermark:focus-visible {
+            outline: 2px solid #f5d78e;
+            outline-offset: 3px;
+        }
+
+        .bloomy-watermark svg {
+            width: 11px;
+            height: 11px;
+            flex-shrink: 0;
+            opacity: .85;
+        }
+
+        .bloomy-watermark .heart {
+            font-size: 1em;
+            line-height: 1;
+            filter: drop-shadow(0 0 4px rgba(255, 160, 190, .55));
+        }
+
+        @media (min-width: 481px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 14px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+                font-size: 12px;
+                padding: 8px 14px;
+                gap: 6px;
+            }
+
+            .bloomy-watermark svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 16px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+                font-size: 13px;
+                padding: 9px 16px;
+                gap: 7px;
+            }
+
+            .bloomy-watermark svg {
+                width: 13px;
+                height: 13px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 20px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+                font-size: 14px;
+                padding: 10px 18px;
+                gap: 8px;
+            }
+
+            .bloomy-watermark svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        @media (min-width: 1441px) {
+            .bloomy-watermark {
+                right: calc(env(safe-area-inset-right, 0px) + 28px);
+                bottom: calc(env(safe-area-inset-bottom, 0px) + 28px);
+                font-size: 16px;
+                padding: 12px 22px;
+                gap: 9px;
+            }
+
+            .bloomy-watermark svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -172,7 +323,7 @@
     <div id="ui">
         <div class="top-bar">
             <div>
-                <div class="logo">Eternal Bonds</div>
+                <h1 class="logo" style="margin:0;font-weight:400">Eternal Bonds</h1>
                 <div class="hint">Drag to explore · Scroll to zoom</div>
             </div>
         </div>
@@ -182,6 +333,22 @@
             <button class="btn" id="btn-reset">Reset View</button>
         </div>
     </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+     BLOOMYVITE WATERMARK — BOTTOM RIGHT CORNER
+     ══════════════════════════════════════════════════════════ -->
+    <a class="bloomy-watermark" href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer"
+        aria-label="Made by Bloomyvite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        <span>Made by Bloomyvite</span>
+        <span class="heart">🩷</span>
+    </a>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script>
@@ -766,6 +933,37 @@
                 animate();
             }, 600);
         })();
+    </script>
+
+    <!-- JSON-LD Structured Data for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Eternal Bonds — Sophia & James Wedding Celebration",
+      "description": "An interactive 3D wedding invitation for Sophia & James at Villa Belle Époque, Tuscany — with reception to follow at The Grand Rose Garden.",
+      "startDate": "2025-06-14T16:30:00+02:00",
+      "endDate": "2025-06-14T23:00:00+02:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Villa Belle Époque · The Grand Rose Garden",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1247 Lavender Lane",
+          "addressLocality": "Tuscany",
+          "addressCountry": "IT"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Hart & Cole Family",
+        "url": "https://bloomyvite.de5.net/"
+      },
+      "url": "https://bloomyvite.de5.net/",
+      "inLanguage": "en"
+    }
     </script>
 </body>
 
