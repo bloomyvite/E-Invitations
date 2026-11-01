@@ -63,6 +63,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
     <style>
         * {
             -webkit-tap-highlight-color: transparent;
@@ -157,6 +158,10 @@
             #webgl {
                 pointer-events: auto;
             }
+        }
+
+        body.immersive #webgl {
+            touch-action: none;
         }
 
         .content-layer {
@@ -257,7 +262,7 @@
             z-index: 99;
             transform: translate(-50%, -50%);
             transition: width .3s, height .3s, background .3s;
-            mix-blend-mode: screen;
+            mix-blend-mode: difference;
             display: none;
         }
 
@@ -541,6 +546,28 @@
             transform: translateY(50px);
         }
 
+        .flip {
+            animation: flipNum .55s ease;
+            display: inline-block;
+        }
+
+        @keyframes flipNum {
+            0% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
         .section-title {
             font-family: "Cormorant Garamond";
             font-size: clamp(2rem, 6vw, 3.75rem);
@@ -680,6 +707,10 @@
             display: flex;
         }
 
+        body.immersive #immersive-controls {
+            display: flex;
+        }
+
         #scrollProgress {
             position: fixed;
             top: 0;
@@ -752,17 +783,31 @@
         class="btn-gold fixed top-6 left-6 z-[1000] px-6 py-2.5 rounded-full text-sm tracking-widest shadow-2xl"><i
             class="fa-solid fa-arrow-left mr-2"></i> RETURN TO INVITATION</button>
 
+    <!-- IMMERSIVE VIEW CONTROLS -->
+    <div id="immersive-controls"
+        class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[1000] gap-2 p-2 rounded-full glass gold-border">
+        <button data-view="front"
+            class="immViewBtn control-pill active px-4 py-2 rounded-full text-[10px] tracking-widest">FRONT</button>
+        <button data-view="top"
+            class="immViewBtn control-pill px-4 py-2 rounded-full text-[10px] tracking-widest">AERIAL</button>
+        <button data-view="fire"
+            class="immViewBtn control-pill px-4 py-2 rounded-full text-[10px] tracking-widest">HAVAN</button>
+        <button data-view="wide"
+            class="immViewBtn control-pill px-4 py-2 rounded-full text-[10px] tracking-widest">WIDE</button>
+    </div>
+
     <div id="scrollProgress"></div>
     <div id="cursor"></div>
     <div id="cursorDot"></div>
-    <canvas id="webgl"></canvas>
+    <canvas id="webgl" role="img"
+        aria-label="Interactive 3D Hindu wedding mandap with sacred fire, diyas and marigold petals"></canvas>
 
     <!-- PRELOADER -->
     <div id="preloader">
         <div class="loader-ring"></div>
         <div class="loader-ring2"></div>
         <div class="om-loader">ॐ</div>
-        <p class="mt-8 font-hindi text-goldlight/80 tracking-widest text-sm">॥ शुभ विवाह ॥</p>
+        <p class="mt-8 font-hindi text-goldlight/80 tracking-widest text-sm" lang="hi">॥ शुभ विवाह ॥</p>
         <h2 class="font-script text-3xl mt-2 gold-text">Aarav weds Diya</h2>
         <div class="w-64 h-[3px] bg-white/10 rounded-full mt-6 overflow-hidden">
             <div id="loadBar"
@@ -778,7 +823,8 @@
         <!-- TOP TORAN -->
         <div class="relative z-40 pt-2 pb-1 bg-gradient-to-b from-black/60 to-transparent">
             <div class="toran px-4 flex-wrap" id="toran"></div>
-            <p class="text-center text-[10px] tracking-[.5em] text-gold/70 mt-2 font-hindi">॥ श्री गणेशाय नमः ॥</p>
+            <p class="text-center text-[10px] tracking-[.5em] text-gold/70 mt-2 font-hindi" lang="hi">॥ श्री गणेशाय नमः
+                ॥</p>
         </div>
 
         <!-- NAV -->
@@ -802,6 +848,8 @@
                     <a href="#rsvp" class="nav-link hover:text-goldlight">RSVP</a>
                 </div>
                 <div class="flex items-center gap-2">
+                    <button id="langBtn" title="हिन्दी / English"
+                        class="w-10 h-10 rounded-full border border-gold/40 text-gold hover:bg-gold/10 flex items-center justify-center transition text-[11px] font-semibold">हिं</button>
                     <button id="musicBtn" title="Temple ambience"
                         class="w-10 h-10 rounded-full border border-gold/40 text-gold hover:bg-gold/10 flex items-center justify-center transition"><i
                             class="fa-solid fa-music text-sm"></i></button>
@@ -842,7 +890,8 @@
                     <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
                     <span class="text-[11px] tracking-[.35em] text-goldlight">LIVE IN 3D • A HINDU ROYAL WEDDING</span>
                 </div>
-                <p class="font-hindi text-gold/80 tracking-[.3em] text-sm md:text-base">॥ वक्रतुण्ड महाकाय ॥</p>
+                <p class="font-hindi text-gold/80 tracking-[.3em] text-sm md:text-base" lang="hi">॥ वक्रतुण्ड महाकाय ॥
+                </p>
                 <p class="mt-3 text-xs md:text-sm tracking-[.5em] text-cream/60">WITH THE BLESSINGS OF OUR FAMILIES</p>
                 <h1 class="font-script text-[17vw] md:text-[7.5rem] leading-[.95] mt-4 gold-text drop-shadow-2xl">Aarav
                     & Diya</h1>
@@ -915,7 +964,7 @@
         <!-- INVITATION -->
         <section class="relative py-20 px-4">
             <div class="max-w-4xl mx-auto glass gold-border rounded-[2rem] p-8 md:p-14 text-center reveal">
-                <p class="font-hindi text-gold text-lg">॥ शुभमस्तु ॥</p>
+                <p class="font-hindi text-gold text-lg" lang="hi">॥ शुभमस्तु ॥</p>
                 <h2 class="font-script text-5xl md:text-6xl gold-text mt-2">Sacred Invitation</h2>
                 <div class="divider-orn my-6"><span class="text-gold">✦</span></div>
                 <p class="font-serif text-lg md:text-xl leading-relaxed text-cream/85 italic">Mr. Rajesh & Mrs. Meena
@@ -943,7 +992,7 @@
                         <p class="text-xs tracking-[.3em] text-cream/50 mt-1">D/O VIKRAM & LAKSHMI • CHENNAI</p>
                     </div>
                 </div>
-                <p class="mt-8 font-hindi text-goldlight/80">मान्यवर, पधारो सा — Padharo Sa!</p>
+                <p class="mt-8 font-hindi text-goldlight/80" lang="hi">मान्यवर, पधारो सा — Padharo Sa!</p>
             </div>
         </section>
 
@@ -1106,7 +1155,7 @@
                     <div class="flex gap-2 mt-5 flex-wrap" id="pheraDots"></div>
                     <div
                         class="mt-5 rounded-2xl border border-gold/25 bg-gradient-to-b from-gold/10 to-transparent p-6 min-h-[210px]">
-                        <p id="pheraSanskrit" class="font-hindi text-gold text-lg"></p>
+                        <p id="pheraSanskrit" class="font-hindi text-gold text-lg" lang="hi"></p>
                         <h4 id="pheraTitle" class="font-serif text-2xl text-goldlight mt-1"></h4>
                         <p id="pheraDesc" class="text-sm text-cream/70 font-light mt-2 leading-relaxed"></p>
                         <div class="h-1.5 bg-white/10 rounded-full mt-4 overflow-hidden">
@@ -1224,10 +1273,13 @@
                         </div>
                         <button class="btn-gold w-full py-4 rounded-xl text-sm tracking-[.2em]">SEND RSVP & GET SHAGUN
                             PASS <i class="fa-solid fa-ticket ml-2"></i></button>
+                        <p class="text-[11px] text-cream/50 text-center leading-relaxed">Your name, phone and email are
+                            used only to confirm your seat at this wedding. Data is never sold or shared with third
+                            parties. Request deletion anytime at the numbers on the venue card.</p>
                     </form>
                     <div id="rsvpDone" class="hidden mt-6">
                         <div class="shagun-ticket p-6 md:p-8 border-4 border-double border-[#9C7A1A]">
-                            <p class="text-center font-hindi text-lg">॥ शुभ विवाह ॥</p>
+                            <p class="text-center font-hindi text-lg" lang="hi">॥ शुभ विवाह ॥</p>
                             <h3 class="text-center font-serif text-2xl font-bold mt-1">SHAGUN ENTRY PASS</h3>
                             <p class="text-center text-xs tracking-[.3em] mt-1 opacity-60">AARAV ❋ DIYA • 12 FEB 2027 •
                                 CITY PALACE JAIPUR</p>
@@ -1351,11 +1403,14 @@
 
     <!-- FLOATING -->
     <div class="fixed bottom-5 right-5 z-50 flex flex-col gap-3 items-end">
+        <button id="shareFloat"
+            class="w-11 h-11 rounded-full glass border border-gold/40 text-gold items-center justify-center hidden md:flex hover:bg-gold/10"
+            title="Share on WhatsApp"><i class="fa-brands fa-whatsapp text-sm"></i></button>
         <button id="diyaFloat"
             class="diya-btn w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-red-800 text-2xl flex items-center justify-center border border-gold/60"
             title="Light a diya">🪔</button>
         <button id="topBtn"
-            class="w-11 h-11 rounded-full glass border border-gold/40 text-gold items-center justify-center hidden md:flex hover:bg-gold/10"><i
+            class="w-11 h-11 rounded-full glass border border-gold/40 text-gold items-center justify-center hidden hover:bg-gold/10"><i
                 class="fa-solid fa-arrow-up text-sm"></i></button>
     </div>
     <button id="blessShower" class="hidden"></button>
@@ -1465,7 +1520,17 @@
         }
 
         /* ============ PRELOADER ============ */
-        let lp = 0; const loadInt = setInterval(() => { lp += Math.random() * 14; if (lp >= 100) { lp = 100; clearInterval(loadInt); setTimeout(() => { document.getElementById('preloader').classList.add('hidden'); startReveals(); }, 600); } document.getElementById('loadBar').style.width = lp + '%'; document.getElementById('loadPct').textContent = Math.floor(lp) + '%'; }, 160);
+        let lp = 0, loadDone = false;
+        const loadInt = setInterval(() => { lp = Math.min(90, lp + Math.random() * 12); document.getElementById('loadBar').style.width = lp + '%'; document.getElementById('loadPct').textContent = Math.floor(lp) + '%'; }, 160);
+        function finishLoader() {
+            if (loadDone) return; loadDone = true; clearInterval(loadInt);
+            document.getElementById('loadBar').style.width = '100%';
+            document.getElementById('loadPct').textContent = '100%';
+            setTimeout(() => { document.getElementById('preloader').classList.add('hidden'); startReveals(); }, 500);
+        }
+        if (document.readyState === 'complete') finishLoader();
+        else window.addEventListener('load', finishLoader);
+        setTimeout(finishLoader, 9000);
 
         /* ============ TORAN + MANDALA PETALS ============ */
         (() => {
@@ -1484,14 +1549,23 @@
         });
         document.getElementById('menuBtn').onclick = () => document.getElementById('mobileMenu').classList.toggle('hidden');
         document.querySelectorAll('#mobileMenu a').forEach(a => a.onclick = () => document.getElementById('mobileMenu').classList.add('hidden'));
-        window.addEventListener('scroll', () => { const h = document.documentElement; const p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100; document.getElementById('scrollProgress').style.width = p + '%'; document.getElementById('topBtn').style.display = h.scrollTop > 600 ? 'flex' : 'none'; }, { passive: true });
+        window.addEventListener('scroll', () => { const h = document.documentElement; const p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100; document.getElementById('scrollProgress').style.width = p + '%'; const tb = document.getElementById('topBtn'); if (h.scrollTop > 600) { tb.classList.remove('hidden'); tb.classList.add('flex'); } else { tb.classList.add('hidden'); tb.classList.remove('flex'); } }, { passive: true });
         document.getElementById('topBtn').onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
         /* ============ COUNTDOWN ============ */
         const WED = new Date('2027-02-12T19:00:00+05:30').getTime();
+        function setNum(id, val) {
+            const el = document.getElementById(id);
+            const str = String(val).padStart(2, '0');
+            if (el.textContent === str) return;
+            el.textContent = str;
+            el.classList.remove('flip');
+            void el.offsetWidth;
+            el.classList.add('flip');
+        }
         setInterval(() => {
             let d = WED - Date.now(); if (d < 0) d = 0; const dd = Math.floor(d / 864e5), hh = Math.floor(d / 36e5) % 24, mm = Math.floor(d / 6e4) % 60, ss = Math.floor(d / 1e3) % 60;
-            document.getElementById('cdD').textContent = String(dd).padStart(2, '0'); document.getElementById('cdH').textContent = String(hh).padStart(2, '0'); document.getElementById('cdM').textContent = String(mm).padStart(2, '0'); document.getElementById('cdS').textContent = String(ss).padStart(2, '0');
+            setNum('cdD', dd); setNum('cdH', hh); setNum('cdM', mm); setNum('cdS', ss);
         }, 1000);
 
         /* ============ TILT ============ */
@@ -1523,7 +1597,10 @@
         document.getElementById('lbNext').onclick = e => { e.stopPropagation(); openLB((lbIdx + 1) % visibleGal.length) };
         document.getElementById('lbPrev').onclick = e => { e.stopPropagation(); openLB((lbIdx - 1 + visibleGal.length) % visibleGal.length) };
         document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') e.target.classList.remove('open'); });
-        document.addEventListener('keydown', e => { if (document.getElementById('lightbox').classList.contains('open')) { if (e.key === 'ArrowRight') document.getElementById('lbNext').click(); if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click(); if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('open'); } });
+        document.addEventListener('keydown', e => {
+            if (document.getElementById('lightbox').classList.contains('open')) { if (e.key === 'ArrowRight') document.getElementById('lbNext').click(); if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click(); if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('open'); }
+            if (e.key === 'Escape') { document.getElementById('eventModal').classList.remove('open'); if (document.body.classList.contains('immersive')) exitImmersive(); }
+        });
 
         /* ============ FAMILY ============ */
         function fam(el, arr) { const c = document.getElementById(el); arr.forEach(([n, r], i) => { c.innerHTML += `<div class="flex items-center gap-4 rounded-2xl border border-gold/15 p-3 hover:border-gold/50 transition bg-white/[.02]"><div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/40 to-maroon2 flex items-center justify-center font-serif text-xl text-goldlight border border-gold/40">${n[0]}</div><div><p class="font-medium text-cream">${n}</p><p class="text-xs text-cream/50 tracking-widest">${r.toUpperCase()}</p></div><span class="ml-auto text-gold/40">❋</span></div>`; }); }
@@ -1532,12 +1609,39 @@
         /* ============ RSVP ============ */
         let side = 'Groom';
         document.querySelectorAll('.sideBtn').forEach(b => b.onclick = () => { document.querySelectorAll('.sideBtn').forEach(x => x.classList.remove('active')); b.classList.add('active'); side = b.dataset.side; });
-        document.getElementById('rsvpForm').addEventListener('submit', e => {
+        document.getElementById('rsvpForm').addEventListener('submit', async e => {
             e.preventDefault(); const name = document.getElementById('rName').value.trim(); if (!name) return;
+            const payload = { name, phone: document.getElementById('rPhone').value.trim(), email: document.getElementById('rEmail').value.trim(), attending: document.getElementById('rAttend').value, guests: document.getElementById('rGuests').value, side, message: document.getElementById('rMsg').value.trim(), _subject: 'Wedding RSVP — ' + name };
+            const submitBtn = e.target.querySelector('button.btn-gold');
+            const oldHTML = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'SENDING...'; }
+            try { await fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) }); } catch (err) { console.warn('RSVP POST failed', err); }
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = oldHTML; }
             document.getElementById('tName').textContent = name; document.getElementById('tMeta').textContent = `${side.toUpperCase()} SIDE • ${document.getElementById('rGuests').value} GUEST(S) • ${document.getElementById('rAttend').value.split('—')[0]}`;
             document.getElementById('rsvpDone').classList.remove('hidden'); drawQR(name); document.getElementById('rsvpDone').scrollIntoView({ behavior: 'smooth', block: 'center' }); chime(880); petalBurst(); confettiBurst();
         });
-        function drawQR(seed) { const c = document.getElementById('qrCanvas'), x = c.getContext('2d'); x.fillStyle = '#FFF8E7'; x.fillRect(0, 0, 110, 110); let h = 0; for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0; const rnd = () => { h = (h * 1103515245 + 12345) >>> 0; return h / 4294967296; }; x.fillStyle = '#3A0B0B'; for (let i = 0; i < 12; i++)for (let j = 0; j < 12; j++) if (rnd() > .5) x.fillRect(8 + i * 8, 8 + j * 8, 6, 6); x.strokeStyle = '#9C7A1A'; x.lineWidth = 3; x.strokeRect(1, 1, 108, 108); }
+        function drawQR(seed) {
+            const c = document.getElementById('qrCanvas'), x = c.getContext('2d');
+            const code = 'AD-' + Math.abs(seed.split('').reduce((a, b) => (a * 31 + b.charCodeAt(0)) | 0, 0)).toString().slice(-6).padStart(6, '0');
+            const data = 'Aarav & Diya | Guest: ' + seed + ' | Pass: ' + code + ' | 12 Feb 2027, City Palace Jaipur';
+            try {
+                const qr = qrcode(0, 'M');
+                qr.addData(data);
+                qr.make();
+                const cells = qr.getModuleCount();
+                const size = 110, pad = 4, cellSize = (size - pad * 2) / cells;
+                x.fillStyle = '#FFF8E7'; x.fillRect(0, 0, size, size);
+                x.fillStyle = '#3A0B0B';
+                for (let r = 0; r < cells; r++) for (let col = 0; col < cells; col++) {
+                    if (qr.isDark(r, col)) x.fillRect(pad + col * cellSize, pad + r * cellSize, Math.ceil(cellSize), Math.ceil(cellSize));
+                }
+                x.strokeStyle = '#9C7A1A'; x.lineWidth = 2; x.strokeRect(1, 1, size - 2, size - 2);
+            } catch (err) {
+                x.fillStyle = '#FFF8E7'; x.fillRect(0, 0, 110, 110);
+                x.fillStyle = '#3A0B0B'; x.font = 'bold 14px serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
+                x.fillText(code, 55, 55);
+            }
+        }
         document.getElementById('addCal').onclick = () => { const ics = 'BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:20270212T133000Z\nDTEND:20270212T180000Z\nSUMMARY:Aarav ❋ Diya Wedding - Pheras\nLOCATION:City Palace Jaipur\nDESCRIPTION:Shubh Muhurat 7:42 PM IST. Baraat 5 PM.\nEND:VEVENT\nEND:VCALENDAR'; const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); a.download = 'aarav-diya-wedding.ics'; a.click(); };
 
         /* ============ WISHES ============ */
@@ -1555,6 +1659,24 @@
         /* ============ AUDIO (WebAudio temple ambience) ============ */
         let AC = null, musicOn = false, droneNodes = [];
         function chime(freq = 660) { try { AC = AC || new (window.AudioContext || window.webkitAudioContext)(); const o = AC.createOscillator(), g = AC.createGain(); o.type = 'sine'; o.frequency.value = freq; g.gain.setValueAtTime(.18, AC.currentTime); g.gain.exponentialRampToValueAtTime(.001, AC.currentTime + 1.4); o.connect(g).connect(AC.destination); o.start(); o.stop(AC.currentTime + 1.5); } catch (e) { } }
+        let currentLang = 'en';
+        document.getElementById('langBtn').onclick = function () {
+            currentLang = currentLang === 'en' ? 'hi' : 'en';
+            document.documentElement.lang = currentLang;
+            const keyText = { 'HOME': 'होम', 'STORY': 'कहानी', 'EVENTS': 'कार्यक्रम', '3D MANDAP': '3D मंडप', 'GALLERY': 'गैलरी', 'RSVP': 'RSVP', 'RSVP NOW': 'RSVP करें' };
+            document.querySelectorAll('a.nav-link, #mobileMenu a').forEach(a => {
+                if (!a.dataset.en) a.dataset.en = a.textContent.trim();
+                const en = a.dataset.en.toUpperCase();
+                a.textContent = currentLang === 'hi' ? (keyText[en] || a.dataset.en) : a.dataset.en;
+            });
+            this.textContent = currentLang === 'hi' ? 'EN' : 'हिं';
+            chime(currentLang === 'hi' ? 520 : 720);
+        };
+        document.getElementById('shareFloat').onclick = async () => {
+            const text = 'You are invited to Aarav & Diya\'s royal Hindu wedding — 12 Feb 2027, City Palace Jaipur 🪔';
+            if (navigator.share) { try { await navigator.share({ title: 'Aarav & Diya Wedding', text, url: location.href }); return; } catch (err) { } }
+            window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + location.href), '_blank', 'noopener');
+        };
         document.getElementById('musicBtn').onclick = function () {
             musicOn = !musicOn; this.classList.toggle('!bg-gold', musicOn); this.classList.toggle('!text-deep', musicOn);
             if (musicOn) { try { AC = AC || new (window.AudioContext || window.webkitAudioContext)(); AC.resume();[110, 165, 220].forEach((f, i) => { const o = AC.createOscillator(), g = AC.createGain(), fl = AC.createBiquadFilter(); o.type = i === 2 ? 'triangle' : 'sine'; o.frequency.value = f; fl.type = 'lowpass'; fl.frequency.value = 500; g.gain.value = .035; o.connect(fl).connect(g).connect(AC.destination); o.start(); droneNodes.push(o); }); const bell = () => { if (!musicOn) return; chime([523, 587, 659, 784][Math.floor(Math.random() * 4)]); setTimeout(bell, 6000 + Math.random() * 6000); }; bell(); } catch (e) { } } else { droneNodes.forEach(o => { try { o.stop() } catch (e) { } }); droneNodes = []; }
@@ -1724,22 +1846,24 @@
             window.addEventListener('pointermove', e => {
                 mouseX = (e.clientX / innerWidth - .5);
                 mouseY = (e.clientY / innerHeight - .5);
-                if (dragging && e.pointerType === 'mouse') {
+                const inImmersive = document.body.classList.contains('immersive');
+                if (dragging && (e.pointerType === 'mouse' || inImmersive)) {
                     targetTheta -= (e.clientX - px) * .005;
                     targetPhi = Math.min(1.45, Math.max(.35, targetPhi - (e.clientY - py) * .003));
                     px = e.clientX; py = e.clientY;
                 }
             });
-            window.addEventListener('wheel', e => { if (window.scrollY < innerHeight * .6) { targetRadius = Math.min(46, Math.max(10, targetRadius + e.deltaY * .02)); } }, { passive: true });
+            window.addEventListener('wheel', e => { if (document.body.classList.contains('immersive')) { targetRadius = Math.min(46, Math.max(10, targetRadius + e.deltaY * .02)); } }, { passive: true });
             // touch pinch-ish: two finger? keep simple
             const views = { front: { th: 0, ph: 1.08, r: 27 }, top: { th: .6, ph: .35, r: 34 }, fire: { th: .4, ph: 1.25, r: 11 }, wide: { th: -.7, ph: 1.0, r: 42 } };
             document.querySelectorAll('.viewBtn').forEach(b => b.onclick = () => { document.querySelectorAll('.viewBtn').forEach(x => x.classList.remove('active')); b.classList.add('active'); const v = views[b.dataset.view]; targetTheta = v.th; targetPhi = v.ph; targetRadius = v.r; chime(700); });
+            document.querySelectorAll('.immViewBtn').forEach(b => b.onclick = () => { document.querySelectorAll('.immViewBtn').forEach(x => x.classList.remove('active')); b.classList.add('active'); const v = views[b.dataset.view]; targetTheta = v.th; targetPhi = v.ph; targetRadius = v.r; chime(700); });
             document.getElementById('toggleRotate').onclick = function () { autoOrbit = !autoOrbit; this.classList.toggle('active', autoOrbit); };
             document.getElementById('toggleFire').onclick = function () { fireOn = !fireOn; this.classList.toggle('active', fireOn); fireLight.visible = fireOn; fireLight2.visible = fireOn; fireGlow.visible = fireOn; flames.forEach(f => f.visible = fireOn); };
             // raycast diya clicks
             const ray = new THREE.Raycaster(), ptr = new THREE.Vector2(); let downAt = 0;
             canvas.addEventListener('pointerdown', () => downAt = Date.now());
-            canvas.addEventListener('pointerup', e => { if (Date.now() - downAt > 250 || Math.abs(e.movementX) > 8) return; ptr.x = (e.clientX / innerWidth) * 2 - 1; ptr.y = -(e.clientY / innerHeight) * 2 + 1; ray.setFromCamera(ptr, camera); const hits = ray.intersectObjects(diyas, true); if (hits.length) { const root = hits[0].object.userData.root || hits[0].object; lightDiya(root); confettiDiya(); } });
+            canvas.addEventListener('pointerup', e => { if (Date.now() - downAt > 250 || (e.pointerType === 'mouse' && Math.abs(e.movementX || 0) > 8)) return; ptr.x = (e.clientX / innerWidth) * 2 - 1; ptr.y = -(e.clientY / innerHeight) * 2 + 1; ray.setFromCamera(ptr, camera); const hits = ray.intersectObjects(diyas, true); if (hits.length) { const root = hits[0].object.userData.root || hits[0].object; lightDiya(root); confettiDiya(); } });
 
             /* --- day/night --- */
             let night = true;

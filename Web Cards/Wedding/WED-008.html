@@ -170,7 +170,7 @@
             padding: 10px 18px;
             border-radius: 999px;
             text-decoration: none;
-            z-index: 9999;
+            z-index: 40;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -188,12 +188,14 @@
             color: #2B1A12;
             transform: translateY(-4px);
             box-shadow: 0 15px 30px -10px rgba(212, 175, 55, 0.8);
+            z-index: 51;
         }
 
         @media (max-width: 767px) {
             .watermark {
                 bottom: 12px;
-                right: 12px;
+                right: auto;
+                left: 12px;
                 padding: 8px 14px;
             }
         }
@@ -1069,7 +1071,8 @@
                     <!-- Flap (z-index: 3) -->
                     <div class="envelope-flap"></div>
                     <!-- Wax Seal (z-index: 5) -->
-                    <div class="wax-seal" id="waxSeal" title="Click to open">
+                    <div class="wax-seal" id="waxSeal" title="Click to open" role="button" tabindex="0"
+                        aria-label="Break the wax seal and open the wedding invitation">
                         <svg viewBox="0 0 100 100" class="w-full h-full">
                             <path
                                 d="M50 2 C 70 2, 92 18, 94 50 C 96 82, 72 98, 50 98 C 28 98, 4 82, 6 50 C 8 18, 30 2, 50 2Z"
@@ -1116,15 +1119,15 @@
             <div class="flex items-center gap-3">
                 <button id="musicBtn"
                     class="w-11 h-11 rounded-full gold-border bg-black/40 flex items-center justify-center gap-1 hover:bg-gold/10 transition"
-                    title="Toggle Music">
-                    <span id="musicBars"
-                        class="paused flex items-end"><span></span><span></span><span></span><span></span></span>
+                    title="Toggle Music" aria-label="Toggle background music">
+                    <span id="musicBars" class="paused flex items-end"
+                        aria-hidden="true"><span></span><span></span><span></span><span></span></span>
                 </button>
                 <a href="#rsvp" class="btn-gold hidden sm:inline-block text-xs px-6 py-3 rounded-full uppercase">RSVP
                     Now</a>
-                <button id="menuBtn"
+                <button id="menuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu"
                     class="lg:hidden w-11 h-11 rounded-full gold-border bg-black/40 flex items-center justify-center"><i
-                        class="fa-solid fa-bars text-gold"></i></button>
+                        class="fa-solid fa-bars text-gold" aria-hidden="true"></i></button>
             </div>
         </div>
         <div id="mobileMenu"
@@ -1189,19 +1192,20 @@
                             class="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover border-4 border-gold/70 shadow-[0_0_40px_rgba(212,175,55,0.45)]">
                     </div>
                 </div>
-                <h1 class="font-script gold-text leading-none text-7xl md:text-9xl drop-shadow-2xl">Diya</h1>
                 <p class="font-serif italic text-xl md:text-2xl text-cream/85 mt-4">request the honour of your presence
                 </p>
                 <!-- SCRATCH CARD replacing the static date frame -->
                 <div class="mt-8 flex flex-col items-center">
-                    <div class="scratch-wrapper" id="scratchWrapper">
+                    <div class="scratch-wrapper" id="scratchWrapper" role="group"
+                        aria-label="Scratch to reveal the wedding date — February 6, 2027">
                         <!-- Hidden Content underneath (Only Date) -->
                         <div class="scratch-content flex-col">
                             <p class="tracking-[0.3em] uppercase text-[10px] text-[#8A6A2E] mb-1">Save the Date</p>
                             <p class="font-serif text-4xl md:text-5xl text-[#4A0E17] font-bold">06 . 02 . 2027</p>
                         </div>
                         <!-- Scratchable Overlay -->
-                        <canvas id="scratchCanvas"></canvas>
+                        <canvas id="scratchCanvas"
+                            aria-label="Scratch-off overlay covering the wedding date — click and drag to reveal"></canvas>
                     </div>
                     <p class="text-[11px] tracking-[0.2em] uppercase text-[#D4AF37] mt-4 animate-pulse"><i
                             class="fa-solid fa-wand-magic-sparkles mr-1"></i> Scratch to reveal the date</p>
@@ -1313,9 +1317,9 @@
                 <!-- Groom -->
                 <div class="reveal glass rounded-3xl overflow-hidden" data-tilt>
                     <div class="relative h-96 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&auto=format&fit=crop"
-                            onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop'"
-                            alt="Groom" class="w-full h-full object-cover">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Allu_Arjun_at_the_press_meet_of_Ala_Vaikunthapurramuloo.jpg/800px-Allu_Arjun_at_the_press_meet_of_Ala_Vaikunthapurramuloo.jpg"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80&auto=format&fit=crop'"
+                            alt="Allu Arjun, the groom" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-royal via-transparent to-transparent"></div>
                         <div
                             class="absolute top-4 left-4 bg-black/60 backdrop-blur px-4 py-2 rounded-full border border-gold/40 text-xs tracking-[0.25em] uppercase text-goldlight">
@@ -1346,9 +1350,9 @@
                 <!-- Bride -->
                 <div class="reveal glass rounded-3xl overflow-hidden" data-tilt>
                     <div class="relative h-96 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&q=80&auto=format&fit=crop"
-                            onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&auto=format&fit=crop'"
-                            alt="Bride" class="w-full h-full object-cover">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Sneha_Reddy_Allu_Arjun_wedding_reception.jpg/800px-Sneha_Reddy_Allu_Arjun_wedding_reception.jpg"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&q=80&auto=format&fit=crop'"
+                            alt="Sneha Reddy, the bride" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-royal via-transparent to-transparent"></div>
                         <div
                             class="absolute top-4 right-4 bg-black/60 backdrop-blur px-4 py-2 rounded-full border border-gold/40 text-xs tracking-[0.25em] uppercase text-goldlight">
@@ -1898,9 +1902,9 @@
             target="_blank"
             class="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center text-white text-2xl shadow-[0_10px_30px_rgba(37,211,102,.4)] hover:scale-110 transition"><i
                 class="fa-brands fa-whatsapp"></i></a>
-        <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"
             class="w-14 h-14 rounded-full gold-border bg-royal/90 hidden items-center justify-center text-gold hover:bg-gold hover:text-royal transition"><i
-                class="fa-solid fa-arrow-up"></i></button>
+                class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
     </div>
 
     <!-- Lightbox -->
@@ -1920,7 +1924,8 @@
 
     <!-- RSVP Success Modal -->
     <div id="successModal"
-        class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md" role="dialog"
+        aria-modal="true" aria-labelledby="successTitle">
         <div
             class="gold-border bg-gradient-to-b from-[#240b0b] to-royal rounded-3xl p-10 max-w-md w-full text-center relative overflow-hidden">
             <div class="absolute inset-0 mandala-bg opacity-30"></div>
@@ -1929,7 +1934,7 @@
                     class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-gold to-[#8a6a14] flex items-center justify-center text-3xl text-royal">
                     <i class="fa-solid fa-check"></i>
                 </div>
-                <h3 class="font-script text-5xl gold-text mt-4">Dhanyavaad!</h3>
+                <h3 id="successTitle" class="font-script text-5xl gold-text mt-4">Dhanyavaad!</h3>
                 <p id="successText" class="text-cream/80 mt-3 font-light">Your RSVP is confirmed. We can't wait to hug
                     you in Udaipur!</p>
                 <p class="font-hindi text-gold mt-3">॥ शुभ विवाह ॥</p>
@@ -1992,12 +1997,27 @@
             if (window.scrollY > 60) navbar.classList.add('nav-blur'); else navbar.classList.remove('nav-blur');
             if (window.scrollY > 600) { topBtn.classList.remove('hidden'); topBtn.classList.add('flex'); } else { topBtn.classList.add('hidden'); topBtn.classList.remove('flex'); }
         });
-        document.getElementById('menuBtn').onclick = () => document.getElementById('mobileMenu').classList.toggle('hidden');
-        document.querySelectorAll('#mobileMenu a').forEach(a => a.onclick = () => document.getElementById('mobileMenu').classList.add('hidden'));
+        const menuBtnEl = document.getElementById('menuBtn');
+        const mobileMenuEl = document.getElementById('mobileMenu');
+        menuBtnEl.onclick = () => {
+            const isOpen = mobileMenuEl.classList.toggle('hidden') === false;
+            menuBtnEl.setAttribute('aria-expanded', String(isOpen));
+        };
+        document.querySelectorAll('#mobileMenu a').forEach(a => a.onclick = () => {
+            mobileMenuEl.classList.add('hidden');
+            menuBtnEl.setAttribute('aria-expanded', 'false');
+        });
 
         /* ---------- ENVELOPE ---------- */
         const envelope = document.getElementById('envelope'), overlay = document.getElementById('envelopeOverlay');
-        document.getElementById('waxSeal').onclick = openInvitation;
+        const waxSealEl = document.getElementById('waxSeal');
+        waxSealEl.onclick = openInvitation;
+        waxSealEl.addEventListener('keydown', function (ev) {
+            if (ev.key === 'Enter' || ev.key === ' ') {
+                ev.preventDefault();
+                openInvitation();
+            }
+        });
         function openInvitation() {
             envelope.classList.add('open');
             startMusic();
@@ -2144,7 +2164,15 @@
         function closeLightbox() { document.getElementById('lightbox').classList.remove('show'); }
         function navLightbox(d) { lightboxIndex = (lightboxIndex + d + filteredGallery.length) % filteredGallery.length; openLightbox(lightboxIndex); }
         document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLightbox(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); closeSuccess(); } });
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+            closeLightbox();
+            closeSuccess();
+            if (!mobileMenuEl.classList.contains('hidden')) {
+                mobileMenuEl.classList.add('hidden');
+                menuBtnEl.setAttribute('aria-expanded', 'false');
+            }
+        });
 
         /* ---------- WISHES ---------- */
         let wishes = JSON.parse(localStorage.getItem('ad_wishes') || 'null') || [
@@ -2176,11 +2204,36 @@
         function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
         /* ---------- RSVP ---------- */
-        document.getElementById('rsvpForm').addEventListener('submit', e => {
+        document.getElementById('rsvpForm').addEventListener('submit', async e => {
             e.preventDefault();
-            const name = document.getElementById('rsvpName').value;
+            const name = document.getElementById('rsvpName').value.trim();
+            const phone = document.getElementById('rsvpPhone').value.trim();
+            const email = document.getElementById('rsvpEmail').value.trim();
             const attend = document.querySelector('input[name="attend"]:checked').value;
             const guests = document.getElementById('rsvpGuests').value;
+            const message = document.getElementById('rsvpMsg').value.trim();
+            const events = [...document.querySelectorAll('.checkbox-pill input:checked')]
+                .map(c => c.parentElement.textContent.trim()).join(', ');
+
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalBtn = btn ? btn.innerHTML : '';
+            if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Sending…'; }
+
+            try {
+                await fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        name, phone, email, attending: attend, guests, events, message,
+                        _subject: 'Wedding RSVP — ' + name
+                    })
+                });
+            } catch (err) {
+                console.warn('RSVP POST failed:', err);
+            } finally {
+                if (btn) { btn.disabled = false; btn.innerHTML = originalBtn; }
+            }
+
             localStorage.setItem('ad_rsvp', JSON.stringify({ name, attend, guests, at: new Date().toISOString() }));
             document.getElementById('successText').innerHTML = attend.includes('Joyfully')
                 ? `<strong class="text-goldlight">${escapeHtml(name)}</strong>, your seat for <strong>${guests} guest(s)</strong> is reserved! Get your dancing shoes ready 💃🕺`

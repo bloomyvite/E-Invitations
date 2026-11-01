@@ -1576,6 +1576,11 @@
             box-shadow: 0 16px 30px -18px rgba(47, 61, 51, .8);
         }
 
+        .radio-pill input:focus-visible+span {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
         .form-msg {
             margin-top: 6px;
             font-size: .82rem;
@@ -1770,7 +1775,7 @@
         }
 
         /* ---------- Responsive ---------- */
-        @media (max-width:1080px) {
+        @media (max-width:1000px) {
             .hero-inner {
                 grid-template-columns: 1fr;
                 gap: 52px;
@@ -1888,6 +1893,37 @@
             }
         }
 
+        /* Tight fix for very small phones */
+        @media (max-width: 480px) {
+            .invite .i-names {
+                font-size: clamp(1.4rem, 7vw, 2rem) !important;
+                line-height: 1.14;
+            }
+
+            .invite .i-names em {
+                display: inline;
+                margin: 0 .25em;
+                font-size: .72em;
+            }
+
+            .invite .seal {
+                width: 72px;
+                height: 72px;
+                right: -18px;
+                bottom: -18px;
+                font-size: .72rem;
+            }
+
+            .invite .i-date {
+                font-size: .62rem;
+                letter-spacing: .24em;
+            }
+
+            .invite .i-place {
+                font-size: .92rem;
+            }
+        }
+
         @media (prefers-reduced-motion:reduce) {
 
             *,
@@ -1907,6 +1943,90 @@
             .reveal-mask>span {
                 transform: none;
             }
+        }
+
+        /* ---------- Gallery lightbox ---------- */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(20, 27, 22, .94);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            cursor: zoom-out;
+        }
+
+        #lightbox.open {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 92vw;
+            max-height: 88vh;
+            border-radius: 6px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, .7), 0 0 0 1px rgba(176, 141, 87, .4);
+            object-fit: contain;
+        }
+
+        /* ---------- FAQ ---------- */
+        .faq-list {
+            max-width: 800px;
+            margin: 44px auto 0;
+            border-top: 1px solid rgba(176, 141, 87, .22);
+        }
+
+        .faq-list details {
+            border-bottom: 1px solid rgba(176, 141, 87, .22);
+        }
+
+        .faq-list summary {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.32rem;
+            font-weight: 400;
+            letter-spacing: .02em;
+            padding: 22px 4px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            color: var(--ink);
+            transition: color .3s;
+        }
+
+        .faq-list summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-list summary::after {
+            content: "+";
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            color: var(--gold);
+            transition: transform .3s;
+            line-height: 1;
+        }
+
+        .faq-list details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-list summary:hover,
+        .faq-list summary:focus-visible {
+            color: var(--gold);
+            outline: none;
+        }
+
+        .faq-list details p {
+            padding: 0 4px 22px;
+            color: var(--ink-soft);
+            font-size: .97rem;
+            line-height: 1.85;
         }
 
         /* ---------- Watermark (Perfect Fit) ---------- */
@@ -1966,6 +2086,7 @@
             <a href="#gallery">Gallery</a>
             <a href="#schedule">The Day</a>
             <a href="#details">Details</a>
+            <a href="#faq">FAQ</a>
             <a href="#rsvp" class="btn btn-ghost nav-cta"><span class="shine"></span>RSVP</a>
         </nav>
         <button class="burger" id="burger" aria-label="Open menu">
@@ -1978,6 +2099,7 @@
         <a href="#gallery">Gallery</a>
         <a href="#schedule">The Day</a>
         <a href="#details">Details</a>
+        <a href="#faq">FAQ</a>
         <a href="#rsvp">RSVP</a>
         <div class="mm-foot">September 20, 2026 &nbsp;·&nbsp; Napa Valley</div>
     </div>
@@ -2339,6 +2461,46 @@
         </div>
     </section>
 
+    <!-- ================= FAQ ================= -->
+    <section class="section" id="faq" style="background:#F6EEE5;">
+        <div class="wrap">
+            <div class="center">
+                <div class="eyebrow reveal">A few things</div>
+                <h2 class="display reveal sweep" data-delay="120"
+                    style="font-size:clamp(2.35rem,5.2vw,4.15rem);margin-top:16px;">
+                    Frequently <em style="font-style:italic;color:var(--gold);">asked</em>
+                </h2>
+            </div>
+            <div class="faq-list reveal" style="--rd:.1s">
+                <details>
+                    <summary>Is there parking at The Rosewood Estate?</summary>
+                    <p>Yes — complimentary valet parking is available from 3:30 PM. Follow the signs from the main gate;
+                        a shuttle will also run from both partner hotels.</p>
+                </details>
+                <details>
+                    <summary>Are children welcome?</summary>
+                    <p>We love your little ones, but the celebration will be adults-only (18+) so everyone can let
+                        loose. We hope you understand.</p>
+                </details>
+                <details>
+                    <summary>What about dietary requirements?</summary>
+                    <p>Our chef can accommodate vegetarian, vegan, gluten-free, and allergy-specific requests. Please
+                        note them in your RSVP message.</p>
+                </details>
+                <details>
+                    <summary>Where should we stay?</summary>
+                    <p>We have reserved room blocks at The Vineyard Hotel (8 min) and Napa Lodge (12 min). Mention
+                        "Amelia &amp; Sebastian" before August 15th for the group rate.</p>
+                </details>
+                <details>
+                    <summary>Is there a gift registry?</summary>
+                    <p>Your presence is the greatest gift. If you would like to contribute, our honeymoon fund details
+                        will be shared by email one month before the wedding.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- ================= RSVP ================= -->
     <section class="section rsvp" id="rsvp">
         <div class="wrap rsvp-grid">
@@ -2460,7 +2622,11 @@
                     <a href="#gallery">Gallery</a>
                     <a href="#schedule">The Day</a>
                     <a href="#details">Details</a>
+                    <a href="#faq">FAQ</a>
                     <a href="#rsvp">RSVP</a>
+                    <a href="https://wa.me/?text=You%27re%20invited%20to%20Amelia%20%26%20Sebastian%27s%20wedding%20%E2%80%94%20Sept%2020%2C%202026%20at%20The%20Rosewood%20Estate.%20"
+                        target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="#" id="addCalBtn">Add to Calendar</a>
                 </nav>
             </div>
 
@@ -2470,6 +2636,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- AMBIENT MUSIC TOGGLE -->
+    <button id="musicBtn" aria-label="Toggle ambient music" title="Ambient music"
+        style="position:fixed;bottom:16px;left:16px;z-index:9998;width:44px;height:44px;border-radius:50%;background:rgba(47,61,51,.85);color:var(--gold-light);border:1px solid rgba(176,141,87,.4);cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px);transition:.3s;box-shadow:0 10px 25px -10px rgba(0,0,0,.5);">
+        <svg id="musicIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.6" aria-hidden="true">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+        </svg>
+    </button>
 
     <!-- WATERMARK / WEBSITE LINK -->
     <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark">
@@ -2893,7 +3075,24 @@
                     btn.style.opacity = '.7';
                     btn.style.pointerEvents = 'none';
 
-                    setTimeout(function () {
+                    const payload = {
+                        firstName: fname.value.trim(),
+                        lastName: lname.value.trim(),
+                        email: email.value.trim(),
+                        attending: (document.querySelector('input[name="attending"]:checked') || {}).value || 'yes',
+                        guests: (document.getElementById('guests') || {}).value || '1',
+                        meal: (document.getElementById('meal') || {}).value || '',
+                        message: (document.getElementById('message') || {}).value || '',
+                        _subject: 'Wedding RSVP — ' + fname.value.trim() + ' ' + lname.value.trim()
+                    };
+
+                    fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify(payload)
+                    }).catch(function (err) {
+                        console.warn('RSVP POST failed:', err);
+                    }).finally(function () {
                         successName.textContent = fname.value.trim();
                         form.style.display = 'none';
                         successBlock.classList.add('show');
@@ -2912,7 +3111,7 @@
                                 confetti(Object.assign({}, defaults, { particleCount: particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
                             }, 250);
                         }
-                    }, 700);
+                    });
                 });
 
                 /* Clear error state on input */
@@ -2924,6 +3123,136 @@
                     });
                 });
             }
+
+            /* ---------------- Gallery lightbox ---------------- */
+            (function () {
+                const lb = document.getElementById('lightbox');
+                const lbImg = document.getElementById('lightboxImg');
+                if (!lb || !lbImg) return;
+
+                function closeLb() {
+                    lb.classList.remove('open');
+                    document.body.style.overflow = '';
+                }
+
+                document.querySelectorAll('.g-item').forEach(function (item) {
+                    item.setAttribute('role', 'button');
+                    item.setAttribute('tabindex', '0');
+                    item.addEventListener('click', function () {
+                        const img = item.querySelector('img');
+                        if (!img) return;
+                        lbImg.src = img.src;
+                        lbImg.alt = img.alt || '';
+                        lb.classList.add('open');
+                        document.body.style.overflow = 'hidden';
+                    });
+                    item.addEventListener('keydown', function (e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            item.click();
+                        }
+                    });
+                });
+
+                lb.addEventListener('click', closeLb);
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && lb.classList.contains('open')) closeLb();
+                });
+            })();
+
+            /* ---------------- Ambient music ---------------- */
+            (function () {
+                const btn = document.getElementById('musicBtn');
+                if (!btn) return;
+                let ctx = null, nodes = [], on = false;
+
+                function start() {
+                    try {
+                        ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+                        if (ctx.state === 'suspended') ctx.resume();
+                        nodes = [];
+                        [261.63, 329.63, 392.00].forEach(function (f, i) {
+                            const osc = ctx.createOscillator();
+                            const gain = ctx.createGain();
+                            const filt = ctx.createBiquadFilter();
+                            osc.type = i === 2 ? 'triangle' : 'sine';
+                            osc.frequency.value = f;
+                            filt.type = 'lowpass';
+                            filt.frequency.value = 800;
+                            gain.gain.value = 0.018;
+                            osc.connect(filt).connect(gain).connect(ctx.destination);
+                            osc.start();
+                            nodes.push(osc);
+                        });
+                        btn.style.background = 'var(--gold)';
+                        btn.style.color = '#1d1508';
+                    } catch (e) {
+                        console.warn('Audio unavailable:', e);
+                    }
+                }
+
+                function stop() {
+                    nodes.forEach(function (o) { try { o.stop(); } catch (e) { } });
+                    nodes = [];
+                    btn.style.background = 'rgba(47,61,51,.85)';
+                    btn.style.color = 'var(--gold-light)';
+                }
+
+                btn.addEventListener('click', function () {
+                    on = !on;
+                    if (on) start(); else stop();
+                });
+
+                document.addEventListener('visibilitychange', function () {
+                    if (document.hidden && on) stop();
+                });
+            })();
+
+            /* ---------------- Add to Calendar (.ics) ---------------- */
+            (function () {
+                const btn = document.getElementById('addCalBtn');
+                if (!btn) return;
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const ics = [
+                        'BEGIN:VCALENDAR',
+                        'VERSION:2.0',
+                        'PRODID:-//AmeliaSebastianWedding//EN',
+                        'BEGIN:VEVENT',
+                        'UID:amelia-sebastian-wedding-20260920@invite',
+                        'DTSTAMP:20250101T000000Z',
+                        'DTSTART:20260920T233000Z',
+                        'DTEND:20260921T070000Z',
+                        'SUMMARY:Amelia & Sebastian — Wedding',
+                        'DESCRIPTION:Ceremony 4:30 PM · Dinner 6:30 PM · Dancing 8:30 PM. Garden Formal attire.',
+                        'LOCATION:The Rosewood Estate\\, 2480 Vineyard Lane\\, Napa Valley\\, California',
+                        'END:VEVENT',
+                        'END:VCALENDAR'
+                    ].join('\r\n');
+                    const blob = new Blob([ics], { type: 'text/calendar' });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = 'Amelia-Sebastian-Wedding.ics';
+                    a.click();
+                    URL.revokeObjectURL(a.href);
+                });
+            })();
+
+            /* ---------------- Personalization (?name= param) ---------------- */
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const guest = (params.get('name') || '').trim().slice(0, 40);
+                if (guest) {
+                    const banner = document.createElement('div');
+                    banner.textContent = 'Welcome, ' + guest + ' — we can\u2019t wait to celebrate with you';
+                    banner.style.cssText = 'position:fixed;top:100px;left:50%;transform:translateX(-50%);z-index:98;background:var(--sage-deep);color:var(--gold-light);padding:10px 22px;border-radius:999px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;box-shadow:0 10px 25px -12px rgba(0,0,0,.5);border:1px solid rgba(176,141,87,.4);backdrop-filter:blur(6px);max-width:90vw;text-align:center;transition:opacity .6s;';
+                    document.body.appendChild(banner);
+                    setTimeout(function () {
+                        banner.style.opacity = '0';
+                        setTimeout(function () { banner.remove(); }, 700);
+                    }, 6000);
+                }
+            } catch (e) { }
 
             /* ---------------- Smooth anchor offset ---------------- */
             document.querySelectorAll('a[href^="#"]').forEach(function (link) {

@@ -21,6 +21,8 @@
         content="Join us on October 1st, 2030, at Rosewood Garden Estate to celebrate the marriage of Sophia & James. Scratch to reveal the date and RSVP online!" />
     <meta property="og:image"
         content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -32,6 +34,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Great+Vibes&display=swap"
@@ -312,7 +316,8 @@
         /* ---------- Scratch Card ---------- */
         .scratch-wrapper {
             position: relative;
-            width: min(95vw, 560px, 65vh);
+            width: min(95vw, 560px);
+            max-height: 60vh;
             aspect-ratio: 2.5 / 1;
             border-radius: 12px;
             overflow: hidden;
@@ -320,6 +325,187 @@
             background: #fff;
             border: 1px solid #eadfce;
             margin: 0 auto;
+        }
+
+        /* ---------- New Premium Features CSS ---------- */
+        .polaroid:hover img {
+            transform: scale(1.04);
+            transition: transform .8s;
+        }
+
+        .count-num {
+            transition: transform .3s ease, opacity .3s ease;
+            display: inline-block;
+        }
+
+        .count-num.tick {
+            animation: tick .4s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        @keyframes tick {
+            from {
+                transform: translateY(-6px);
+                opacity: .4;
+            }
+
+            to {
+                transform: none;
+                opacity: 1;
+            }
+        }
+
+        .section-chip {
+            display: inline-block;
+            padding: 4px 12px;
+            border: 1px solid var(--gold-light);
+            border-radius: 999px;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Envelope */
+        #envelope-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: #f5ede0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease, visibility 1s;
+        }
+
+        #envelope-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .envelope-seal {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #d4af37, #9C7E46);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 2px 6px rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 4px solid #fff;
+        }
+
+        .envelope-seal:hover {
+            transform: scale(1.08);
+        }
+
+        .envelope-text {
+            margin-top: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            color: var(--ink);
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+        }
+
+        /* Gallery Lightbox */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 150;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        #lightbox.open {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-height: 90vh;
+            max-width: 90vw;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        #lb-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: 0.3s;
+            border: none;
+        }
+
+        #lb-close:hover {
+            background: var(--gold);
+        }
+
+        /* FAQ */
+        details {
+            background: #fff;
+            border: 1px solid #eadfce;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        summary {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details p {
+            margin-top: 1rem;
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        section {
+            scroll-margin-top: 80px;
         }
 
         .scratch-content {
@@ -345,9 +531,9 @@
 
         /* ---------- Watermark ---------- */
         .watermark {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
             font-family: 'Cormorant Garamond', serif;
             font-size: 0.8rem;
             font-weight: 500;
@@ -358,7 +544,8 @@
             padding: 10px 18px;
             border-radius: 999px;
             text-decoration: none;
-            z-index: 9999;
+            z-index: 99999 !important;
+            /* Forces it above all modals and overlays */
             display: flex;
             align-items: center;
             gap: 8px;
@@ -376,8 +563,8 @@
 
         @media (max-width: 767px) {
             .watermark {
-                bottom: 12px;
-                right: 12px;
+                bottom: 12px !important;
+                right: 12px !important;
                 font-size: 0.65rem;
                 padding: 8px 14px;
             }
@@ -386,6 +573,19 @@
 </head>
 
 <body>
+
+    <!-- Envelope Overlay -->
+    <div id="envelope-overlay">
+        <button class="envelope-seal" id="open-envelope" aria-label="Open invitation">S ♥ J</button>
+        <div class="envelope-text">Tap to open</div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source
+            src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0c6ff1bab.mp3?filename=relaxing-piano-110050.mp3"
+            type="audio/mpeg">
+    </audio>
 
     <!-- floating petals container (filled by JS) -->
     <div id="petals"></div>
@@ -420,6 +620,15 @@
                 Two hearts, one love, forever entwined. Join us as we begin our new chapter
                 surrounded by the people who mean the most. Your presence would make our day complete.
             </p>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button id="save-date" class="btn-gold px-6 py-3 rounded-full uppercase text-xs tracking-widest"><i
+                        class="fa-regular fa-calendar-plus mr-2"></i>Save the Date</button>
+                <a href="https://wa.me/?text=You%20are%20invited%20to%20the%20wedding%20of%20Sophia%20%26%20James!%20%0AJoin%20us%20on%20October%201st,%202030%20in%20Napa%20Valley.%0AView%20the%20invitation%20here:%20https://sophiaandjames.com"
+                    target="_blank"
+                    class="border border-[var(--gold)] text-[var(--gold)] px-6 py-3 rounded-full uppercase text-xs tracking-widest hover:bg-[var(--gold)] hover:text-white transition"><i
+                        class="fa-brands fa-whatsapp mr-2"></i>Share</a>
+            </div>
 
             <!-- Scratch Card -->
             <div class="mt-12 flex justify-center">
@@ -466,6 +675,9 @@
 
     <!-- ============ OUR STORY / COUPLE PHOTOS ============ -->
     <section class="py-20 md:py-28 px-6" style="background:var(--blush);">
+        <div class="max-w-6xl mx-auto text-center reveal mb-12">
+            <span class="section-chip">02 / 06</span>
+        </div>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
             <div class="relative reveal flex justify-center">
                 <div class="polaroid max-w-sm" style="transform:rotate(-3deg);">
@@ -512,6 +724,7 @@
     <!-- ============ VENUE ============ -->
     <section class="py-20 md:py-28 px-6">
         <div class="max-w-6xl mx-auto text-center reveal">
+            <span class="section-chip">03 / 06</span>
             <p class="font-script text-4xl md:text-5xl gold">The Venue</p>
             <div class="divider my-6"><span class="line"></span><span class="diamond"></span><span
                     class="line r"></span></div>
@@ -669,11 +882,51 @@
                     <textarea rows="3" class="field mt-2 rounded-md" placeholder="Share your wishes..."></textarea>
                 </label>
                 <button type="submit" class="btn-gold w-full py-4 rounded-md uppercase text-sm">Send RSVP</button>
-                <p id="rsvpThanks" class="hidden text-center mt-5 text-lg gold font-display">Thank you! We can't wait to
-                    celebrate with you. ♥</p>
+                <p id="rsvpThanks" class="hidden text-center mt-5 text-lg gold font-display" aria-live="polite"
+                    role="status">Thank you! We can't wait to celebrate with you. ♥</p>
             </form>
         </div>
     </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="py-20 md:py-28 px-6 bg-[var(--blush)]">
+        <div class="max-w-3xl mx-auto reveal">
+            <div class="text-center">
+                <span class="section-chip">05 / 06</span>
+                <p class="font-script text-4xl md:text-5xl gold">Questions</p>
+                <div class="divider my-6"><span class="line"></span><span class="diamond"></span><span
+                        class="line r"></span></div>
+            </div>
+            <div class="mt-10">
+                <details>
+                    <summary>Can I bring a plus-one?</summary>
+                    <p>We are only able to accommodate guests formally invited on your wedding invitation. If you have a
+                        plus-one, their name will be included on your invite.</p>
+                </details>
+                <details>
+                    <summary>Is there parking at the venue?</summary>
+                    <p>Yes, complimentary valet parking will be available at the main entrance of Rosewood Garden
+                        Estate. We also recommend carpooling if possible.</p>
+                </details>
+                <details>
+                    <summary>What is the dress code?</summary>
+                    <p>We kindly request black-tie optional attire. Think formal evening wear with a touch of garden
+                        elegance. For the ceremony on the lawn, block heels are highly recommended!</p>
+                </details>
+                <details>
+                    <summary>Are kids invited?</summary>
+                    <p>While we love your little ones, this will be an adults-only celebration. We hope you can use this
+                        as a night to relax and enjoy the party!</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox">
+        <button id="lb-close" aria-label="Close">&times;</button>
+        <img id="lb-img" src="" alt="Gallery Image">
+    </div>
 
     <!-- ============ FOOTER ============ -->
     <footer class="py-14 text-center px-6">
@@ -685,18 +938,41 @@
     </footer>
 
     <!-- WATERMARK / WEBSITE LINK -->
-    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark">
+    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark"
+        style="position: fixed; bottom: 20px; right: 20px; z-index: 99999;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
             <polyline points="15 3 21 3 21 9"></polyline>
             <line x1="10" y1="14" x2="21" y2="3"></line>
         </svg>
-        made with bloomyvite
+        Made by bloomyvite <span style="color: #d9534f; margin-left: 2px; font-size: 1.1em;">♥</span>
     </a>
 
     <script>
-        // ---- Countdown ----
+        // ---- Envelope, Music, Personalization ----
+        const envelope = document.getElementById('envelope-overlay');
+        const openBtn = document.getElementById('open-envelope');
+        const bgMusic = document.getElementById('bg-music');
+        let musicPlaying = false;
+
+        openBtn.addEventListener('click', () => {
+            envelope.classList.add('hidden');
+
+            // Start Music
+            bgMusic.volume = 0.3;
+            bgMusic.play().then(() => { musicPlaying = true; }).catch(e => console.log("Audio play blocked"));
+
+            // Personalize
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestName = urlParams.get('to');
+            if (guestName) {
+                const heroSub = document.querySelector('.hero p.tracking-wideish');
+                if (heroSub) heroSub.innerHTML = `Together with their families, inviting <strong class="font-display text-lg tracking-normal">${guestName.replace(/\+/g, ' ')}</strong>`;
+            }
+        });
+
+        // ---- Countdown with Flip Animation ----
         const target = new Date('2030-10-01T16:00:00-07:00').getTime();
         function pad(n) { return String(n).padStart(2, '0'); }
         function tick() {
@@ -706,12 +982,58 @@
                 h = Math.floor(diff / 3600000) % 24,
                 m = Math.floor(diff / 60000) % 60,
                 s = Math.floor(diff / 1000) % 60;
-            document.getElementById('cd-days').textContent = d;
-            document.getElementById('cd-hours').textContent = pad(h);
-            document.getElementById('cd-mins').textContent = pad(m);
-            document.getElementById('cd-secs').textContent = pad(s);
+
+            const update = (id, val) => {
+                const el = document.getElementById(id);
+                if (el.textContent !== String(val)) {
+                    el.textContent = val;
+                    el.classList.add('tick');
+                    setTimeout(() => el.classList.remove('tick'), 400);
+                }
+            };
+
+            update('cd-days', d);
+            update('cd-hours', pad(h));
+            update('cd-mins', pad(m));
+            update('cd-secs', pad(s));
         }
         tick(); setInterval(tick, 1000);
+
+        // ---- Add to Calendar (ICS) ----
+        document.getElementById('save-date').addEventListener('click', () => {
+            const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20301001T160000Z
+DTEND:20301002T000000Z
+SUMMARY:Sophia & James Wedding
+LOCATION:Rosewood Garden Estate, Napa Valley
+DESCRIPTION:Join us for the wedding of Sophia & James!
+END:VEVENT
+END:VCALENDAR`;
+            const blob = new Blob([ics], { type: 'text/calendar' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'sophia-james-wedding.ics';
+            a.click();
+        });
+
+        // ---- Gallery Lightbox ----
+        const galleryImgs = document.querySelectorAll('.grid-cols-4 img');
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lb-img');
+        const lbClose = document.getElementById('lb-close');
+
+        galleryImgs.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                lbImg.src = img.src;
+                lightbox.classList.add('open');
+            });
+        });
+        lbClose.addEventListener('click', () => lightbox.classList.remove('open'));
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
 
         // ---- Scroll reveal ----
         const io = new IntersectionObserver(entries => {

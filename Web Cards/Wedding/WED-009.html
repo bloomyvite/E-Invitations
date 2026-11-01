@@ -2689,14 +2689,20 @@
         /* Letter Typography */
         .env-letter .names {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(2.5rem, 7vw, 3.8rem);
+            font-size: clamp(1.6rem, 6vw, 3.8rem);
             color: #4A1824;
             /* Deeper, richer burgundy */
-            line-height: 1;
+            line-height: 1.1;
             margin-bottom: 0.5rem;
             margin-top: -1rem;
             text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
             /* Embossed effect */
+        }
+
+        @media (max-width: 400px) {
+            .env-letter .names {
+                font-size: 1.75rem;
+            }
         }
 
         .env-letter .date-loc {
@@ -2863,6 +2869,17 @@
 </head>
 
 <body>
+    <noscript>
+        <style>
+            #unlockScreen {
+                display: none !important;
+            }
+
+            body {
+                overflow: auto !important;
+            }
+        </style>
+    </noscript>
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
 
@@ -3010,6 +3027,30 @@
                         <a href="#invitation" class="btn btn-primary magnetic"><span class="shine"></span>View the
                             Invitation</a>
                         <a href="#rsvp" class="btn btn-light magnetic">Reserve your seat</a>
+                    </div>
+                    <div class="mt-6 flex items-center gap-4 text-white/80">
+                        <button id="saveDateBtn"
+                            class="hover:text-white transition flex items-center gap-2 text-xs tracking-wider uppercase">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Save Date
+                        </button>
+                        <a href="https://wa.me/?text=You%20are%20invited%20to%20the%20wedding%20of%20Elena%20%26%20Matteo!%20Join%20us%20on%20Sept%2012,%202026%20at%20Villa%20Ardenna."
+                            target="_blank"
+                            class="hover:text-white transition flex items-center gap-2 text-xs tracking-wider uppercase">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                </path>
+                            </svg>
+                            Share
+                        </a>
                     </div>
                 </div>
 
@@ -3414,6 +3455,49 @@
                     <div class="k">RSVP by</div>
                     <div class="v">30 June 2026</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section-pad" id="faq" style="background: var(--ivory);">
+        <div class="container-narrow">
+            <div class="count-head">
+                <p class="eyebrow reveal">Good to know</p>
+                <h2 class="section-title reveal">Questions &amp; <em>Answers</em></h2>
+                <div class="rule reveal" style="margin:.35rem auto 0"></div>
+            </div>
+            <div class="mt-12 space-y-4">
+                <details class="group bg-white border border-[#DDD2C5] rounded-xl p-5 cursor-pointer reveal">
+                    <summary
+                        class="font-serif text-lg text-ink outline-none list-none flex justify-between items-center">
+                        Can I bring a plus-one?
+                        <span class="text-gold group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-ink-soft font-light leading-relaxed">We are only able to accommodate
+                        guests formally invited on your wedding invitation. If you have a plus-one, their name will be
+                        included on your invite.</p>
+                </details>
+                <details class="group bg-white border border-[#DDD2C5] rounded-xl p-5 cursor-pointer reveal">
+                    <summary
+                        class="font-serif text-lg text-ink outline-none list-none flex justify-between items-center">
+                        Is there parking at the venue?
+                        <span class="text-gold group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-ink-soft font-light leading-relaxed">Yes, complimentary valet parking
+                        will be available at the main entrance of Villa Ardenna. We also recommend carpooling if
+                        possible.</p>
+                </details>
+                <details class="group bg-white border border-[#DDD2C5] rounded-xl p-5 cursor-pointer reveal">
+                    <summary
+                        class="font-serif text-lg text-ink outline-none list-none flex justify-between items-center">
+                        Are kids invited?
+                        <span class="text-gold group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-ink-soft font-light leading-relaxed">While we love your little ones,
+                        this will be an adults-only celebration. We hope you can use this as a night to relax and enjoy
+                        the party!</p>
+                </details>
             </div>
         </div>
     </section>
@@ -4104,17 +4188,20 @@
                 music.pause();
                 playIcon.style.display = 'block';
                 pauseIcon.style.display = 'none';
-                musicBtn.style.transform = 'scale(0.9)';
+                musicBtn.style.transform = 'scale(1)';
+                musicBtn.style.boxShadow = 'var(--shadow-m)';
             } else {
                 music.play();
                 playIcon.style.display = 'none';
                 pauseIcon.style.display = 'block';
                 musicBtn.style.transform = 'scale(1.1)';
+                musicBtn.style.boxShadow = '0 0 15px var(--accent)';
             }
             isPlaying = !isPlaying;
         });
 
         /* ---------------- Floating Gold Dust ---------------- */
+        let dustInterval = null;
         function createDust() {
             const dust = document.createElement('div');
             dust.classList.add('gold-dust');
@@ -4126,7 +4213,15 @@
             document.body.appendChild(dust);
             setTimeout(() => dust.remove(), 20000);
         }
-        setInterval(createDust, 400);
+        dustInterval = setInterval(createDust, 400);
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(dustInterval);
+            } else {
+                dustInterval = setInterval(createDust, 400);
+            }
+        });
 
         /* ---------------- Custom Cursor ---------------- */
         const cDot = document.querySelector('.cursor-dot');
@@ -4171,8 +4266,11 @@
                 confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 }, colors: ['#D4AF37', '#F6E27A', '#ffffff'] });
 
                 // Fade out the overlay completely
+                unlockScreen.style.transition = 'opacity 1.2s ease';
                 unlockScreen.style.opacity = '0';
-                unlockScreen.style.visibility = 'hidden';
+                setTimeout(() => {
+                    unlockScreen.style.visibility = 'hidden';
+                }, 1200);
                 document.body.style.overflow = '';
 
                 // Auto-play music on unlock

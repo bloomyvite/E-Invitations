@@ -544,6 +544,27 @@
             font-variant-numeric: tabular-nums;
         }
 
+        .count-num.flip {
+            animation: flipNum .55s ease;
+        }
+
+        @keyframes flipNum {
+            0% {
+                transform: rotateX(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: rotateX(0);
+                opacity: 1;
+            }
+        }
+
         /* timeline */
         .timeline-line {
             position: absolute;
@@ -934,7 +955,8 @@
         id="progress" style="width:0%"></div>
 
     <!-- PETALS CANVAS -->
-    <canvas id="petal-canvas" class="fixed inset-0 w-full h-full pointer-events-none" style="z-index:0;"></canvas>
+    <canvas id="petal-canvas" role="img" aria-label="Decorative falling flower petals animation" aria-hidden="true"
+        class="fixed inset-0 w-full h-full pointer-events-none" style="z-index:0;"></canvas>
 
     <!-- LOADER -->
     <div id="loader">
@@ -944,7 +966,8 @@
                 <div class="text-[10px] tracking-[.4em] mt-1 opacity-70">12 • 12 • 2026</div>
             </div>
         </div>
-        <div class="font-italiana tracking-[.35em] text-sm mb-4">A A R A V &nbsp; ♥ &nbsp; D I Y A</div>
+        <div class="font-italiana tracking-[.35em] text-sm mb-4" role="heading" aria-label="Aarav and Diya">A A R A V
+            &nbsp; ♥ &nbsp; D I Y A</div>
         <div class="w-56 h-[2px] bg-black/10 rounded overflow-hidden">
             <div id="load-bar" class="h-full w-0 bg-gradient-to-r from-[#C9A86A] to-[#6D2A3A] transition-all"></div>
         </div>
@@ -1015,22 +1038,23 @@
                 </div>
             </a>
             <div class="hidden md:flex items-center gap-8 text-[12px] tracking-[.22em] uppercase">
-                <a href="#home" class="hover:text-[#C9A86A] transition">Home</a>
-                <a href="#story" class="hover:text-[#C9A86A] transition">Story</a>
-                <a href="#details" class="hover:text-[#C9A86A] transition">Details</a>
-                <a href="#gallery" class="hover:text-[#C9A86A] transition">Gallery</a>
-                <a href="#wishes" class="hover:text-[#C9A86A] transition">Wishes</a>
-                <a href="#rsvp" class="btn-gold px-6 py-2.5 rounded-full">RSVP</a>
+                <a href="#home" class="hover:text-[#C9A86A] transition" data-hi="होम">Home</a>
+                <a href="#story" class="hover:text-[#C9A86A] transition" data-hi="कहानी">Story</a>
+                <a href="#details" class="hover:text-[#C9A86A] transition" data-hi="विवरण">Details</a>
+                <a href="#gallery" class="hover:text-[#C9A86A] transition" data-hi="तस्वीरें">Gallery</a>
+                <a href="#wishes" class="hover:text-[#C9A86A] transition" data-hi="आशीर्वाद">Wishes</a>
+                <a href="#rsvp" class="btn-gold px-6 py-2.5 rounded-full" data-hi="उपस्थिति">RSVP</a>
             </div>
             <button id="menu-btn" class="md:hidden float-btn"><i class="fa-solid fa-bars"></i></button>
         </div>
         <div id="mobile-menu"
             class="md:hidden hidden mx-4 mb-4 rounded-2xl p-5 border border-[#C9A86A]/30 bg-[var(--card)] backdrop-blur-xl shadow-xl">
             <div class="grid gap-3 text-sm tracking-[.2em] uppercase text-center">
-                <a href="#home" class="py-2 mob-link">Home</a><a href="#story" class="py-2 mob-link">Story</a><a
-                    href="#details" class="py-2 mob-link">Details</a><a href="#gallery"
-                    class="py-2 mob-link">Gallery</a><a href="#wishes" class="py-2 mob-link">Wishes</a><a href="#rsvp"
-                    class="btn-gold rounded-full py-3 mob-link">RSVP Now</a>
+                <a href="#home" class="py-2 mob-link" data-hi="होम">Home</a><a href="#story" class="py-2 mob-link"
+                    data-hi="कहानी">Story</a><a href="#details" class="py-2 mob-link" data-hi="विवरण">Details</a><a
+                    href="#gallery" class="py-2 mob-link" data-hi="तस्वीरें">Gallery</a><a href="#wishes"
+                    class="py-2 mob-link" data-hi="आशीर्वाद">Wishes</a><a href="#rsvp"
+                    class="btn-gold rounded-full py-3 mob-link" data-hi="उपस्थिति दर्ज करें">RSVP Now</a>
             </div>
         </div>
     </nav>
@@ -1041,6 +1065,7 @@
             <div class="eq paused" id="eq"><span></span><span></span><span></span></div>
         </button>
         <button id="theme-btn" class="float-btn" title="Midnight mode"><i class="fa-solid fa-moon"></i></button>
+        <button id="lang-btn" class="float-btn" title="Language"><i class="fa-solid fa-language"></i></button>
         <button id="top-btn" class="float-btn opacity-0 pointer-events-none" title="Top"><i
                 class="fa-solid fa-arrow-up"></i></button>
     </div>
@@ -1057,10 +1082,11 @@
             <div class="text-center mb-8 md:mb-12 reveal w-full">
                 <div
                     class="inline-flex flex-wrap justify-center items-center gap-2 md:gap-3 text-[10px] md:text-[11px] tracking-[.3em] md:tracking-[.4em] uppercase text-[#9C7E46]">
-                    <span class="orn-line w-6 md:w-12"></span> Shree Ganeshaya Namah <span
-                        class="orn-line w-6 md:w-12"></span>
+                    <span class="orn-line w-6 md:w-12"></span> <span lang="hi" data-hi="॥ श्री गणेशाय नमः ॥">Shree
+                        Ganeshaya Namah</span> <span class="orn-line w-6 md:w-12"></span>
                 </div>
-                <p class="font-serif italic text-base md:text-xl mt-3 md:mt-4 opacity-70">Together with their beloved
+                <p class="font-serif italic text-base md:text-xl mt-3 md:mt-4 opacity-70"
+                    data-hi="अपने प्रिय परिवारों के साथ">Together with their beloved
                     families</p>
             </div>
 
@@ -1380,6 +1406,9 @@
                         <button type="submit"
                             class="btn-gold w-full py-4 rounded-full text-xs uppercase tracking-[.25em]">Send RSVP
                             <i class="fa-solid fa-paper-plane ml-2"></i></button>
+                        <p class="text-center text-[11px] opacity-60 leading-relaxed">Your name and contact are used
+                            only to manage this wedding's guest list and are never shared with third parties. You can
+                            request deletion anytime by calling the numbers below.</p>
                         <p class="text-center text-xs opacity-50">Need help? Call <a
                                 class="underline decoration-[#C9A86A]" href="tel:+919829012345">+91 98290 12345</a>
                             (Aarav) • <a class="underline decoration-[#C9A86A]" href="tel:+919829065432">+91 98290
@@ -1590,7 +1619,22 @@
         }
 
         /* ============ LOADER ============ */
-        let lp = 0; const li = setInterval(() => { lp += Math.random() * 16; if (lp >= 100) { lp = 100; clearInterval(li); setTimeout(() => { $('#loader').classList.add('hide'); }, 400); } $('#load-bar').style.width = lp + '%'; $('#load-pct').textContent = Math.floor(lp) + '%'; }, 140);
+        let lp = 0, loadDone = false;
+        const li = setInterval(() => {
+            lp = Math.min(90, lp + Math.random() * 12);
+            $('#load-bar').style.width = lp + '%';
+            $('#load-pct').textContent = Math.floor(lp) + '%';
+        }, 140);
+        function finishLoader() {
+            if (loadDone) return; loadDone = true;
+            clearInterval(li);
+            $('#load-bar').style.width = '100%';
+            $('#load-pct').textContent = '100%';
+            setTimeout(() => { $('#loader').classList.add('hide'); }, 400);
+        }
+        if (document.readyState === 'complete') finishLoader();
+        else window.addEventListener('load', finishLoader);
+        setTimeout(finishLoader, 9000);
 
         /* ============ THREE PETALS ============ */
         (function () {
@@ -1668,7 +1712,7 @@
         addEventListener('scroll', () => {
             const h = document.documentElement; const p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100; $('#progress').style.width = p + '%';
             $('#nav').classList.toggle('scrolled', scrollY > 40);
-            const show = scrollY > 600; $('#top-btn').style.opacity = show ? 1 : 0; $('#top-btn').style.pointerEvents = show ? 'auto' : 'none';
+            const show = scrollY > 600; $('#top-btn').classList.toggle('opacity-0', !show); $('#top-btn').classList.toggle('pointer-events-none', !show);
         });
         $('#top-btn').onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
         $('#menu-btn').onclick = () => $('#mobile-menu').classList.toggle('hidden');
@@ -1693,12 +1737,19 @@
         })();
 
         /* ============ COUNTDOWN ============ */
+        function setNum(id, val) {
+            const el = $(id); const str = String(val).padStart(2, '0');
+            if (el.textContent === str) return;
+            el.textContent = str;
+            el.classList.remove('flip');
+            void el.offsetWidth;
+            el.classList.add('flip');
+        }
         function tick() {
             let diff = WEDDING_DATE - new Date();
             if (diff < 0) diff = 0;
             const d = Math.floor(diff / 864e5), h = Math.floor(diff / 36e5) % 24, m = Math.floor(diff / 6e4) % 60, s = Math.floor(diff / 1e3) % 60;
-            $('#cd-d').textContent = String(d).padStart(2, '0'); $('#cd-h').textContent = String(h).padStart(2, '0');
-            $('#cd-m').textContent = String(m).padStart(2, '0'); $('#cd-s').textContent = String(s).padStart(2, '0');
+            setNum('#cd-d', d); setNum('#cd-h', h); setNum('#cd-m', m); setNum('#cd-s', s);
         } setInterval(tick, 1000); tick();
 
         /* ============ TIMELINE & EVENTS ============ */
@@ -1783,7 +1834,13 @@
         $('#lb-close').onclick = closeLB; $('#lightbox').onclick = e => { if (e.target.id === 'lightbox') closeLB(); };
         $('#lb-next').onclick = e => { e.stopPropagation(); gIdx++; const f = filtered(); if (gIdx >= f.length) gIdx = 0; openLB(gIdx); };
         $('#lb-prev').onclick = e => { e.stopPropagation(); gIdx--; const f = filtered(); if (gIdx < 0) gIdx = f.length - 1; openLB(gIdx); };
-        addEventListener('keydown', e => { if (e.key === 'Escape') { closeLB(); $('#gift-modal').classList.add('hidden'); $('#gift-modal').classList.remove('flex'); } });
+        addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+            closeLB();
+            $('#gift-modal').classList.add('hidden');
+            $('#gift-modal').classList.remove('flex');
+            $('#mobile-menu').classList.add('hidden');
+        });
 
         /* ============ RSVP ============ */
         let going = 128, pending = 34, total = 200;
@@ -1802,12 +1859,20 @@
             $('#lbl-yes').className = `block text-center py-3 rounded-full border text-xs tracking-[.2em] uppercase font-medium transition ${yes ? 'border-[#C9A86A] bg-[#C9A86A] text-[#2B1E0E]' : 'border-[var(--line)] opacity-60'}`;
             $('#lbl-no').className = `block text-center py-3 rounded-full border text-xs tracking-[.2em] uppercase font-medium transition ${!yes ? 'bg-[#6D2A3A] border-[#6D2A3A] text-white' : 'border-[var(--line)] opacity-60'}`;
         });
-        $('#rsvp-form').onsubmit = e => {
+        $('#rsvp-form').onsubmit = async e => {
             e.preventDefault();
             const name = $('#f-name').value.trim(), contact = $('#f-contact').value.trim();
             if (!name || !contact) { toast('Please fill your name & contact 💌', 'fa-solid fa-triangle-exclamation'); gsap.fromTo('#rsvp-form', { x: -8 }, { x: 0, duration: .4, ease: 'elastic.out(1,.3)' }); return; }
             const yes = $('#a-yes').checked, guests = +$('#f-guests').value;
             const evs = [...$$('#event-chips .ev-chip')].filter(c => c.dataset.on === '1').map(c => c.textContent).join(', ') || '—';
+            const payload = { name, contact, attending: yes ? 'Yes' : 'No', guests, events: evs, meal: $('#f-meal').value, message: $('#f-msg').value.trim(), _subject: `Wedding RSVP — ${name}` };
+            const btn = $('#rsvp-form button[type=submit]'); const oldHTML = btn.innerHTML;
+            btn.disabled = true; btn.innerHTML = '<span>Sending...</span>';
+            try {
+                const res = await fetch('https://formspree.io/f/REPLACE_WITH_YOUR_ID', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+            } catch (err) { console.warn('RSVP POST failed:', err); }
+            btn.disabled = false; btn.innerHTML = oldHTML;
             if (yes) { going += 1; pending = Math.max(0, pending - 1); } updateStats();
             $('#ticket-name').textContent = name; $('#ticket-code').textContent = 'AD-' + Math.floor(1000 + Math.random() * 9000);
             $('#ticket-detail').textContent = `${guests} guest(s) • ${evs} • ${$('#f-meal').value.split('—')[0]}`;
@@ -1826,6 +1891,7 @@
         }
         const heroBtn = $('#hero-cal-btn');
         if (heroBtn) heroBtn.onclick = downloadICS;
+        /* note: no #hero-cal-btn in this markup — the check above is intentionally kept as a no-op */
         const addCal2Btn = $('#add-cal-2');
         if (addCal2Btn) addCal2Btn.onclick = downloadICS;
 
@@ -1875,11 +1941,31 @@
             ensureAudio(); if (!actx) { toast('Audio not supported here', 'fa-solid fa-volume-xmark'); return; }
             playing = !playing; $('#eq').classList.toggle('paused', !playing);
             this.innerHTML = playing ? '<div class="eq" id="eq"><span></span><span></span><span></span></div>' : '<i class="fa-solid fa-music"></i>';
-            if (playing) { step = 0; seqTimer = setInterval(schedule, 420); toast('Playing our melody 🎶 — Canon of Love', 'fa-solid fa-music'); }
+            if (playing) {
+                step = 0;
+                clearInterval(seqTimer);
+                seqTimer = setInterval(schedule, 420);
+                document.addEventListener('visibilitychange', () => {
+                    if (!actx) return;
+                    if (document.hidden) { clearInterval(seqTimer); }
+                    else if (playing) { seqTimer = setInterval(schedule, 420); }
+                }, { passive: true });
+                toast('Playing our melody 🎶 — Canon of Love', 'fa-solid fa-music');
+            }
             else { clearInterval(seqTimer); toast('Music paused', 'fa-solid fa-pause'); }
         };
 
         /* ============ THEME / SHARE / GIFT ============ */
+        let lang = 'en';
+        $('#lang-btn').onclick = function () {
+            lang = lang === 'en' ? 'hi' : 'en';
+            $$('[data-hi]').forEach(el => {
+                if (!el.dataset.en) el.dataset.en = el.textContent;
+                el.textContent = lang === 'hi' ? el.dataset.hi : el.dataset.en;
+            });
+            document.documentElement.lang = lang === 'hi' ? 'hi' : 'en';
+            toast(lang === 'hi' ? 'हिन्दी में देखें 🙏' : 'Viewing in English', 'fa-solid fa-language');
+        };
         $('#theme-btn').onclick = function () {
             document.body.classList.toggle('midnight');
             const mid = document.body.classList.contains('midnight');
@@ -1887,8 +1973,12 @@
             toast(mid ? 'Midnight royal mode 🌙' : 'Ivory daylight mode ☀️', 'fa-solid fa-wand-magic-sparkles');
         };
         $('#share-btn').onclick = async () => {
-            const data = { title: 'Aarav & Diya Wedding', text: 'You are invited! Aarav weds Diya — Dec 12, 2026, Udaipur 💛', url: location.href };
-            if (navigator.share) { try { await navigator.share(data); } catch (e) { } }
+            const text = 'You are invited! Aarav weds Diya — Dec 12, 2026, Udaipur 💛';
+            const wa = `https://wa.me/?text=${encodeURIComponent(text + ' ' + location.href)}`;
+            const data = { title: 'Aarav & Diya Wedding', text, url: location.href };
+            if (navigator.share) { try { await navigator.share(data); return; } catch (e) { } }
+            const choice = confirm('Open WhatsApp share? OK = WhatsApp, Cancel = Copy link.');
+            if (choice) { window.open(wa, '_blank', 'noopener'); }
             else { try { await navigator.clipboard.writeText(location.href); toast('Invitation link copied! Share the love 💌', 'fa-solid fa-link'); } catch (e) { toast('Copy this link: ' + location.href, 'fa-solid fa-link'); } }
         };
         $('#gift-btn').onclick = () => { $('#gift-modal').classList.remove('hidden'); $('#gift-modal').classList.add('flex'); };

@@ -291,150 +291,6 @@
             transform: none;
         }
 
-        /* ---------- 3D Invitation Card ---------- */
-        .tilt-stage {
-            perspective: 1500px;
-            perspective-origin: 50% 50%;
-        }
-
-        .tilt {
-            position: relative;
-            width: min(360px, 86vw);
-            height: min(540px, 124vw);
-            transform-style: preserve-3d;
-            transition: transform .9s cubic-bezier(.19, 1, .22, 1);
-            animation: floaty 9s ease-in-out infinite;
-            will-change: transform;
-        }
-
-        @keyframes floaty {
-
-            0%,
-            100% {
-                transform: translateY(0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-            }
-
-            50% {
-                transform: translateY(-16px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-            }
-        }
-
-        .flipper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 1.15s cubic-bezier(.7, 0, .2, 1);
-        }
-
-        .tilt.flipped .flipper {
-            transform: rotateY(180deg);
-        }
-
-        .face {
-            position: absolute;
-            inset: 0;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            border-radius: 18px;
-            overflow: hidden;
-        }
-
-        .face-back {
-            transform: rotateY(180deg);
-        }
-
-        .card-shell {
-            width: min(360px, 86vw);
-            height: min(540px, 124vw);
-            box-shadow:
-                0 2px 0 rgba(255, 255, 255, .6) inset,
-                0 50px 90px -32px rgba(76, 52, 30, .55),
-                0 20px 40px -22px rgba(76, 52, 30, .35);
-        }
-
-        .card-front {
-            background:
-                radial-gradient(120% 100% at 20% 10%, #FFFCF8 0%, #F7EDE0 55%, #EFE0CB 100%);
-        }
-
-        .card-back {
-            background:
-                radial-gradient(120% 110% at 80% 0%, #F6E9D8 0%, #E9D6BC 60%, #DCC29F 100%);
-        }
-
-        .card-frame {
-            position: absolute;
-            inset: 14px;
-            border: 1px solid rgba(176, 141, 87, .55);
-            border-radius: 10px;
-            pointer-events: none;
-        }
-
-        .card-frame::after {
-            content: "";
-            position: absolute;
-            inset: 5px;
-            border: 1px solid rgba(176, 141, 87, .28);
-            border-radius: 6px;
-        }
-
-        .corner {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            border-color: rgba(176, 141, 87, .85);
-            border-style: solid;
-            border-width: 0;
-        }
-
-        .corner.tl {
-            top: 22px;
-            left: 22px;
-            border-top-width: 1.5px;
-            border-left-width: 1.5px;
-        }
-
-        .corner.tr {
-            top: 22px;
-            right: 22px;
-            border-top-width: 1.5px;
-            border-right-width: 1.5px;
-        }
-
-        .corner.bl {
-            bottom: 22px;
-            left: 22px;
-            border-bottom-width: 1.5px;
-            border-left-width: 1.5px;
-        }
-
-        .corner.br {
-            bottom: 22px;
-            right: 22px;
-            border-bottom-width: 1.5px;
-            border-right-width: 1.5px;
-        }
-
-        .monogram-ring {
-            width: 74px;
-            height: 74px;
-            border-radius: 50%;
-            border: 1px solid rgba(176, 141, 87, .6);
-            display: grid;
-            place-items: center;
-            position: relative;
-        }
-
-        .monogram-ring::before {
-            content: "";
-            position: absolute;
-            inset: 6px;
-            border-radius: 50%;
-            border: 1px dashed rgba(176, 141, 87, .5);
-            animation: spinSlow 26s linear infinite;
-        }
-
         @keyframes spinSlow {
             to {
                 transform: rotate(360deg);
@@ -444,36 +300,6 @@
         .hairline {
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(176, 141, 87, .75), transparent);
-        }
-
-        .card-btn {
-            padding: .72rem 1.55rem;
-            border-radius: 999px;
-            border: 1px solid rgba(122, 86, 50, .5);
-            font-size: .62rem;
-            letter-spacing: .28em;
-            text-transform: uppercase;
-            color: #7A5632;
-            background: rgba(255, 255, 255, .35);
-            cursor: pointer;
-            transition: all .45s cubic-bezier(.2, .8, .2, 1);
-        }
-
-        .card-btn:hover {
-            background: #7A5632;
-            color: #F7EDE0;
-            transform: translateY(-2px);
-            box-shadow: 0 16px 30px -16px rgba(122, 86, 50, .8);
-        }
-
-        .glare {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            border-radius: 18px;
-            mix-blend-mode: soft-light;
-            background: radial-gradient(60% 45% at var(--gx, 30%) var(--gy, 20%), rgba(255, 255, 255, .9), transparent 70%);
-            opacity: .75;
         }
 
         /* ---------- Scratch Card ---------- */
@@ -704,6 +530,29 @@
             line-height: 1;
             font-weight: 500;
             color: var(--ink);
+            display: inline-block;
+            perspective: 400px;
+        }
+
+        .count-num.flip {
+            animation: countFlip .55s ease;
+        }
+
+        @keyframes countFlip {
+            0% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
         }
 
         .count-label {
@@ -782,7 +631,7 @@
             background: linear-gradient(180deg, var(--gold), var(--clay));
             transform: translateX(-50%);
             height: 0;
-            transition: height .18s linear;
+            transition: height .3s cubic-bezier(.2, .8, .2, 1);
         }
 
         .tl-dot {
@@ -1109,14 +958,6 @@
                 left: 16px;
             }
 
-            .tilt,
-            .card-shell {
-                height: min(560px, 168vw);
-            }
-
-            .card-inner {
-                padding: 20px 18px !important;
-            }
 
             .eyebrow {
                 font-size: .6rem;
@@ -1180,6 +1021,107 @@
             }
         }
 
+        /* ---------- Lightbox ---------- */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(20, 15, 10, .94);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            cursor: zoom-out;
+        }
+
+        #lightbox.open {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 92vw;
+            max-height: 82vh;
+            border-radius: 12px;
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .6);
+            object-fit: contain;
+            cursor: default;
+        }
+
+        .lb-btn {
+            position: absolute;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .22);
+            color: #F4E9DC;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: .3s;
+            display: grid;
+            place-items: center;
+            line-height: 1;
+        }
+
+        .lb-btn:hover {
+            background: var(--gold);
+            color: #fff;
+            border-color: var(--gold);
+        }
+
+        .lb-close {
+            top: 20px;
+            right: 20px;
+        }
+
+        .lb-prev {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lb-next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #lbCap {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold-light);
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            font-size: .72rem;
+            background: rgba(0, 0, 0, .45);
+            padding: 10px 22px;
+            border-radius: 999px;
+            backdrop-filter: blur(6px);
+        }
+
+        .gal {
+            cursor: zoom-in;
+        }
+
+        @media (max-width: 640px) {
+            .lb-prev {
+                left: 10px;
+            }
+
+            .lb-next {
+                right: 10px;
+            }
+
+            .lb-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: .001ms !important;
@@ -1202,27 +1144,32 @@
         /* Fix for couple-card plates on small phones (320px - 480px) */
         @media (max-width: 480px) {
             .person .plate {
-                left: 10px !important;
-                right: 10px !important;
-                bottom: 10px !important;
-                padding: 12px 14px !important;
+                left: 8px !important;
+                right: 8px !important;
+                bottom: 8px !important;
+                padding: 10px 12px !important;
                 transform: translateY(4px) !important;
             }
 
             .person .plate .text-\[\.58rem\] {
-                font-size: 0.5rem !important;
-                letter-spacing: 0.2em !important;
+                font-size: 0.48rem !important;
+                letter-spacing: 0.18em !important;
             }
 
             .person .plate .serif {
-                font-size: 1.15rem !important;
-                margin-top: 0.25rem !important;
+                font-size: 1.02rem !important;
+                margin-top: 0.2rem !important;
+                line-height: 1.2 !important;
             }
 
             .person .plate .text-\[\.78rem\] {
-                font-size: 0.7rem !important;
-                line-height: 1.4 !important;
-                margin-top: 0.25rem !important;
+                font-size: 0.66rem !important;
+                line-height: 1.35 !important;
+                margin-top: 0.2rem !important;
+                display: -webkit-box !important;
+                -webkit-line-clamp: 2 !important;
+                -webkit-box-orient: vertical !important;
+                overflow: hidden !important;
             }
         }
     </style>
@@ -1230,7 +1177,10 @@
 
 <body>
 
-    <div id="progress"></div>
+    <div id="progress" role="progressbar" aria-label="Page scroll progress" aria-hidden="true"></div>
+    <div id="personalBanner"
+        style="display:none;position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:88;padding:8px 22px;border-radius:999px;background:rgba(42,37,33,.88);color:#F4E9DC;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;backdrop-filter:blur(8px);border:1px solid rgba(217,190,146,.35);box-shadow:0 10px 25px -12px rgba(0,0,0,.5);">
+    </div>
 
     <!-- ================= NAV ================= -->
     <header class="nav" id="nav">
@@ -1256,6 +1206,15 @@
                 <a href="#rsvp" class="btn btn-solid magnetic hidden sm:inline-flex !py-3 !px-6">
                     <span class="sheen"></span>Reply Now
                 </a>
+                <button id="musicBtn" aria-label="Toggle ambient music" title="Ambient music"
+                    style="width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;display:grid;place-items:center;transition:.4s;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        aria-hidden="true">
+                        <path d="M9 18V5l12-2v13" />
+                        <circle cx="6" cy="18" r="3" />
+                        <circle cx="18" cy="16" r="3" />
+                    </svg>
+                </button>
                 <div class="burger lg:hidden" id="burger" aria-label="Menu" role="button" tabindex="0">
                     <span></span><span></span><span></span>
                 </div>
@@ -1314,7 +1273,7 @@
                             <div>
                                 <div class="text-[.6rem] tracking-[.34em] uppercase text-[var(--ink-soft)]">The Date
                                 </div>
-                                <div class="serif text-[1.32rem] mt-1.5">Tuesday, October 1</div>
+                                <div class="serif text-[1.32rem] mt-1.5" data-date-long>Tuesday, 1 October 2030</div>
                             </div>
                             <div class="w-px h-10 bg-[var(--line)] hidden sm:block"></div>
                             <div>
@@ -1580,15 +1539,27 @@
                         <div class="text-[.82rem] text-[var(--ink-soft)] mt-2 leading-relaxed">
                             Chipping Lane, Cotswolds<br>Gloucestershire, GL54 2JN
                         </div>
-                        <a href="#"
-                            class="inline-flex items-center gap-2 mt-4 text-[.66rem] tracking-[.26em] uppercase text-[var(--ink)] group">
-                            <span class="border-b border-[var(--gold)] pb-1">Get Directions</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5"
-                                class="transition-transform duration-500 group-hover:translate-x-1.5">
-                                <path d="M5 12h14M13 6l6 6-6 6" />
-                            </svg>
-                        </a>
+                        <div class="flex flex-wrap items-center gap-x-5 gap-y-3 mt-4">
+                            <a href="https://maps.google.com/?q=Willowmere+Estate+Cotswolds" target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center gap-2 text-[.66rem] tracking-[.26em] uppercase text-[var(--ink)] group">
+                                <span class="border-b border-[var(--gold)] pb-1">Get Directions</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5"
+                                    class="transition-transform duration-500 group-hover:translate-x-1.5">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </a>
+                            <button id="addCalBtn" type="button"
+                                class="inline-flex items-center gap-2 text-[.66rem] tracking-[.26em] uppercase text-[var(--ink)] group cursor-pointer">
+                                <span class="border-b border-[var(--gold)] pb-1">Add to Calendar</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <rect x="3" y="5" width="18" height="16" rx="2.5" />
+                                    <path d="M8 3v4M16 3v4M3 10h18" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -1688,45 +1659,45 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-12">
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px]" data-delay="0" data-parallax="0.05">
                     <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
-                        alt="Wedding table setting" loading="lazy">
+                        alt="Wedding table setting" loading="lazy" width="800" height="600" decoding="async">
                     <div class="cap">The Table</div>
                 </div>
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px] lg:mt-12" data-delay="90" data-parallax="0.11">
                     <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=800&q=80"
-                        alt="Couple holding hands" loading="lazy">
+                        alt="Couple holding hands" loading="lazy" width="800" height="600" decoding="async">
                     <div class="cap">The Two of Us</div>
                 </div>
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px]" data-delay="180" data-parallax="0.07">
                     <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80"
-                        alt="Engagement portrait" loading="lazy">
+                        alt="Engagement portrait" loading="lazy" width="800" height="600" decoding="async">
                     <div class="cap">Golden Hour</div>
                 </div>
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px] lg:mt-12" data-delay="270"
                     data-parallax="0.13">
                     <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=800&q=80"
-                        alt="Floral arrangement" loading="lazy">
+                        alt="Floral arrangement" loading="lazy" width="800" height="600" decoding="async">
                     <div class="cap">The Flowers</div>
                 </div>
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px]" data-delay="60" data-parallax="0.09">
                     <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80"
-                        alt="Reception celebration" loading="lazy">
+                        alt="Reception celebration" loading="lazy" width="800" height="600" decoding="async">
                     <div class="cap">The Party</div>
                 </div>
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px] lg:mt-12" data-delay="150"
                     data-parallax="0.05">
                     <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80"
-                        alt="Couple in a field" loading="lazy">
+                        alt="Couple in a field" loading="lazy" width="800" height="600" decoding="async">
                     <div class="cap">The Countryside</div>
                 </div>
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px]" data-delay="240" data-parallax="0.12">
                     <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80"
-                        alt="Wedding venue hall" loading="lazy">
+                        alt="Wedding venue hall" loading="lazy" width="800" height="600" decoding="async">
                     <div class="cap">The Venue</div>
                 </div>
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px] lg:mt-12" data-delay="330"
                     data-parallax="0.08">
                     <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
-                        alt="Wedding rings and details" loading="lazy">
+                        alt="Wedding rings and details" loading="lazy" width="800" height="600" decoding="async">
                     <div class="cap">The Details</div>
                 </div>
             </div>
@@ -1858,6 +1829,72 @@
         </div>
     </section>
 
+    <!-- ================= FAQ ================= -->
+    <section id="faq" class="py-20 md:py-24" style="background:#F2E9DC;">
+        <div class="max-w-[900px] mx-auto px-6 md:px-10">
+            <div class="text-center max-w-[640px] mx-auto">
+                <div class="reveal eyebrow justify-center">Common questions</div>
+                <h2 class="section-title reveal">A few <em>things</em> to know</h2>
+            </div>
+            <div class="mt-12 space-y-4" id="faqList">
+                <details class="reveal"
+                    style="background:#FFFDFB;border:1px solid var(--line);border-radius:14px;padding:22px 26px;transition:border-color .4s;">
+                    <summary class="serif"
+                        style="font-size:1.18rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+                        <span>What should I wear?</span>
+                        <span style="color:var(--gold);font-size:1.35rem;transition:transform .3s;">+</span>
+                    </summary>
+                    <p class="mt-3 text-[.9rem] text-[var(--ink-soft)] leading-[1.8] font-light">Black tie & garden
+                        florals — elegant, joyful and comfortable. The lawn ceremony favours block heels.</p>
+                </details>
+                <details class="reveal" data-delay="80"
+                    style="background:#FFFDFB;border:1px solid var(--line);border-radius:14px;padding:22px 26px;transition:border-color .4s;">
+                    <summary class="serif"
+                        style="font-size:1.18rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+                        <span>Can I bring a plus-one?</span>
+                        <span style="color:var(--gold);font-size:1.35rem;">+</span>
+                    </summary>
+                    <p class="mt-3 text-[.9rem] text-[var(--ink-soft)] leading-[1.8] font-light">Your invitation
+                        indicates the number of seats reserved for you. If you'd like to bring a guest, please mention
+                        it in the RSVP message and we'll do our very best.</p>
+                </details>
+                <details class="reveal" data-delay="160"
+                    style="background:#FFFDFB;border:1px solid var(--line);border-radius:14px;padding:22px 26px;transition:border-color .4s;">
+                    <summary class="serif"
+                        style="font-size:1.18rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+                        <span>Where should I stay?</span>
+                        <span style="color:var(--gold);font-size:1.35rem;">+</span>
+                    </summary>
+                    <p class="mt-3 text-[.9rem] text-[var(--ink-soft)] leading-[1.8] font-light">Estate rooms and a
+                        shuttle from Chipping village are available. Mention it in your RSVP and we'll reserve the right
+                        room for you.</p>
+                </details>
+                <details class="reveal" data-delay="240"
+                    style="background:#FFFDFB;border:1px solid var(--line);border-radius:14px;padding:22px 26px;transition:border-color .4s;">
+                    <summary class="serif"
+                        style="font-size:1.18rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+                        <span>Is there parking on-site?</span>
+                        <span style="color:var(--gold);font-size:1.35rem;">+</span>
+                    </summary>
+                    <p class="mt-3 text-[.9rem] text-[var(--ink-soft)] leading-[1.8] font-light">Yes — free parking is
+                        available at the main car park, a two-minute walk from Willow Chapel. Valet is available for
+                        guests with mobility needs.</p>
+                </details>
+                <details class="reveal" data-delay="320"
+                    style="background:#FFFDFB;border:1px solid var(--line);border-radius:14px;padding:22px 26px;transition:border-color .4s;">
+                    <summary class="serif"
+                        style="font-size:1.18rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+                        <span>Will there be a gift registry?</span>
+                        <span style="color:var(--gold);font-size:1.35rem;">+</span>
+                    </summary>
+                    <p class="mt-3 text-[.9rem] text-[var(--ink-soft)] leading-[1.8] font-light">Your presence is the
+                        greatest gift. If you'd like to contribute to our honeymoon fund or a charity close to our
+                        hearts, details will be shared by email a month before the wedding.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- ================= FOOTER ================= -->
     <footer class="pt-20 pb-12 relative overflow-hidden" style="background:var(--ink);color:#EDE1D2;">
         <div class="max-w-[1240px] mx-auto px-6 md:px-10">
@@ -1906,6 +1943,26 @@
         </div>
     </footer>
 
+    <!-- LIGHTBOX -->
+    <div id="lightbox" role="dialog" aria-label="Image preview" aria-modal="true" aria-hidden="true">
+        <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+        <button class="lb-btn lb-prev" aria-label="Previous image">&lsaquo;</button>
+        <button class="lb-btn lb-next" aria-label="Next image">&rsaquo;</button>
+        <img id="lbImg" src="" alt="">
+        <p id="lbCap"></p>
+    </div>
+
+    <!-- SHARE / WHATSAPP -->
+    <button id="shareBtn" aria-label="Share via WhatsApp"
+        style="position:fixed;bottom:20px;left:20px;z-index:9998;width:48px;height:48px;border-radius:50%;background:rgba(42,37,33,.85);color:#FAF6F0;border:1px solid rgba(217,190,146,.4);display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px);transition:.4s cubic-bezier(.2,.8,.2,1);box-shadow:0 10px 25px -10px rgba(0,0,0,.5);"
+        onmouseover="this.style.background='#25D366';this.style.transform='translateY(-4px)'"
+        onmouseout="this.style.background='rgba(42,37,33,.85)';this.style.transform='none'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+                d="M17.5 14.4l-2.4-1.1c-.3-.1-.6 0-.8.3l-.8 1c-.1.2-.4.3-.6.2-.8-.3-2.6-1.1-3.7-2.9-.9-1.4-1-2.1-1-2.5 0-.2.1-.4.2-.5l.7-.8c.2-.2.2-.5.1-.8L8.1 4.6C7.9 4 7.4 4 7.1 4H5.9C5.3 4 4.7 4.3 4.4 4.8c-.7 1.2-1 2.6-.7 3.9.7 3.2 3 6.4 3.2 6.6 2.2 2.9 5 4.6 8 4.6 1.2 0 2.4-.3 3.5-.9.5-.3.9-.9.9-1.5v-1.1c0-.4-.2-.8-.6-1z" />
+        </svg>
+    </button>
+
     <!-- WATERMARK / WEBSITE LINK -->
     <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener noreferrer" class="watermark">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1921,6 +1978,19 @@
         (function () {
             "use strict";
             const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            /* ---------- Personalization ( ?name=First ) ---------- */
+            try {
+                const params = new URLSearchParams(location.search);
+                const guest = (params.get('name') || '').trim().slice(0, 40);
+                if (guest) {
+                    const banner = document.getElementById('personalBanner');
+                    if (banner) {
+                        banner.textContent = 'Welcome, ' + guest + ' \u2014 we can\u2019t wait to celebrate with you';
+                        banner.style.display = 'block';
+                    }
+                }
+            } catch (e) { }
 
             /* ---------- Page load ---------- */
             window.addEventListener('load', () => document.body.classList.add('loaded'));
@@ -1944,16 +2014,18 @@
                 }
 
                 // gallery parallax
-                parallaxItems.forEach(item => {
-                    const rect = item.el.getBoundingClientRect();
-                    if (rect.bottom > -200 && rect.top < window.innerHeight + 200) {
-                        const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * -item.speed;
-                        const img = item.el.querySelector('img');
-                        if (img && item.el.classList.contains('in')) {
-                            img.style.transform = 'scale(1.12) translate3d(0,' + offset.toFixed(2) + 'px,0)';
+                if (!prefersReduced) {
+                    parallaxItems.forEach(item => {
+                        const rect = item.el.getBoundingClientRect();
+                        if (rect.bottom > -200 && rect.top < window.innerHeight + 200) {
+                            const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * -item.speed;
+                            const img = item.el.querySelector('img');
+                            if (img && item.el.classList.contains('in')) {
+                                img.style.transform = 'scale(1.12) translate3d(0,' + offset.toFixed(2) + 'px,0)';
+                            }
                         }
-                    }
-                });
+                    });
+                }
 
                 updateTimeline();
                 ticking = false;
@@ -1996,12 +2068,30 @@
 
             /* ---------- Countdown ---------- */
             const target = new Date('2030-10-01T16:00:00').getTime();
+
+            document.querySelectorAll('[data-date-long]').forEach(el => {
+                el.textContent = new Date(target).toLocaleDateString('en-GB', {
+                    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+                });
+            });
             const cdDays = document.getElementById('cdDays');
             const cdHours = document.getElementById('cdHours');
             const cdMinutes = document.getElementById('cdMinutes');
             const cdSeconds = document.getElementById('cdSeconds');
 
             function pad(n, len) { n = String(Math.max(0, n)); while (n.length < (len || 2)) n = '0' + n; return n; }
+
+            function setNum(el, val, len) {
+                if (!el) return;
+                const str = pad(val, len);
+                if (el.textContent === str) return;
+                el.textContent = str;
+                if (!prefersReduced) {
+                    el.classList.remove('flip');
+                    void el.offsetWidth;
+                    el.classList.add('flip');
+                }
+            }
 
             function tick() {
                 const now = Date.now();
@@ -2011,10 +2101,10 @@
                 const hours = Math.floor((diff % 86400000) / 3600000);
                 const mins = Math.floor((diff % 3600000) / 60000);
                 const secs = Math.floor((diff % 60000) / 1000);
-                if (cdDays) cdDays.textContent = pad(days, 3);
-                if (cdHours) cdHours.textContent = pad(hours);
-                if (cdMinutes) cdMinutes.textContent = pad(mins);
-                if (cdSeconds) cdSeconds.textContent = pad(secs);
+                setNum(cdDays, days, 3);
+                setNum(cdHours, hours, 2);
+                setNum(cdMinutes, mins, 2);
+                setNum(cdSeconds, secs, 2);
             }
             tick();
             setInterval(tick, 1000);
@@ -2044,52 +2134,6 @@
                 }
             }
 
-            /* ---------- 3D Card tilt + flip ---------- */
-            const stage = document.getElementById('tiltStage');
-            const card = document.getElementById('tiltCard');
-            const glare = document.getElementById('glare');
-
-            if (stage && card && !prefersReduced) {
-                let raf = null;
-                stage.addEventListener('mousemove', (e) => {
-                    const r = stage.getBoundingClientRect();
-                    const px = (e.clientX - r.left) / r.width;
-                    const py = (e.clientY - r.top) / r.height;
-                    const ry = (px - 0.5) * 26;
-                    const rx = -(py - 0.5) * 20;
-
-                    if (raf) cancelAnimationFrame(raf);
-                    raf = requestAnimationFrame(() => {
-                        card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
-                        card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
-                        card.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
-                        if (glare) {
-                            glare.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
-                            glare.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
-                        }
-                    });
-                });
-
-                stage.addEventListener('mouseleave', () => {
-                    card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-                    card.style.setProperty('--ry', '0deg');
-                    card.style.setProperty('--rx', '0deg');
-                });
-
-                // subtle device-orientation-free idle drift on hero scroll
-                window.addEventListener('scroll', () => {
-                    if (card.classList.contains('flipped')) return;
-                    const r = stage.getBoundingClientRect();
-                    if (r.bottom < 0 || r.top > window.innerHeight) return;
-                    const t = (window.innerHeight / 2 - (r.top + r.height / 2)) / window.innerHeight;
-                    card.style.setProperty('--rx', (t * 8).toFixed(2) + 'deg');
-                }, { passive: true });
-            }
-
-            const openBtn = document.getElementById('openCard');
-            const closeBtn = document.getElementById('closeCard');
-            if (openBtn) openBtn.addEventListener('click', () => card && card.classList.add('flipped'));
-            if (closeBtn) closeBtn.addEventListener('click', () => card && card.classList.remove('flipped'));
 
             /* ---------- Magnetic buttons ---------- */
             if (!prefersReduced && window.matchMedia('(hover:hover)').matches) {
@@ -2113,17 +2157,36 @@
                 const open = typeof force === 'boolean' ? force : !mobileMenu.classList.contains('open');
                 mobileMenu.classList.toggle('open', open);
                 burger.classList.toggle('active', open);
+                burger.setAttribute('aria-expanded', String(open));
                 document.body.style.overflow = open ? 'hidden' : '';
             }
+            let menuHistory = false;
             if (burger) {
-                burger.addEventListener('click', () => toggleMenu());
+                burger.addEventListener('click', () => {
+                    const opening = !mobileMenu.classList.contains('open');
+                    if (opening) {
+                        history.pushState({ menu: true }, '', '#menu');
+                        menuHistory = true;
+                        toggleMenu(true);
+                    } else if (menuHistory) {
+                        history.back();
+                    } else {
+                        toggleMenu(false);
+                    }
+                });
                 burger.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
                 });
             }
             if (mobileMenu) {
-                mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+                mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+                    toggleMenu(false);
+                    if (menuHistory) { history.back(); menuHistory = false; }
+                }));
             }
+            window.addEventListener('popstate', () => {
+                if (menuHistory) { toggleMenu(false); menuHistory = false; }
+            });
             window.addEventListener('keydown', (e) => { if (e.key === 'Escape') toggleMenu(false); });
 
             /* ---------- Smooth anchor scroll with nav offset ---------- */
@@ -2170,7 +2233,32 @@
                     submitBtn.innerHTML = '<span class="sheen"></span>Sending…';
                     submitBtn.style.pointerEvents = 'none';
 
-                    setTimeout(() => {
+                    const failSafe = setTimeout(() => {
+                        submitBtn.innerHTML = '<span class="sheen"></span>Send Our Reply';
+                        submitBtn.style.pointerEvents = '';
+                        if (formNote) {
+                            formNote.textContent = 'Slow connection — please try again.';
+                            formNote.style.color = '#E9A08D';
+                        }
+                    }, 12000);
+
+                    const payload = {
+                        firstName: fname.value.trim(),
+                        lastName: lname.value.trim(),
+                        email: email.value.trim(),
+                        attending: document.getElementById('attending').value,
+                        guests: document.getElementById('guests').value,
+                        meal: document.getElementById('meal').value,
+                        message: document.getElementById('message').value.trim(),
+                        _subject: 'Wedding RSVP — ' + fname.value.trim() + ' ' + lname.value.trim()
+                    };
+
+                    fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify(payload)
+                    }).catch(err => console.warn('RSVP POST failed:', err)).finally(() => {
+                        clearTimeout(failSafe);
                         submitBtn.innerHTML = '<span class="sheen"></span>Reply Received ✓';
                         if (formNote) {
                             formNote.textContent = 'Thank you, ' + fname.value.trim() + '! Your response has been recorded.';
@@ -2181,7 +2269,7 @@
                             submitBtn.innerHTML = '<span class="sheen"></span>Send Our Reply';
                             submitBtn.style.pointerEvents = '';
                         }, 3200);
-                    }, 900);
+                    });
                 });
             }
 
@@ -2309,16 +2397,135 @@
                 window.addEventListener('touchend', () => isDrawing = false);
             }
 
+            /* ---------- Ambient Music ---------- */
+            (function () {
+                const btn = document.getElementById('musicBtn');
+                if (!btn) return;
+                let ctx = null, nodes = [], on = false;
+                const start = () => {
+                    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+                    if (ctx.state === 'suspended') ctx.resume();
+                    nodes = [];
+                    [261.63, 329.63, 392.00].forEach((f, i) => {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        const filt = ctx.createBiquadFilter();
+                        osc.type = i === 2 ? 'triangle' : 'sine';
+                        osc.frequency.value = f;
+                        filt.type = 'lowpass';
+                        filt.frequency.value = 800;
+                        gain.gain.value = 0.015;
+                        osc.connect(filt).connect(gain).connect(ctx.destination);
+                        osc.start();
+                        nodes.push(osc);
+                    });
+                    btn.style.background = 'var(--gold)';
+                    btn.style.color = '#fff';
+                };
+                const stop = () => {
+                    nodes.forEach(o => { try { o.stop(); } catch (e) { } });
+                    nodes = [];
+                    btn.style.background = 'transparent';
+                    btn.style.color = 'var(--gold)';
+                };
+                btn.addEventListener('click', () => { on = !on; on ? start() : stop(); });
+            })();
+
+            /* ---------- FAQ accordion (single-open) ---------- */
+            (function () {
+                const items = document.querySelectorAll('#faqList details');
+                items.forEach(d => {
+                    d.addEventListener('toggle', () => {
+                        if (!d.open) return;
+                        items.forEach(o => { if (o !== d) o.open = false; });
+                    });
+                });
+            })();
+
+            /* ---------- WhatsApp Share ---------- */
+            (function () {
+                const btn = document.getElementById('shareBtn');
+                if (!btn) return;
+                btn.addEventListener('click', async () => {
+                    const text = "You're invited to Amelia & Oliver's wedding — 1 October 2030 at Willowmere Estate 🕊️";
+                    if (navigator.share) {
+                        try { await navigator.share({ title: 'Amelia & Oliver Wedding', text, url: location.href }); return; } catch (e) { }
+                    }
+                    window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + location.href), '_blank', 'noopener');
+                });
+            })();
+
+            /* ---------- Add to Calendar (ICS) ---------- */
+            (function () {
+                const btn = document.getElementById('addCalBtn');
+                if (!btn) return;
+                btn.addEventListener('click', () => {
+                    const ics = [
+                        'BEGIN:VCALENDAR',
+                        'VERSION:2.0',
+                        'PRODID:-//AmeliaOliverWedding//EN',
+                        'BEGIN:VEVENT',
+                        'UID:amelia-oliver-wedding-20301001@invite',
+                        'DTSTAMP:20251001T000000Z',
+                        'DTSTART:20301001T150000Z',
+                        'DTEND:20301001T230000Z',
+                        'SUMMARY:Amelia & Oliver — Wedding',
+                        'DESCRIPTION:Ceremony at 4:00 PM\\, Dinner & Toasts at 7:00 PM. Black tie & garden florals.',
+                        'LOCATION:Willowmere Estate\\, Chipping Lane\\, Cotswolds\\, Gloucestershire GL54 2JN',
+                        'END:VEVENT',
+                        'END:VCALENDAR'
+                    ].join('\r\n');
+                    const blob = new Blob([ics], { type: 'text/calendar' });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = 'Amelia-Oliver-Wedding.ics';
+                    a.click();
+                    URL.revokeObjectURL(a.href);
+                });
+            })();
+
+            /* ---------- Lightbox ---------- */
+            (function () {
+                const lb = document.getElementById('lightbox');
+                const lbImg = document.getElementById('lbImg');
+                const lbCap = document.getElementById('lbCap');
+                const galImgs = Array.from(document.querySelectorAll('.gal img'));
+                if (!lb || !lbImg || !galImgs.length) return;
+                let idx = 0;
+                const open = (i) => {
+                    idx = ((i % galImgs.length) + galImgs.length) % galImgs.length;
+                    const img = galImgs[idx];
+                    lbImg.src = img.src;
+                    lbImg.alt = img.alt || '';
+                    const cap = img.parentElement.querySelector('.cap');
+                    lbCap.textContent = cap ? cap.textContent.trim() : (img.alt || '');
+                    lb.classList.add('open');
+                    lb.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                };
+                const close = () => {
+                    lb.classList.remove('open');
+                    lb.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                };
+                galImgs.forEach((img, i) => {
+                    img.parentElement.addEventListener('click', () => open(i));
+                });
+                lb.querySelector('.lb-close').addEventListener('click', close);
+                lb.querySelector('.lb-prev').addEventListener('click', (e) => { e.stopPropagation(); open(idx - 1); });
+                lb.querySelector('.lb-next').addEventListener('click', (e) => { e.stopPropagation(); open(idx + 1); });
+                lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+                document.addEventListener('keydown', (e) => {
+                    if (!lb.classList.contains('open')) return;
+                    if (e.key === 'Escape') close();
+                    if (e.key === 'ArrowLeft') open(idx - 1);
+                    if (e.key === 'ArrowRight') open(idx + 1);
+                });
+            })();
+
             /* ---------- Init ---------- */
             onScroll();
-            window.addEventListener('resize', () => {
-                // keep card height sane on very small screens
-                if (card) {
-                    const w = card.getBoundingClientRect().width;
-                    if (w > 0) card.style.height = Math.min(Math.round(w * 1.68), 560, window.innerHeight * 0.9) + 'px';
-                }
-                onScroll();
-            });
+            window.addEventListener('resize', onScroll);
 
         })();
     </script>
