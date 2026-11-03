@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="champagne">
+<html lang="en-IN" data-theme="champagne">
 
 <head>
     <meta name="google-site-verification" content="DHpb0g1rs5iH1p88j7qkAnefdBwfHIJAqwrRzyXXyFA" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aiden &amp; Sophia Wedding Invitation 2026 | The Grand Palace, Udaipur — Luxury E-Invite by Bloomyvite
-    </title>
+    <title>Aiden &amp; Sophia Wedding 2026 | Luxury E-Invite by Bloomyvite</title>
     <meta name="description"
-        content="You are cordially invited to the luxury wedding of Aiden &amp; Sophia on December 12, 2026, at The Grand Palace, Udaipur. Explore our love story, venue details, event schedule, photo gallery, 3D invitation card, and RSVP online. A beautiful interactive digital wedding e-invitation crafted by Bloomyvite — https://bloomyvite.de5.net/" />
-    <meta name="keywords"
-        content="Aiden and Sophia wedding, wedding invitation, digital wedding invitation, e-invitation, online wedding invitation, interactive wedding invitation, 3D wedding invitation, wedding e-card, luxury wedding invitation, elegant wedding invite, The Grand Palace wedding, Udaipur wedding, palace wedding, royal wedding, Indian wedding, 2026 wedding, December 2026 wedding, destination wedding, wedding website, RSVP online, wedding countdown timer, 3D card invitation, wedding e-invite template, HTML5 wedding invitation, responsive wedding invitation, Bloomyvite, bloomyvite.de5.net, digital wedding invite designer, wedding website design" />
+        content="Aiden &amp; Sophia invite you to their wedding on December 12, 2026 at The Grand Palace, Udaipur. Explore the story, venue, 3D card, and RSVP online." />
+
     <meta name="author" content="Bloomyvite — https://bloomyvite.de5.net/" />
     <meta name="publisher" content="Bloomyvite" />
     <meta name="application-name" content="Bloomyvite" />
@@ -23,7 +21,7 @@
     <meta name="ICBM" content="24.5854, 73.7125" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://aidenandsophia.com/" />
-    <link rel="alternate" hreflang="en" href="https://aidenandsophia.com/" />
+    <link rel="alternate" hreflang="en-IN" href="https://aidenandsophia.com/" />
     <link rel="alternate" hreflang="x-default" href="https://aidenandsophia.com/" />
     <link rel="publisher" href="https://bloomyvite.de5.net/" />
     <link rel="author" href="https://bloomyvite.de5.net/" />
@@ -41,7 +39,7 @@
     <meta property="og:image:alt"
         content="Aiden &amp; Sophia luxury wedding e-invitation at The Grand Palace, Udaipur — crafted by Bloomyvite" />
     <meta property="og:site_name" content="Bloomyvite — Luxury Wedding E-Invitations" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,13 +82,15 @@
             }
         }
     </script>
+    <link rel="preload" as="image" fetchpriority="high"
+        href="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://bloomyvite.de5.net">
-    <link rel="icon" type="image/svg+xml" href="https://bloomyvite.de5.net/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="https://bloomyvite.de5.net/apple-touch-icon.png" />
     <link rel="mask-icon" href="https://bloomyvite.de5.net/favicon.svg" color="#C9A86A" />
     <link
@@ -1295,6 +1295,13 @@
             }
         }
 
+        /* Perf: skip offscreen rendering for below-fold sections (helps LCP / INP) */
+        main>section:not(#couple),
+        main>footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 1000px;
+        }
+
         /* ---------- Watermark ---------- */
         .watermark {
             position: fixed;
@@ -1351,18 +1358,51 @@
       "url": "https://bloomyvite.de5.net/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://bloomyvite.de5.net/logo.png"
+        "url": "https://bloomyvite.de5.net/logo.png",
+        "width": 512,
+        "height": 512
       },
       "description": "Bloomyvite designs luxury interactive digital wedding e-invitations, wedding websites, and online RSVP experiences for modern couples worldwide.",
-      "sameAs": ["https://bloomyvite.de5.net/"]
+      "sameAs": [
+        "https://twitter.com/bloomyvite",
+        "https://www.instagram.com/bloomyvite"
+      ]
     },
     {
       "@type": "WebSite",
-      "@id": "https://aidenandsophia.com/#website",
+      "@id": "https://bloomyvite.de5.net/#website",
+      "url": "https://bloomyvite.de5.net/",
+      "name": "Bloomyvite",
+      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aidenandsophia.com/#webpage",
       "url": "https://aidenandsophia.com/",
-      "name": "Aiden & Sophia Wedding — by Bloomyvite",
-      "inLanguage": "en",
-      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" }
+      "name": "Aiden & Sophia Wedding 2026 — Luxury E-Invitation",
+      "description": "You are cordially invited to the wedding of Aiden & Sophia on December 12, 2026, at The Grand Palace, Udaipur.",
+      "isPartOf": { "@id": "https://bloomyvite.de5.net/#website" },
+      "about": { "@id": "https://aidenandsophia.com/#event" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://aidenandsophia.com/assets/og-aiden-sophia.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": { "@id": "https://aidenandsophia.com/#breadcrumb" },
+      "inLanguage": "en-IN",
+      "creator": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aidenandsophia.com/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bloomyvite", "item": "https://bloomyvite.de5.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Aiden & Sophia Wedding" }
+      ]
     },
     {
       "@type": "Event",
@@ -1385,25 +1425,67 @@
           "addressCountry": "IN"
         }
       },
-      "image": ["https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80"],
-      "organizer": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "image": [
+        "https://aidenandsophia.com/assets/og-aiden-sophia.jpg",
+        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80",
+        "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "organizer": {
+        "@type": "Person",
+        "name": "Aiden & Sophia"
+      },
       "performer": [
         { "@type": "Person", "name": "Aiden Alexander" },
         { "@type": "Person", "name": "Sophia Laurent" }
       ],
+      "url": "https://aidenandsophia.com/",
+      "isAccessibleForFree": true,
       "offers": {
         "@type": "Offer",
         "name": "RSVP",
         "url": "https://aidenandsophia.com/#rsvp",
+        "price": "0",
+        "priceCurrency": "INR",
         "availability": "https://schema.org/InStock"
-      }
+      },
+      "mainEntityOfPage": { "@id": "https://aidenandsophia.com/#webpage" }
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bloomyvite.de5.net/" },
-        { "@type": "ListItem", "position": 2, "name": "Wedding Invitations", "item": "https://bloomyvite.de5.net/" },
-        { "@type": "ListItem", "position": 3, "name": "Aiden & Sophia Wedding", "item": "https://aidenandsophia.com/" }
+      "@type": "FAQPage",
+      "@id": "https://aidenandsophia.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the dress code for Aiden & Sophia's wedding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Formal and festive — gold, pastels, and jewel tones. The December Udaipur weather is mild, but evenings can be cool, so bring a shawl or wrap for the lakeside reception."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is the wedding being held?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Grand Palace, Lake Pichola, Udaipur, Rajasthan 313001, India. The ceremony is in Durbar Hall and the reception is on the Lakeside Lawns and Crystal Ballroom."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bring a plus-one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kindly mention your plus-one in the RSVP form so we can seat everyone comfortably."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a gift registry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your presence is the present. Blessings are preferred over gifts."
+          }
+        }
       ]
     }
   ]
@@ -1412,6 +1494,29 @@
 </head>
 
 <body class="locked paper-texture">
+
+    <noscript>
+        <style>
+            #preloader {
+                display: none !important;
+            }
+
+            #envelope-overlay {
+                display: none !important;
+            }
+
+            body.locked {
+                overflow: auto !important;
+                height: auto !important;
+            }
+
+            .reveal,
+            .hero-anim {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
 
     <div id="progressBar"></div>
 
@@ -1533,8 +1638,8 @@
         <header class="relative min-h-screen flex items-center justify-center overflow-hidden" id="hero">
             <div class="absolute inset-0" id="heroBg">
                 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80"
-                    alt="Aiden and Sophia luxury wedding hero image — The Grand Palace, Udaipur 2026"
-                    class="w-full h-full object-cover scale-110">
+                    alt="Aiden and Sophia luxury wedding hero image — The Grand Palace, Udaipur 2026" width="1600"
+                    height="1067" fetchpriority="high" decoding="async" class="w-full h-full object-cover scale-110">
                 <div class="absolute inset-0"
                     style="background:linear-gradient(180deg,rgba(15,10,8,.65) 0%,rgba(15,10,8,.45) 40%,rgba(15,10,8,.85) 100%);">
                 </div>
@@ -2010,42 +2115,48 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-12">
                     <div class="reveal g-item h-64 md:h-80" data-index="0"><img
                             src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=700&q=80"
-                            alt="Sophia Laurent — the bride portrait for their luxury Udaipur wedding" loading="lazy">
+                            alt="Sophia Laurent — the bride portrait for their luxury Udaipur wedding" width="700"
+                            height="467" loading="lazy" decoding="async">
                         <div class="g-overlay">
                             <p class="text-white font-script text-2xl">The Bride</p>
                         </div>
                     </div>
                     <div class="reveal g-item h-64 md:h-80" data-index="1"><img
                             src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80"
-                            alt="Aiden and Sophia wedding rings — luxury 2026 celebration" loading="lazy">
+                            alt="Aiden and Sophia wedding rings — luxury 2026 celebration" width="700" height="467"
+                            loading="lazy" decoding="async">
                         <div class="g-overlay">
                             <p class="text-white font-script text-2xl">The Rings</p>
                         </div>
                     </div>
                     <div class="reveal g-item h-64 md:h-80" data-index="2"><img
                             src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=80"
-                            alt="Aiden and Sophia holding hands — romantic wedding gallery" loading="lazy">
+                            alt="Aiden and Sophia holding hands — romantic wedding gallery" width="700" height="467"
+                            loading="lazy" decoding="async">
                         <div class="g-overlay">
                             <p class="text-white font-script text-2xl">Hand in Hand</p>
                         </div>
                     </div>
                     <div class="reveal g-item h-64 md:h-80" data-index="3"><img
                             src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=700&q=80"
-                            alt="Aiden and Sophia couple portrait — forever and always" loading="lazy">
+                            alt="Aiden and Sophia couple portrait — forever and always" width="700" height="467"
+                            loading="lazy" decoding="async">
                         <div class="g-overlay">
                             <p class="text-white font-script text-2xl">Forever</p>
                         </div>
                     </div>
                     <div class="reveal g-item h-64 md:h-80" data-index="4"><img
                             src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=700&q=80"
-                            alt="Aiden and Sophia wedding decor — The Grand Palace Udaipur" loading="lazy">
+                            alt="Aiden and Sophia wedding decor — The Grand Palace Udaipur" width="700" height="467"
+                            loading="lazy" decoding="async">
                         <div class="g-overlay">
                             <p class="text-white font-script text-2xl">The Decor</p>
                         </div>
                     </div>
                     <div class="reveal g-item h-64 md:h-80" data-index="5"><img
                             src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=700&q=80"
-                            alt="Aiden and Sophia wedding celebration — 2026" loading="lazy">
+                            alt="Aiden and Sophia wedding celebration — 2026" width="700" height="467" loading="lazy"
+                            decoding="async">
                         <div class="g-overlay">
                             <p class="text-white font-script text-2xl">Celebration</p>
                         </div>
@@ -2535,7 +2646,7 @@
         document.getElementById('topBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         /* ---------- COUNTDOWN ---------- */
-        const target = new Date('2026-12-12T16:00:00');
+        const target = new Date('2026-12-12T16:00:00+05:30');
         function pad(n) { return String(n).padStart(2, '0'); }
         function tick() {
             let d = target - new Date();
@@ -2610,6 +2721,7 @@
             const img = document.getElementById('lbImg');
             gsap.fromTo(img, { opacity: 0, scale: .94 }, { opacity: 1, scale: 1, duration: .45, ease: 'power2.out' });
             img.src = gImgs[lbIdx].src;
+            img.alt = gImgs[lbIdx].cap + ' — Aiden & Sophia wedding gallery, Bloomyvite';
             document.getElementById('lbCap').textContent = gImgs[lbIdx].cap;
             document.getElementById('lbCount').textContent = (lbIdx + 1) + ' / ' + gImgs.length;
         }
@@ -2784,5 +2896,3 @@
         });
     </script>
 </body>
-
-</html>

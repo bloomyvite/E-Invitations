@@ -1,42 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#05050a">
-    <title>Naming Ceremony Invitation — Namakaran Sanskar for Aarav Sharma</title>
+    <title>Namakaran Sanskar Invitation · Aarav Sharma | Bloomyvite</title>
     <meta name="description"
-        content="You are cordially invited to the Namakaran Sanskar naming ceremony of baby Aarav Sharma — Sunday, November 24, 2024 at The Grand Palace Banquet Hall, Bangalore. An interactive 3D invitation.">
-    <meta name="keywords"
-        content="naming ceremony invitation, namakaran sanskar, baby naming ceremony, indian naming ceremony, hindu naming ceremony, aarav sharma, grand palace banquet hall bangalore, digital baby invitation, 3d invitation, interactive invitation, baby ceremony invite, namkaran ceremony, indian baby ceremony, traditional naming ceremony, online baby invite, blessing ceremony invitation, baby shower alternative, newborn celebration, family celebration invite, sharma mehra family">
+        content="You're invited to the Namakaran Sanskar naming ceremony of baby Aarav Sharma — Sunday, Nov 24, 2024 at The Grand Palace Banquet Hall, Bangalore. Interactive 3D invite.">
+
     <meta name="author" content="Bloomyvite">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="https://bloomyvite.de5.net/">
+    <link rel="canonical" href="https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bloomyvite.de5.net/">
-    <meta property="og:title" content="Naming Ceremony Invitation — Namakaran Sanskar for Aarav Sharma">
+    <meta property="og:url" content="https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/">
+    <meta property="og:title" content="Namakaran Sanskar Invitation · Aarav Sharma | Bloomyvite">
     <meta property="og:description"
-        content="Join us for the auspicious Namakaran Sanskar of our little prince Aarav Sharma — Sunday, November 24, 2024 at The Grand Palace Banquet Hall, Bangalore.">
-    <meta property="og:image"
-        content="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&h=630&q=85">
+        content="Join us for the auspicious Namakaran Sanskar of baby Aarav Sharma — Sunday, Nov 24, 2024 at The Grand Palace Banquet Hall, Bangalore.">
+    <meta property="og:image" content="https://bloomyvite.de5.net/assets/og-aarav-namakaran.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"
+        content="Namakaran Sanskar naming ceremony invitation for baby Aarav Sharma, Bangalore 2024">
     <meta property="og:site_name" content="Bloomyvite">
+    <meta property="og:locale" content="en_IN">
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Naming Ceremony Invitation — Namakaran Sanskar for Aarav Sharma">
+    <meta name="twitter:site" content="@bloomyvite">
+    <meta name="twitter:creator" content="@bloomyvite">
+    <meta name="twitter:title" content="Namakaran Sanskar Invitation · Aarav Sharma | Bloomyvite">
     <meta name="twitter:description"
-        content="An interactive 3D invitation to the Namakaran Sanskar of baby Aarav Sharma.">
-    <meta name="twitter:image"
-        content="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&h=630&q=85">
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%B6%3C/text%3E%3C/svg%3E">
+        content="An interactive 3D invitation to the Namakaran Sanskar of baby Aarav Sharma — Nov 24, 2024, Bangalore.">
+    <meta name="twitter:image" content="https://bloomyvite.de5.net/assets/og-aarav-namakaran.jpg">
+    <meta name="twitter:image:alt" content="Namakaran Sanskar invitation for Aarav Sharma — Bloomyvite">
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"
+        as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -538,6 +548,20 @@
                 height: 16px;
             }
         }
+
+        /* SEO: crawlable content — hidden from sighted users, read by Googlebot + screen readers.
+           Revealed as a full-page HTML invitation when JS is disabled (see <noscript> below). */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
@@ -616,6 +640,126 @@
         <span>Made by Bloomyvite</span>
         <span class="heart">🩷</span>
     </a>
+
+    <!-- SEO: crawlable ceremony details — hidden from sighted users, read by Googlebot + screen readers.
+         The visible .details-panel already contains this content but is hidden via `right: -450px`
+         until a user clicks "Open Invitation" — so it's not visible on first paint for Googlebot's
+         non-interactive rendering. This block puts the same content in plain text that's always visible
+         to crawlers. Also revealed as a full-page HTML invitation when JS is disabled (see <noscript>). -->
+    <div class="sr-only" id="crawlable-content">
+        <h2>Namakaran Sanskar — Aarav Sharma's Naming Ceremony</h2>
+        <p>You are cordially invited to the auspicious Namakaran Sanskar (Hindu naming ceremony) of our
+            baby boy Aarav Sharma. Your presence and blessings will make this day truly memorable.</p>
+
+        <h3>Ceremony Details</h3>
+        <ul>
+            <li><strong>Date:</strong> Sunday, November 24, 2024</li>
+            <li><strong>Auspicious Muhurat:</strong> 10:30 AM onwards</li>
+            <li><strong>Venue:</strong> The Grand Palace Banquet Hall, Royal Orchid Enclave, Bangalore, India</li>
+            <li><strong>Blessings from:</strong> Sharma &amp; Mehra Family</li>
+            <li><strong>Followed by:</strong> A family feast</li>
+        </ul>
+
+        <h3>RSVP</h3>
+        <p>Please confirm your attendance by emailing
+            <a
+                href="mailto:sharma.family@example.com?subject=RSVP%20-%20Naming%20Ceremony">sharma.family@example.com</a>
+            or using the RSVP button on the invitation card.
+        </p>
+
+        <h3>About this invitation</h3>
+        <p>An interactive 3D card with a gold-ribboned cover, pop-up cradle centerpiece, and floating gold dust
+            that opens to reveal the ceremony details. Crafted by
+            <a href="https://bloomyvite.de5.net/">Bloomyvite — premium 3D digital invitation websites</a>.
+        </p>
+    </div>
+
+    <noscript>
+        <style>
+            /* Without JS: #canvas-container renders nothing, the .details-panel stays at right: -450px
+               (off-screen), and the "Open Invitation" button does nothing. The page is a static dark
+               screen with only the header visible. Reveal the crawlable content as a full readable
+               HTML invitation instead. */
+            #canvas-container,
+            .ui-layer,
+            .details-panel,
+            .btn-back,
+            .audio-toggle,
+            .bloomy-watermark {
+                display: none !important;
+            }
+
+            body,
+            html {
+                overflow: auto !important;
+                height: auto !important;
+                background: #05050a !important;
+            }
+
+            #crawlable-content {
+                position: static !important;
+                width: auto !important;
+                height: auto !important;
+                padding: 60px 24px !important;
+                margin: 0 !important;
+                overflow: visible !important;
+                clip: auto !important;
+                white-space: normal !important;
+                text-align: center !important;
+                background: radial-gradient(ellipse at 50% 35%, #0d0d1a 0%, #05050a 70%) !important;
+                color: #f0e6d2 !important;
+                font-family: 'Montserrat', system-ui, sans-serif !important;
+                min-height: 100vh !important;
+            }
+
+            #crawlable-content h2 {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+                color: #dfba6b !important;
+                margin: 0 0 24px !important;
+                line-height: 1.2 !important;
+                letter-spacing: .05em !important;
+            }
+
+            #crawlable-content h3 {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(1.1rem, 3vw, 1.4rem) !important;
+                color: #dfba6b !important;
+                margin: 32px 0 12px !important;
+                letter-spacing: .03em !important;
+            }
+
+            #crawlable-content p,
+            #crawlable-content li {
+                max-width: 640px;
+                margin: 0 auto 12px;
+                font-size: 1.05rem;
+                line-height: 1.75;
+                color: rgba(240, 230, 210, .85);
+                font-weight: 300;
+            }
+
+            #crawlable-content ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            #crawlable-content li::before {
+                content: '❦ ';
+                color: #dfba6b;
+            }
+
+            #crawlable-content strong {
+                color: #dfba6b;
+                font-weight: 600;
+            }
+
+            #crawlable-content a {
+                color: #dfba6b;
+                text-decoration: underline;
+            }
+        </style>
+    </noscript>
 
     <!-- Three.js + OrbitControls + GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -1504,35 +1648,151 @@
 
     <!-- JSON-LD Structured Data for Google Rich Results -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Naming Ceremony — Namakaran Sanskar for Aarav Sharma",
-      "description": "You are cordially invited to the Namakaran Sanskar naming ceremony of baby Aarav Sharma — an auspicious Hindu naming ceremony followed by a family feast.",
-      "startDate": "2024-11-24T10:30:00+05:30",
-      "endDate": "2024-11-24T14:00:00+05:30",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "The Grand Palace Banquet Hall",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Royal Orchid Enclave",
-          "addressLocality": "Bangalore",
-          "addressRegion": "KA",
-          "addressCountry": "IN"
-        }
-      },
-      "organizer": {
-        "@type": "Organization",
-        "name": "Sharma & Mehra Family",
-        "url": "https://bloomyvite.de5.net/"
-      },
+      "@type": "Organization",
+      "@id": "https://bloomyvite.de5.net/#organization",
+      "name": "Bloomyvite",
       "url": "https://bloomyvite.de5.net/",
-      "inLanguage": "en"
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bloomyvite.de5.net/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Bloomyvite designs luxury interactive digital greeting cards, wedding e-invitations, naming ceremony invitations, and celebration websites for modern families worldwide.",
+      "sameAs": [
+        "https://twitter.com/bloomyvite",
+        "https://www.instagram.com/bloomyvite"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bloomyvite.de5.net/#website",
+      "url": "https://bloomyvite.de5.net/",
+      "name": "Bloomyvite",
+      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/#webpage",
+      "url": "https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/",
+      "name": "Namakaran Sanskar Invitation — Aarav Sharma | Bloomyvite",
+      "description": "An interactive 3D invitation to the Namakaran Sanskar naming ceremony of baby Aarav Sharma at The Grand Palace Banquet Hall, Bangalore on Sunday, November 24, 2024.",
+      "isPartOf": { "@id": "https://bloomyvite.de5.net/#website" },
+      "about": { "@id": "https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/#creativework" },
+      "creator": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://bloomyvite.de5.net/assets/og-aarav-namakaran.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": { "@id": "https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/#breadcrumb" },
+      "datePublished": "2024-10-01",
+      "dateModified": "2026-11-03",
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bloomyvite", "item": "https://bloomyvite.de5.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Invitations", "item": "https://bloomyvite.de5.net/invitations/" },
+        { "@type": "ListItem", "position": 3, "name": "Aarav Sharma Namakaran Sanskar" }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/#creativework",
+      "name": "Aarav Sharma — Namakaran Sanskar Invitation",
+      "headline": "Namakaran Sanskar Invitation for Aarav Sharma",
+      "description": "A 3D interactive invitation card for baby Aarav Sharma's Namakaran Sanskar naming ceremony at The Grand Palace Banquet Hall, Bangalore.",
+      "author": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "datePublished": "2024-10-01",
+      "genre": "Naming Ceremony Invitation",
+      "inLanguage": "en-IN",
+      "image": "https://bloomyvite.de5.net/assets/og-aarav-namakaran.jpg",
+      "about": {
+        "@type": "Event",
+        "name": "Namakaran Sanskar for Aarav Sharma",
+        "startDate": "2024-11-24T10:30:00+05:30",
+        "endDate": "2024-11-24T14:00:00+05:30",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "description": "An auspicious Hindu naming ceremony followed by a family feast.",
+        "image": ["https://bloomyvite.de5.net/assets/og-aarav-namakaran.jpg"],
+        "location": {
+          "@type": "Place",
+          "name": "The Grand Palace Banquet Hall",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Royal Orchid Enclave",
+            "addressLocality": "Bangalore",
+            "addressRegion": "KA",
+            "addressCountry": "IN"
+          }
+        },
+        "organizer": {
+          "@type": "Person",
+          "name": "Sharma & Mehra Family"
+        },
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "name": "Free entry — RSVP required",
+          "price": "0",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bloomyvite.de5.net/invitations/aarav-namakaran-sanskar/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Namakaran Sanskar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Namakaran Sanskar is the traditional Hindu naming ceremony for a newborn baby, typically held on the eleventh day or later after birth. The ceremony includes prayers, the father whispers the chosen name into the baby's ear, and family members offer blessings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When and where is Aarav Sharma's naming ceremony?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sunday, November 24, 2024 from 10:30 AM (auspicious muhurat) at The Grand Palace Banquet Hall, Royal Orchid Enclave, Bangalore."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is hosting the ceremony?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Sharma & Mehra family is hosting the Namakaran Sanskar for baby Aarav Sharma."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I RSVP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click the RSVP button in the invitation card, or email sharma.family@example.com to confirm your attendance and share blessings."
+          }
+        }
+      ]
     }
-    </script>
+  ]
+}
+</script>
 </body>
 
 </html>

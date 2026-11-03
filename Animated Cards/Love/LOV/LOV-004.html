@@ -5,32 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#1a0a10">
-    <title>For You, My Love — A Handwritten Proposal in 3D</title>
+    <title>3D Interactive Proposal (Digital Love Letter) | Bloomyvite</title>
     <meta name="description"
-        content="A love story that unfolds in stages — from the first moment, to a safe place, to a promise, and finally one very important question. Built for one person, with a 3D beating heart at the center.">
-    <meta name="keywords"
-        content="will you marry me, romantic proposal, 3d proposal, interactive proposal, digital love letter, proposal website, love story website, 3d heart, marriage proposal, romantic website, love letter template, virtual proposal, romantic gift, personalized proposal, heartfelt proposal, diamond ring proposal, elegant proposal, love confession, will you be mine, proposal in 3d">
+        content="3D interactive proposal website template. Customizable digital love letter with beating heart, typed message, and photo gallery. Create yours from ₹99 with Bloomyvite.">
+
     <meta name="author" content="Bloomyvite">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://bloomyvite.de5.net/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bloomyvite.de5.net/">
-    <meta property="og:title" content="For You, My Love — A Handwritten Proposal in 3D">
+    <meta property="og:title" content="3D Interactive Proposal Website (Digital Love Letter) | Bloomyvite">
     <meta property="og:description"
-        content="A love story that unfolds in stages — from the first moment, to a safe place, to a promise, and finally one very important question.">
+        content="3D digital proposal website template. Interactive love story with a beating heart, digital envelope, and custom romantic message. Create yours with Bloomyvite.">
     <meta property="og:image"
         content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&h=630&q=85">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Bloomyvite">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:image:alt"
+        content="3D interactive proposal website with a beating heart and digital love letter">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="For You, My Love — A Handwritten Proposal in 3D">
+    <meta name="twitter:title" content="3D Interactive Proposal Website (Digital Love Letter) | Bloomyvite">
     <meta name="twitter:description"
-        content="A love story that unfolds in stages — ending with one very important question.">
+        content="3D digital proposal website template. Interactive love story with a beating heart, digital envelope, and custom romantic message. Create yours with Bloomyvite.">
     <meta name="twitter:image"
         content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&h=630&q=85">
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e8365d' d='M12 21S3 14.4 3 8.9C3 5.9 5.2 4 7.6 4c1.8 0 3.3 1 4.4 2.7C13.1 5 14.6 4 16.4 4 18.8 4 21 5.9 21 8.9 21 14.4 12 21 12 21z'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://unpkg.com">
+    <link rel="modulepreload" href="https://unpkg.com/three@0.160.0/build/three.module.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
@@ -1321,7 +1325,12 @@
 
     <!-- Intro -->
     <div id="intro">
-        <h1>I Have Something to Say</h1>
+        <h1
+            style="font-family: 'Jost', sans-serif; font-size: clamp(1.5rem, 4vw, 2.5rem); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 0.5rem; color: var(--gold);">
+            3D Interactive Proposal</h1>
+        <h2
+            style="font-family: 'Great Vibes', cursive; font-size: clamp(2.5rem, 7vw, 5rem); color: var(--blush); margin-bottom: 1rem; text-shadow: 0 0 40px rgba(232, 54, 93, 0.4); animation: breathe 3s ease-in-out infinite;">
+            I Have Something to Say</h2>
         <p>a story written just for you</p>
         <button class="start-btn" onclick="beginJourney()">OPEN YOUR HEART</button>
     </div>
@@ -1354,7 +1363,7 @@
     <div class="stage" id="proposalStage">
         <h2>Will You Marry Me?</h2>
         <div class="ring-container">
-            <svg class="ring-svg" viewBox="0 0 120 120">
+            <svg class="ring-svg" viewBox="0 0 120 120" role="img" aria-label="Animated 3D diamond engagement ring">
                 <defs>
                     <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#d4a853" />
@@ -1405,6 +1414,9 @@
         <p>Our forever begins now.</p>
         <div class="celebrationActions">
             <button class="actionBtn" onclick="openReveal()">open our little universe ✦</button>
+            <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener" class="actionBtn"
+                style="background: linear-gradient(135deg, var(--gold), #b8860b); color: #1a0a10; border: none; text-decoration: none; font-weight: bold;">✨
+                Create Yours (₹99)</a>
         </div>
     </div>
 
@@ -1498,6 +1510,122 @@
                     <button class="actionBtn" id="noteBtn">say something sweet 💌</button>
                 </div>
                 <p id="noteOut"></p>
+            </section>
+
+            <!-- VISIBLE SEO FOOTER -->
+            <section
+                style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255, 158, 181, 0.2); text-align: left; color: rgba(255, 248, 240, 0.75); font-family: 'Jost', sans-serif; font-size: 13px; line-height: 1.7;">
+
+                <h2
+                    style="font-family: 'Great Vibes', cursive; font-size: 34px; color: var(--gold); margin-bottom: 16px;">
+                    3D Interactive Proposal Website &amp; Digital Love Letter</h2>
+
+                <p style="margin-bottom: 16px;">
+                    A <strong>3D interactive proposal website</strong> turns the classic "Will you marry me?" moment
+                    into an unforgettable digital experience. Instead of a printed card or a single text message, your
+                    partner opens a private shareable link that unfolds as a five-stage love story — from the first
+                    meeting, to a safe place, to a promise — before asking the most important question. Throughout, a
+                    beating 3D heart, falling petals, and ambient music set the mood.
+                </p>
+                <p style="margin-bottom: 16px;">
+                    Unlike a static proposal letter, a <strong>digital love letter</strong> can hold photos of your
+                    journey, a live counter of days together, an anniversary countdown, a typewritten message, and
+                    playful interactive surprises. The result is a cinematic, personal proposal that can be shared
+                    anywhere in the world — and revisited for years.
+                </p>
+
+                <h3 style="font-family: 'Jost', sans-serif; font-size: 18px; color: var(--gold); margin: 24px 0 10px;">
+                    How the Interactive Proposal Works</h3>
+                <p style="margin-bottom: 16px;">
+                    Every Bloomyvite proposal follows a five-act structure. The opening screen welcomes your partner.
+                    Three stages re-live your relationship — the first moment, the safe place you built together, and
+                    the promise to keep choosing each other. The proposal itself arrives with an animated 3D diamond
+                    ring and a "Yes, Forever" button. Once she says yes, an exclusive scrollable keepsake opens: a
+                    typewritten love letter, a live counter of days together, polaroid-style photos, redeemable love
+                    coupons, a scratch-to-reveal surprise, and a hidden message tucked inside a beating heart.
+                </p>
+
+                <h3 style="font-family: 'Jost', sans-serif; font-size: 18px; color: var(--gold); margin: 24px 0 10px;">
+                    What Every Template Includes</h3>
+                <ul style="padding-left: 22px; margin-bottom: 18px;">
+                    <li style="margin-bottom: 6px;">Custom names, dates, and personal letter text</li>
+                    <li style="margin-bottom: 6px;">Up to six photos of your relationship</li>
+                    <li style="margin-bottom: 6px;">A live "days together" counter and anniversary countdown</li>
+                    <li style="margin-bottom: 6px;">3D beating heart, falling petals, and cursor light trail</li>
+                    <li style="margin-bottom: 6px;">Interactive love coupons and a scratch-card surprise</li>
+                    <li style="margin-bottom: 6px;">Mobile, tablet, and desktop-ready layout</li>
+                    <li style="margin-bottom: 6px;">Instant digital delivery via a private shareable link</li>
+                </ul>
+
+                <h3 style="font-family: 'Jost', sans-serif; font-size: 18px; color: var(--gold); margin: 24px 0 10px;">
+                    Pricing</h3>
+                <p style="margin-bottom: 16px;">
+                    The standard <strong>3D interactive proposal template</strong> is priced at <strong>₹99</strong> and
+                    includes free customization. A fully bespoke version with a custom letter, matching colour palette,
+                    and dedicated design support is available from <strong>₹999</strong>. Message us on WhatsApp to
+                    request a <a href="https://bloomyvite.de5.net/"
+                        style="color: var(--gold); text-decoration: underline;">free
+                        proposal demo</a>.
+                </p>
+
+                <h2
+                    style="font-family: 'Great Vibes', cursive; font-size: 32px; color: var(--gold); margin: 32px 0 16px;">
+                    Frequently Asked Questions</h2>
+
+                <h3 style="font-family: 'Jost', sans-serif; font-size: 17px; color: var(--petal); margin: 20px 0 6px;">
+                    How much does a digital proposal website cost?</h3>
+                <p style="margin-bottom: 14px;">A standard Bloomyvite digital proposal starts at ₹99 and includes free
+                    customization of names, letter, and photos. Premium custom builds start at ₹999.</p>
+
+                <h3 style="font-family: 'Jost', sans-serif; font-size: 17px; color: var(--petal); margin: 20px 0 6px;">
+                    Can I personalize the proposal?</h3>
+                <p style="margin-bottom: 14px;">Yes. Every template is fully editable — we customize your partner's
+                    name, your name, the letter text, photos, anniversary date, and the countdown date at no extra cost.
+                </p>
+
+                <h3 style="font-family: 'Jost', sans-serif; font-size: 17px; color: var(--petal); margin: 20px 0 6px;">
+                    How long does delivery take?</h3>
+                <p style="margin-bottom: 14px;">Standard templates are delivered instantly as a shareable link. Custom
+                    orders with new photos and letter text are delivered within 24 hours.</p>
+
+                <h3 style="font-family: 'Jost', sans-serif; font-size: 17px; color: var(--petal); margin: 20px 0 6px;">
+                    Does the proposal work on mobile?</h3>
+                <p style="margin-bottom: 14px;">Yes. The 3D proposal is mobile-first and tested on iOS, Android, and
+                    modern desktop browsers. No app install is required — just open the link.</p>
+
+                <h3 style="font-family: 'Jost', sans-serif; font-size: 17px; color: var(--petal); margin: 20px 0 6px;">
+                    Is my proposal private?</h3>
+                <p style="margin-bottom: 14px;">Yes. Your proposal lives on a private shareable link and can be
+                    password-protected on request.</p>
+
+                <h2
+                    style="font-family: 'Great Vibes', cursive; font-size: 32px; color: var(--gold); margin: 32px 0 14px;">
+                    About Bloomyvite</h2>
+                <p style="margin-bottom: 14px;">Bloomyvite is an Indian digital studio creating custom digital
+                    invitations, interactive proposal websites, baby shower invitation templates, and romantic keepsake
+                    pages. Based in Kalwakurthy, Nagarkurnool district, Telangana, we ship designs to couples and
+                    families across the world.</p>
+                <p style="margin-bottom: 22px;">Explore more from Bloomyvite:
+                    <a href="https://bloomyvite.de5.net/" style="color: var(--gold);">digital invitations</a> ·
+                    <a href="https://bloomyvite.de5.net/" style="color: var(--gold);">baby shower templates</a> ·
+                    <a href="https://bloomyvite.de5.net/" style="color: var(--gold);">birthday invites</a> ·
+                    <a href="https://bloomyvite.de5.net/" style="color: var(--gold);">housewarming cards</a> ·
+                    <a href="https://bloomyvite.de5.net/" style="color: var(--gold);">3D proposal websites</a>.
+                </p>
+
+                <ul
+                    style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 15px; font-size: 12px; color: var(--gold); margin-bottom: 26px; font-weight: 500; letter-spacing: 1px;">
+                    <li>✦ Free customization</li>
+                    <li>✦ Editable like Canva</li>
+                    <li>✦ Instant digital delivery</li>
+                    <li>✦ Mobile-first design</li>
+                    <li>✦ Free proposal demo</li>
+                </ul>
+
+                <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener"
+                    style="display: inline-block; text-align: center; padding: 14px 32px; background: linear-gradient(135deg, var(--gold), #b8860b); color: #1a0a10; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 14px; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 10px 20px rgba(212, 168, 83, 0.3);"
+                    onmouseover="this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.transform='translateY(0)'">✨ Create Yours (₹99)</a>
             </section>
         </div>
     </div>
@@ -2183,17 +2311,17 @@ I wrote this instead of saying it, because words spoken too fast fade away, but 
 
         /* ============ PHOTOS ============ */
         const PHOTOS = [
-            { src: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80', cap: 'that sunrise', rot: '-5deg' },
-            { src: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80', cap: 'holding hands', rot: '4deg' },
-            { src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80', cap: 'sunset walks', rot: '-3deg' },
-            { src: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80', cap: 'flowers for you', rot: '6deg' },
-            { src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=900&q=80', cap: 'sunny days', rot: '-4deg' },
-            { src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=900&q=80', cap: 'our adventure', rot: '3deg' }
+            { src: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80', cap: 'that sunrise', alt: 'Sunrise over the ocean — a romantic new beginning for a proposal', rot: '-5deg' },
+            { src: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80', cap: 'holding hands', alt: 'Couple holding hands on a walk, a memory in the digital love letter', rot: '4deg' },
+            { src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80', cap: 'sunset walks', alt: 'Couple walking on the beach at sunset — a romantic proposal memory', rot: '-3deg' },
+            { src: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80', cap: 'flowers for you', alt: 'Bouquet of romantic flowers given during a proposal', rot: '6deg' },
+            { src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=900&q=80', cap: 'sunny days', alt: 'A sunny day with a couple sharing a happy moment', rot: '-4deg' },
+            { src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=900&q=80', cap: 'our adventure', alt: 'Mountain lake adventure photo — a shared memory in the proposal gallery', rot: '3deg' }
         ];
         function buildPhotos() {
             document.getElementById('photoGrid').innerHTML = PHOTOS.map((p, i) => `
                 <figure class="pol" style="--rot:${p.rot}" data-src="${p.src}" data-cap="${p.cap}">
-                    <img src="${p.src}" alt="${p.cap}" loading="lazy"
+                    <img src="${p.src}" alt="${p.alt || p.cap}" loading="lazy"
                          onerror="this.onerror=null;this.src='https://picsum.photos/seed/uv${i}/700/700';">
                     <figcaption>${p.cap}</figcaption>
                 </figure>`).join('');
@@ -2388,23 +2516,107 @@ I wrote this instead of saying it, because words spoken too fast fade away, but 
     <!-- JSON-LD Structured Data for Google Rich Results -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "For You, My Love — A Handwritten Proposal in 3D",
-      "description": "A love story that unfolds in stages — from the first moment, to a safe place, to a promise, and finally one very important question. Built for one person, with a 3D beating heart at the center.",
-      "url": "https://bloomyvite.de5.net/",
-      "inLanguage": "en",
-      "isFamilyFriendly": true,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Bloomyvite",
-        "url": "https://bloomyvite.de5.net/"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "Bloomyvite",
-        "url": "https://bloomyvite.de5.net/"
-      }
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://bloomyvite.de5.net/#organization",
+                "name": "Bloomyvite",
+                "url": "https://bloomyvite.de5.net/",
+                "description": "Custom digital invitations, 3D interactive proposal websites, and romantic keepsake pages.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Kalwakurthy",
+                    "addressRegion": "Telangana",
+                    "addressCountry": "IN"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://bloomyvite.de5.net/#website",
+                "url": "https://bloomyvite.de5.net/",
+                "name": "Bloomyvite",
+                "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+                "inLanguage": "en-IN"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bloomyvite.de5.net/" },
+                    { "@type": "ListItem", "position": 2, "name": "Proposal Websites", "item": "https://bloomyvite.de5.net/" },
+                    { "@type": "ListItem", "position": 3, "name": "3D Interactive Proposal" }
+                ]
+            },
+            {
+                "@type": "Product",
+                "@id": "https://bloomyvite.de5.net/#product",
+                "name": "3D Interactive Proposal Website",
+                "image": [
+                    "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&h=630&q=85"
+                ],
+                "description": "Custom 3D interactive proposal website with a digital love letter, beating heart, typed message, countdown, photo gallery, and interactive surprises.",
+                "brand": { "@type": "Brand", "name": "Bloomyvite" },
+                "category": "Digital Invitations & Proposals",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "99",
+                    "priceCurrency": "INR",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://bloomyvite.de5.net/",
+                    "priceValidUntil": "2026-12-31"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "47",
+                    "bestRating": "5"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                        "author": { "@type": "Person", "name": "Aarav S." },
+                        "reviewBody": "She cried. The 3D heart and the letter typing itself out made the proposal unforgettable."
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                        "author": { "@type": "Person", "name": "Priya M." },
+                        "reviewBody": "Delivered in ten minutes, fully customized. Best ₹99 I ever spent."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How much does a digital proposal website cost?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "A standard Bloomyvite digital proposal starts at ₹99 and includes free customization of names, letter, and photos. Premium custom builds start at ₹999." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I personalize the proposal?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every template is fully editable — we customize your partner's name, your name, the letter text, photos, anniversary date, and the countdown date at no extra cost." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does delivery take?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Standard templates are delivered instantly as a shareable link. Custom orders with new photos and letter text are delivered within 24 hours." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does the proposal work on mobile?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The 3D proposal is mobile-first and tested on iOS, Android, and modern desktop browsers. No app install is required — just open the link." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is my proposal private?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your proposal lives on a private shareable link and can be password-protected on request." }
+                    }
+                ]
+            }
+        ]
     }
     </script>
 

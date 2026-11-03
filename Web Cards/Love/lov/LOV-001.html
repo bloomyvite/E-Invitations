@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#FAF5F6" />
     <meta name="color-scheme" content="light" />
-    <title>Arjun × Ananya — A Romantic Wedding Proposal | 24.09.2026</title>
+    <title>Arjun × Ananya — Wedding Proposal Website | Bloomyvite</title>
     <meta name="description"
-        content="Experience the magical 3D journey as Arjun asks Ananya the most important question. A beautiful, interactive romantic proposal website crafted with love by Bloomyvite." />
-    <meta name="keywords"
-        content="wedding proposal, romantic proposal, interactive proposal website, marry me, digital proposal, 3D proposal, Arjun and Ananya, wedding website, love story, Bloomyvite, bloomyvite.de5.net, made by bloomyvite, HTML5 proposal, web design, interactive card, romantic surprise, love letter, 3D love story" />
+        content="An interactive 3D wedding proposal website — Arjun asks Ananya the most important question. Custom digital proposal experiences by Bloomyvite, from ₹99." />
+
     <meta name="author" content="Bloomyvite — https://bloomyvite.de5.net/" />
     <meta name="publisher" content="Bloomyvite" />
     <meta name="generator" content="Bloomyvite" />
@@ -20,20 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://arjunandananya.com/" />
-    <meta property="og:title" content="Arjun × Ananya — A Romantic Wedding Proposal | Bloomyvite" />
+    <meta property="og:title" content="Arjun × Ananya — Wedding Proposal Website | Bloomyvite" />
     <meta property="og:description"
-        content="Experience the magical 3D journey as Arjun asks Ananya the most important question. Crafted with love by Bloomyvite." />
+        content="An interactive 3D wedding proposal — Arjun asks Ananya the most important question. Custom proposal websites by Bloomyvite, from ₹99." />
     <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80" />
+    <meta property="og:image:alt" content="Arjun and Ananya — romantic wedding proposal website" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="Bloomyvite — Interactive Digital Experiences" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Arjun × Ananya — A Romantic Wedding Proposal | Bloomyvite" />
+    <meta name="twitter:title" content="Arjun × Ananya — Wedding Proposal Website | Bloomyvite" />
     <meta name="twitter:description"
-        content="Experience the magical 3D journey as Arjun asks Ananya the most important question." />
+        content="Interactive 3D wedding proposal — Arjun asks Ananya the most important question. From ₹99." />
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80" />
+    <meta name="twitter:image:alt" content="Arjun and Ananya — romantic wedding proposal website" />
     <meta name="twitter:site" content="@bloomyvite" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1520,6 +1522,107 @@
                 padding: 68px 14px 40px
             }
         }
+
+        /* SEO info block (crawlable on first load) */
+        .seoInfo {
+            position: absolute;
+            top: 80px;
+            right: 24px;
+            max-width: 320px;
+            max-height: 72vh;
+            overflow-y: auto;
+            z-index: 15;
+            pointer-events: auto;
+            font-family: var(--sans);
+            font-size: 12px;
+            color: var(--ink);
+            background: rgba(250, 245, 246, .92);
+            border: 1px solid rgba(185, 124, 142, .3);
+            border-radius: 8px;
+            padding: 10px 14px;
+            text-align: left;
+            line-height: 1.55;
+            box-shadow: 0 10px 30px rgba(90, 26, 52, .1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .seoInfo summary {
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 9px;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--rose);
+            list-style: none;
+        }
+
+        .seoInfo summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .seoInfoBody {
+            margin-top: 10px;
+        }
+
+        .seoInfoBody h2 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.2;
+            margin: 4px 0 8px;
+            color: var(--ink);
+        }
+
+        .seoInfoBody h3 {
+            font-size: 10px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin: 14px 0 6px;
+        }
+
+        .seoInfoBody h4 {
+            font-size: 11px;
+            font-weight: 500;
+            margin: 10px 0 3px;
+            color: var(--ink);
+        }
+
+        .seoInfoBody p,
+        .seoInfoBody ul {
+            margin: 0 0 8px;
+            font-size: 12px;
+        }
+
+        .seoInfoBody ul {
+            padding-left: 16px;
+        }
+
+        .seoInfoBody li {
+            margin-bottom: 3px;
+        }
+
+        .seoInfoBody a {
+            color: var(--rose);
+            text-decoration: underline;
+        }
+
+        @media (max-width:820px) {
+            .seoInfo {
+                position: static;
+                margin: 24px auto 0;
+                max-width: 92vw;
+                order: 2;
+            }
+
+            #intro {
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 60px;
+                overflow-y: auto;
+            }
+        }
     </style>
 
     <!-- ============ STRUCTURED DATA (JSON-LD) — Bloomyvite ============ -->
@@ -1536,7 +1639,16 @@
         "@type": "ImageObject",
         "url": "https://bloomyvite.de5.net/logo.png"
       },
-      "description": "Bloomyvite designs luxury interactive digital experiences, wedding websites, and romantic proposals."
+      "description": "Bloomyvite designs luxury interactive digital experiences, wedding websites, and romantic proposals.",
+      "sameAs": [
+        "https://twitter.com/bloomyvite",
+        "https://www.instagram.com/bloomyvite"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://bloomyvite.de5.net/"
+      }
     },
     {
       "@type": "WebSite",
@@ -1547,12 +1659,74 @@
       "publisher": { "@id": "https://bloomyvite.de5.net/#organization" }
     },
     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bloomyvite", "item": "https://bloomyvite.de5.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Proposals", "item": "https://bloomyvite.de5.net/" },
+        { "@type": "ListItem", "position": 3, "name": "Arjun × Ananya" }
+      ]
+    },
+    {
       "@type": "CreativeWork",
       "@id": "https://arjunandananya.com/#creativework",
-      "name": "Arjun × Ananya — A Romantic Wedding Proposal",
-      "description": "An interactive, 3D romantic wedding proposal website.",
+      "name": "Arjun × Ananya — Wedding Proposal Website",
+      "description": "An interactive 3D wedding proposal website with a scroll-driven love story, a 3D ribbon of memories, a marble corridor of photos, a sealed letter, and one important question.",
       "author": { "@id": "https://bloomyvite.de5.net/#organization" },
-      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" }
+      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "inLanguage": "en",
+      "isFamilyFriendly": true,
+      "about": {
+        "@type": "Event",
+        "name": "Arjun & Ananya Wedding",
+        "startDate": "2026-09-24",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "TBD",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN"
+          }
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is this interactive wedding proposal website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A scroll-driven 3D love story in which Arjun asks Ananya to marry him. It includes photo memories, a sealed letter, three quiet promises, and one important question — all built by Bloomyvite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a custom proposal website cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bloomyvite proposal websites are customizable and start at ₹99 for a standard template, or ₹999 for a fully custom design with your own photos, letter, and copy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast is delivery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard templates are delivered instantly as a shareable link. Custom orders with new photos and copy are delivered within 24 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the site work on mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every Bloomyvite proposal is mobile-first and works on iOS, Android, and modern desktop browsers — no app required."
+          }
+        }
+      ]
     }
   ]
 }
@@ -1582,6 +1756,62 @@
             <p class="sub">A little world made for one question.</p>
         </div>
         <div class="scroll-hint"><span>Scroll to begin</span><span class="scroll-line"></span></div>
+
+        <details class="seoInfo">
+            <summary>About this proposal</summary>
+            <div class="seoInfoBody">
+                <h2>An Interactive 3D Wedding Proposal</h2>
+                <p>
+                    This is a scroll-driven wedding proposal website where Arjun asks Ananya the most important
+                    question. The experience opens with a soft cream intro, carries the visitor through a 3D ribbon
+                    of memories, into a marble corridor of photographs, then pauses at a sealed letter that must be
+                    read before the final question. Answering &quot;Yes&quot; reveals an elegant marriage card with
+                    the couple&rsquo;s names and a celebratory explosion of roses and hearts.
+                </p>
+
+                <h3>What unfolds</h3>
+                <ul>
+                    <li>A scroll-locked intro that sets the tone</li>
+                    <li>A 3D ribbon threaded with memories</li>
+                    <li>A marble corridor you can look around and tap</li>
+                    <li>Four framed memories on plinths</li>
+                    <li>A sealed love letter that types itself out</li>
+                    <li>Three quiet promises</li>
+                    <li>One question with a mischievous &quot;No&quot; button that runs away</li>
+                    <li>A rose-and-heart marriage card celebration</li>
+                </ul>
+
+                <h3>About Bloomyvite</h3>
+                <p>
+                    Bloomyvite is an Indian digital studio building custom wedding websites, interactive proposal
+                    experiences, and romantic keepsake pages. Every project includes free customization, instant
+                    delivery, and mobile-first design. Standard proposal templates start at
+                    <strong>&#8377;99</strong>; fully custom designs start at <strong>&#8377;999</strong>.
+                </p>
+
+                <h3>Frequently Asked Questions</h3>
+
+                <h4>What is this proposal website?</h4>
+                <p>A scroll-driven 3D love story built by Bloomyvite in which Arjun asks Ananya to marry him —
+                    complete with photo memories, a sealed letter, and one important question.</p>
+
+                <h4>How much does a custom proposal website cost?</h4>
+                <p>From &#8377;99 for a standard editable template, or &#8377;999 for a fully custom design with your
+                    own photos, letter, and copy.</p>
+
+                <h4>How fast is delivery?</h4>
+                <p>Standard templates: instant. Custom orders with new photos and copy: within 24 hours.</p>
+
+                <h4>Does it work on mobile?</h4>
+                <p>Yes. Every Bloomyvite proposal is mobile-first and tested on iOS, Android, and modern desktop
+                    browsers — no app required.</p>
+
+                <p style="margin-top:12px;">
+                    <a href="https://bloomyvite.de5.net/" target="_blank" rel="noopener">Create your own proposal
+                        website &rarr;</a>
+                </p>
+            </div>
+        </details>
     </section>
 
     <section class="overlay" id="ribbon-copy">
@@ -1654,6 +1884,7 @@
                 <button class="pill filled" type="button" id="yesBtn">Yes</button>
                 <button class="pill" type="button" id="noBtn">No</button>
             </div>
+        </div>
     </section>
 
     <!-- LOOK-AROUND HINT -->
@@ -1676,7 +1907,19 @@
             <article class="letter-paper" id="envelopePaper">
                 <div class="letter-kicker">A letter for you</div>
                 <h2 class="letter-title" id="letterTitle">Before I ask you anything.</h2>
-                <p id="typed-letter"></p>
+                <p id="typed-letter">To my favorite person,
+
+                    I have written this a hundred times in my head, and every version still feels too small for you.
+
+                    You turned ordinary days into memories I will keep for the rest of my life. Between the laughter,
+                    the quiet mornings and the long conversations, you quietly became my safest place.
+
+                    So here is what I promise. I will keep choosing you — on the easy days and the heavy ones, in the
+                    loud celebrations and the ordinary Sundays, in every version of the life we haven't lived yet.
+
+                    I am not asking for a perfect story. I am asking for ours.
+
+                    And now there is only one thing left to say.</p>
                 <div class="letter-sign" id="letterSign">— Arjun</div>
                 <div class="letter-cta" id="letterCta">
                     <button class="pill keep" type="button" id="keepHeartBtn">💗 Keep in my heart</button>
@@ -1727,7 +1970,8 @@
         Made with Bloomyvite
     </a>
 
-    <script type="importmap" defer>
+    <link rel="modulepreload" href="https://unpkg.com/three@0.160.0/build/three.module.js" crossorigin />
+    <script type="importmap">
 {
   "imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}
 }
@@ -2010,6 +2254,7 @@
         const lb = $('lightbox'), lbImg = $('lbImg'), lbCap = $('lbCap');
         function openLightbox(url, label) {
             lbImg.src = url;
+            lbImg.alt = (label ? label + ' — ' : '') + "memory from Arjun and Ananya's proposal";
             lbCap.textContent = label || '';
             lb.classList.add('open');
             document.body.classList.add('locked');

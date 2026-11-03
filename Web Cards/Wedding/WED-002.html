@@ -1,15 +1,13 @@
-<html lang="en">
+<html lang="en-GB">
 
 <head>
     <meta name="google-site-verification" content="DHpb0g1rs5iH1p88j7qkAnefdBwfHIJAqwrRzyXXyFA" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amelia &amp; Oliver Wedding Invitation 2030 | Willowmere Estate, Cotswolds — Luxury E-Invite by Bloomyvite
-    </title>
+    <title>Amelia &amp; Oliver Wedding 2030 free wedding | Luxury E-Invite by Bloomyvite</title>
     <meta name="description"
-        content="You are cordially invited to the luxury wedding of Amelia &amp; Oliver on October 1, 2030, at Willowmere Estate, Cotswolds. Explore our love story, venue details, event schedule, photo gallery, scratch-to-reveal date, and RSVP online. A beautiful interactive digital wedding e-invitation crafted by Bloomyvite — https://bloomyvite.de5.net/" />
-    <meta name="keywords"
-        content="Amelia and Oliver wedding, wedding invitation, digital wedding invitation, e-invitation, online wedding invitation, interactive wedding invitation, wedding e-card, luxury wedding invitation, elegant wedding invite, Willowmere Estate wedding, Cotswolds wedding, UK wedding, 2030 wedding, October 2030 wedding, wedding website, RSVP online, wedding countdown timer, scratch to reveal wedding date, wedding e-invite template, HTML5 wedding invitation, responsive wedding invitation, Bloomyvite, bloomyvite.de5.net, digital wedding invite designer, wedding website design" />
+        content="Amelia &amp; Oliver invite you to their wedding on October 1, 2030 at Willowmere Estate, Cotswolds. Explore the story, venue, schedule, and RSVP online." />
+
     <meta name="author" content="Bloomyvite — https://bloomyvite.de5.net/" />
     <meta name="publisher" content="Bloomyvite" />
     <meta name="application-name" content="Bloomyvite" />
@@ -22,7 +20,7 @@
     <meta name="ICBM" content="51.8333, -1.8333" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ameliaandoliver.com/" />
-    <link rel="alternate" hreflang="en" href="https://ameliaandoliver.com/" />
+    <link rel="alternate" hreflang="en-GB" href="https://ameliaandoliver.com/" />
     <link rel="alternate" hreflang="x-default" href="https://ameliaandoliver.com/" />
     <link rel="publisher" href="https://bloomyvite.de5.net/" />
     <link rel="author" href="https://bloomyvite.de5.net/" />
@@ -30,11 +28,10 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ameliaandoliver.com/" />
-    <meta property="og:title" content="Amelia &amp; Oliver Wedding 2030 — Luxury E-Invitation | by Bloomyvite" />
+    <meta property="og:title" content="Amelia &amp; Oliver Wedding 2030 — Luxury E-Invitation | Bloomyvite" />
     <meta property="og:description"
-        content="Join Amelia &amp; Oliver on October 1, 2030, at Willowmere Estate, Cotswolds. An interactive luxury wedding e-invitation by Bloomyvite — scratch to reveal the date and RSVP online at https://bloomyvite.de5.net/" />
-    <meta property="og:image"
-        content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" />
+        content="Join Amelia &amp; Oliver on October 1, 2030, at Willowmere Estate, Cotswolds. An interactive luxury wedding e-invitation by Bloomyvite." />
+    <meta property="og:image" content="https://ameliaandoliver.com/assets/og-amelia-oliver.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt"
@@ -46,9 +43,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Amelia &amp; Oliver Wedding 2030 — Luxury E-Invitation | Bloomyvite" />
     <meta name="twitter:description"
-        content="You're invited to Amelia &amp; Oliver's wedding on October 1, 2030 at Willowmere Estate, Cotswolds. RSVP online — an interactive luxury e-invite crafted by Bloomyvite (https://bloomyvite.de5.net/)." />
-    <meta name="twitter:image"
-        content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" />
+        content="You're invited to Amelia &amp; Oliver's wedding on October 1, 2030 at Willowmere Estate, Cotswolds. RSVP online — an interactive luxury e-invite crafted by Bloomyvite." />
+    <meta name="twitter:image" content="https://ameliaandoliver.com/assets/og-amelia-oliver.jpg" />
     <meta name="twitter:image:alt"
         content="Amelia &amp; Oliver Wedding E-Invitation — Willowmere Estate, Cotswolds — Bloomyvite" />
     <meta name="twitter:site" content="@bloomyvite" />
@@ -64,7 +60,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="dns-prefetch" href="https://bloomyvite.de5.net">
-    <link rel="icon" type="image/svg+xml" href="https://bloomyvite.de5.net/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="https://bloomyvite.de5.net/apple-touch-icon.png" />
     <link rel="mask-icon" href="https://bloomyvite.de5.net/favicon.svg" color="#B08D57" />
     <link
@@ -1078,10 +1074,13 @@
         #lightbox img {
             max-width: 92vw;
             max-height: 82vh;
+            min-width: 200px;
+            min-height: 200px;
             border-radius: 12px;
             box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .6);
             object-fit: contain;
             cursor: default;
+            background: rgba(255, 255, 255, .04);
         }
 
         .lb-btn {
@@ -1177,6 +1176,12 @@
             }
         }
 
+        /* Perf: skip offscreen rendering for below-fold sections (helps LCP / INP) */
+        body>section {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 1000px;
+        }
+
         /* Fix for couple-card plates on small phones (320px - 480px) */
         @media (max-width: 480px) {
             .person .plate {
@@ -1210,6 +1215,31 @@
         }
     </style>
 
+    <!-- Non-JS fallback: hide animated overlays that need JS to populate -->
+    <noscript>
+        <style>
+            .petal-field {
+                display: none !important;
+            }
+
+            #progress {
+                display: none !important;
+            }
+
+            .kin>span,
+            .fade-up,
+            .reveal,
+            .reveal-img {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            #mobileMenu {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+
     <!-- ============ STRUCTURED DATA (JSON-LD) — Bloomyvite ============ -->
     <script type="application/ld+json">
 {
@@ -1232,7 +1262,7 @@
       "@id": "https://ameliaandoliver.com/#website",
       "url": "https://ameliaandoliver.com/",
       "name": "Amelia & Oliver Wedding — by Bloomyvite",
-      "inLanguage": "en",
+      "inLanguage": "en-GB",
       "publisher": { "@id": "https://bloomyvite.de5.net/#organization" }
     },
     {
@@ -1407,9 +1437,6 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-        </div>
         </div>
     </section>
 
@@ -1513,7 +1540,8 @@
                     <div class="person reveal" data-delay="0">
                         <div class="ph reveal-img">
                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
-                                alt="Amelia Hartley — the bride, for her 2030 Willowmere Estate wedding" loading="lazy">
+                                alt="Amelia Hartley — the bride, for her 2030 Willowmere Estate wedding" width="800"
+                                height="1067" loading="lazy" decoding="async">
                         </div>
                         <div class="plate">
                             <div class="text-[.58rem] tracking-[.32em] uppercase text-[var(--clay)]">The Bride</div>
@@ -1526,7 +1554,8 @@
                     <div class="person reveal mt-10 md:mt-16" data-delay="150">
                         <div class="ph reveal-img">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-                                alt="Oliver Bennett — the groom, for his 2030 Cotswolds wedding" loading="lazy">
+                                alt="Oliver Bennett — the groom, for his 2030 Cotswolds wedding" width="800"
+                                height="1067" loading="lazy" decoding="async">
                         </div>
                         <div class="plate">
                             <div class="text-[.58rem] tracking-[.32em] uppercase text-[var(--clay)]">The Groom</div>
@@ -1567,8 +1596,8 @@
                         <div class="mt-6 md:mt-0 pl-10 md:pl-0">
                             <div class="reveal-img h-[220px] md:h-[280px]">
                                 <img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?auto=format&fit=crop&w=900&q=80"
-                                    alt="Amelia and Oliver's first meeting at a coffee shop — wedding story"
-                                    loading="lazy">
+                                    alt="Amelia and Oliver's first meeting at a coffee shop — wedding story" width="900"
+                                    height="600" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -1586,7 +1615,8 @@
                         <div class="mt-6 md:mt-0 pl-10 md:pl-0 md:order-1">
                             <div class="reveal-img h-[220px] md:h-[280px]">
                                 <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80"
-                                    alt="Amelia and Oliver's first home together — wedding journey" loading="lazy">
+                                    alt="Amelia and Oliver's first home together — wedding journey" width="900"
+                                    height="600" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -1604,7 +1634,8 @@
                         <div class="mt-6 md:mt-0 pl-10 md:pl-0">
                             <div class="reveal-img h-[220px] md:h-[280px]">
                                 <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=900&q=80"
-                                    alt="Oliver proposing to Amelia at golden hour in Cornwall" loading="lazy">
+                                    alt="Oliver proposing to Amelia at golden hour in Cornwall" width="900" height="600"
+                                    loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -1624,7 +1655,7 @@
                             <div class="reveal-img h-[220px] md:h-[280px]">
                                 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
                                     alt="Amelia and Oliver's upcoming wedding celebration at Willowmere Estate"
-                                    loading="lazy">
+                                    width="900" height="600" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -1640,8 +1671,8 @@
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div class="venue-img reveal-img h-[380px] md:h-[560px]">
                     <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80"
-                        alt="Willowmere Estate — luxury Cotswolds wedding venue for Amelia & Oliver 2030"
-                        loading="lazy">
+                        alt="Willowmere Estate — luxury Cotswolds wedding venue for Amelia & Oliver 2030" width="1200"
+                        height="800" loading="lazy" decoding="async">
                     <div class="absolute left-6 bottom-6 right-6 md:left-8 md:bottom-8 md:right-auto md:max-w-[300px]"
                         style="background:rgba(250,246,240,.93);backdrop-filter:blur(12px);border-radius:13px;padding:22px 24px;">
                         <div class="text-[.58rem] tracking-[.34em] uppercase text-[var(--clay)]">The Venue</div>
@@ -1770,7 +1801,7 @@
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px]" data-delay="0" data-parallax="0.05">
                     <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
                         alt="Amelia and Oliver wedding table setting — luxury Willowmere Estate reception 2030"
-                        loading="lazy" width="800" height="600" decoding="async">
+                        loading="eager" fetchpriority="low" width="800" height="600" decoding="async">
                     <div class="cap">The Table</div>
                 </div>
                 <div class="gal reveal-img reveal h-[220px] md:h-[330px] lg:mt-12" data-delay="90" data-parallax="0.11">

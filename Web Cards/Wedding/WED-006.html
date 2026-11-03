@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
     <meta name="google-site-verification" content="DHpb0g1rs5iH1p88j7qkAnefdBwfHIJAqwrRzyXXyFA" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Aarav &amp; Diya Royal Wedding Invitation 2026 | The Leela Palace, Udaipur — Luxury E-Invite by Bloomyvite
-    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aarav &amp; Diya Royal Wedding 2026 | Luxury E-Invite by Bloomyvite</title>
     <meta name="description"
-        content="You are cordially invited to the royal wedding of Aarav &amp; Diya on December 12, 2026, at The Leela Palace, Udaipur. Explore our love story, event schedule, photo gallery, 3D invitation card, and RSVP online. A beautiful interactive digital wedding e-invitation crafted by Bloomyvite — https://bloomyvite.de5.net/" />
-    <meta name="keywords"
-        content="Aarav and Diya wedding, wedding invitation, digital wedding invitation, e-invitation, online wedding invitation, interactive wedding invitation, 3D wedding invitation, royal wedding, Indian wedding, luxury wedding invitation, elegant wedding invite, The Leela Palace wedding, Udaipur wedding, palace wedding, destination wedding, 2026 wedding, December 2026 wedding, wedding website, RSVP online, wedding countdown timer, 3D card invitation, wedding e-invite template, HTML5 wedding invitation, responsive wedding invitation, Bloomyvite, bloomyvite.de5.net, digital wedding invite designer, wedding website design" />
+        content="Aarav &amp; Diya invite you to their royal wedding on December 12, 2026 at The Leela Palace, Udaipur. Explore the story, 3D card, and RSVP online." />
+
     <meta name="author" content="Bloomyvite — https://bloomyvite.de5.net/" />
     <meta name="publisher" content="Bloomyvite" />
     <meta name="application-name" content="Bloomyvite" />
@@ -23,7 +21,7 @@
     <meta name="ICBM" content="24.5854, 73.7125" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://aaravanddiya.com/" />
-    <link rel="alternate" hreflang="en" href="https://aaravanddiya.com/" />
+    <link rel="alternate" hreflang="en-IN" href="https://aaravanddiya.com/" />
     <link rel="alternate" hreflang="x-default" href="https://aaravanddiya.com/" />
     <link rel="publisher" href="https://bloomyvite.de5.net/" />
     <link rel="author" href="https://bloomyvite.de5.net/" />
@@ -41,7 +39,7 @@
     <meta property="og:image:alt"
         content="Aarav &amp; Diya luxury royal wedding e-invitation at The Leela Palace, Udaipur — crafted by Bloomyvite" />
     <meta property="og:site_name" content="Bloomyvite — Luxury Wedding E-Invitations" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -59,13 +57,15 @@
     <meta name="twitter:label2" content="Venue" />
     <meta name="twitter:data2" content="The Leela Palace, Udaipur" />
 
+    <link rel="preload" as="image" fetchpriority="high"
+        href="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://bloomyvite.de5.net">
-    <link rel="icon" type="image/svg+xml" href="https://bloomyvite.de5.net/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="https://bloomyvite.de5.net/apple-touch-icon.png" />
     <link rel="mask-icon" href="https://bloomyvite.de5.net/favicon.svg" color="#C9A86A" />
     <link
@@ -852,6 +852,13 @@
             min-height: 100svh;
         }
 
+        /* Perf: skip offscreen rendering for below-fold sections (helps LCP / INP) */
+        main>section:not(#home),
+        main>footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 1000px;
+        }
+
         #nav.scrolled {
             background: color-mix(in srgb, var(--bg) 82%, transparent);
             backdrop-filter: blur(16px);
@@ -992,18 +999,51 @@
       "url": "https://bloomyvite.de5.net/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://bloomyvite.de5.net/logo.png"
+        "url": "https://bloomyvite.de5.net/logo.png",
+        "width": 512,
+        "height": 512
       },
       "description": "Bloomyvite designs luxury interactive digital wedding e-invitations, wedding websites, and online RSVP experiences for modern couples worldwide.",
-      "sameAs": ["https://bloomyvite.de5.net/"]
+      "sameAs": [
+        "https://twitter.com/bloomyvite",
+        "https://www.instagram.com/bloomyvite"
+      ]
     },
     {
       "@type": "WebSite",
-      "@id": "https://aaravanddiya.com/#website",
+      "@id": "https://bloomyvite.de5.net/#website",
+      "url": "https://bloomyvite.de5.net/",
+      "name": "Bloomyvite",
+      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aaravanddiya.com/#webpage",
       "url": "https://aaravanddiya.com/",
-      "name": "Aarav & Diya Wedding — by Bloomyvite",
-      "inLanguage": "en",
-      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" }
+      "name": "Aarav & Diya Royal Wedding 2026 — Luxury E-Invitation",
+      "description": "You are cordially invited to the royal wedding of Aarav & Diya on December 12, 2026, at The Leela Palace, Udaipur.",
+      "isPartOf": { "@id": "https://bloomyvite.de5.net/#website" },
+      "about": { "@id": "https://aaravanddiya.com/#event" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://aaravanddiya.com/assets/og-aarav-diya.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": { "@id": "https://aaravanddiya.com/#breadcrumb" },
+      "inLanguage": "en-IN",
+      "creator": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aaravanddiya.com/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bloomyvite", "item": "https://bloomyvite.de5.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Aarav & Diya Royal Wedding" }
+      ]
     },
     {
       "@type": "Event",
@@ -1026,25 +1066,75 @@
           "addressCountry": "IN"
         }
       },
-      "image": ["https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80"],
-      "organizer": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "image": [
+        "https://aaravanddiya.com/assets/og-aarav-diya.jpg",
+        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "organizer": {
+        "@type": "Person",
+        "name": "Aarav & Diya"
+      },
       "performer": [
         { "@type": "Person", "name": "Aarav Sharma" },
         { "@type": "Person", "name": "Diya Mehta" }
       ],
+      "url": "https://aaravanddiya.com/",
+      "isAccessibleForFree": true,
       "offers": {
         "@type": "Offer",
         "name": "RSVP",
         "url": "https://aaravanddiya.com/#rsvp",
+        "price": "0",
+        "priceCurrency": "INR",
         "availability": "https://schema.org/InStock"
-      }
+      },
+      "mainEntityOfPage": { "@id": "https://aaravanddiya.com/#webpage" }
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bloomyvite.de5.net/" },
-        { "@type": "ListItem", "position": 2, "name": "Wedding Invitations", "item": "https://bloomyvite.de5.net/" },
-        { "@type": "ListItem", "position": 3, "name": "Aarav & Diya Wedding", "item": "https://aaravanddiya.com/" }
+      "@type": "FAQPage",
+      "@id": "https://aaravanddiya.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the wedding events and dates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Haldi on December 10, Mehndi on December 11, the Wedding ceremony on December 12, and the Reception on December 13, all at The Leela Palace, Udaipur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the dress code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Royal ethnic / pastel for the wedding. Yellow for Haldi, green leheriya for Mehndi, and suits / gowns for the reception."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is the venue and is there parking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Leela Palace, Lake Pichola, Udaipur 313001. Valet and shuttle service from partner hotels runs from 8 AM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are children welcome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — children are loved and welcome at every event. Kids' meals are available on the RSVP form."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a gift registry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your presence is the greatest blessing. A UPI handle and Amazon / Westside registry codes are available in the Gifts section of the invitation."
+          }
+        }
       ]
     }
   ]
@@ -1053,6 +1143,70 @@
 </head>
 
 <body class="locked grain antialiased">
+
+    <noscript>
+        <style>
+            /* Without JS: body.locked freezes scroll, #loader (z-index 200) covers everything,
+               #envelope-overlay (z-index 100) sits on top of content — the page is a blank loader forever.
+               Fix all three so the invitation is readable without JavaScript. */
+            body.locked {
+                overflow: auto !important;
+                height: auto !important;
+            }
+
+            #loader,
+            #envelope-overlay,
+            #cursor-dot,
+            #cursor-ring {
+                display: none !important;
+            }
+
+            #petal-canvas {
+                display: none !important;
+            }
+
+            .reveal,
+            .reveal-left,
+            .reveal-right,
+            .reveal-scale {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+
+    <!-- CURSOR -->
+
+    <noscript>
+        <style>
+            /* Without JS: body.locked freezes scroll, #loader (z-index 200) covers everything,
+               #envelope-overlay (z-index 100) sits on top of content — the page is a blank loader forever.
+               Fix all three so the invitation is readable without JavaScript. */
+            body.locked {
+                overflow: auto !important;
+                height: auto !important;
+            }
+
+            #loader,
+            #envelope-overlay,
+            #cursor-dot,
+            #cursor-ring {
+                display: none !important;
+            }
+
+            #petal-canvas {
+                display: none !important;
+            }
+
+            .reveal,
+            .reveal-left,
+            .reveal-right,
+            .reveal-scale {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
 
     <!-- CURSOR -->
     <div id="cursor-dot"></div>
@@ -1202,7 +1356,7 @@
             <div
                 class="relative w-full h-[350px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-luxe reveal-scale mb-12 md:mb-16">
                 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop"
-                    class="w-full h-full object-cover"
+                    width="1600" height="1067" fetchpriority="high" decoding="async" class="w-full h-full object-cover"
                     alt="Aarav and Diya royal wedding banner — The Leela Palace, Udaipur 2026" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
@@ -1298,7 +1452,8 @@
                     class="reveal-left rounded-3xl overflow-hidden relative h-[350px] md:h-[450px] group border border-[#C9A86A]/30 shadow-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Vijay_Deverakonda_at_NOTA_pressmeet_%28cropped%29.jpg"
                         class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-[1.5s]"
-                        alt="Aarav — the groom, for his 2026 royal Udaipur wedding" loading="lazy" />
+                        alt="Vijay Deverakonda — placeholder groom portrait for the royal wedding template" width="800"
+                        height="1200" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-6 left-6 text-white">
                         <div class="text-[10px] tracking-[.4em] uppercase text-[#EAD9B6]">The Groom</div>
@@ -1310,7 +1465,8 @@
                     class="reveal-right rounded-3xl overflow-hidden relative h-[350px] md:h-[450px] group border border-[#C9A86A]/30 shadow-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Rashmika_Mandanna_grace_the_Hindustan_Times_India_Most_Stylish_Awards_2022.jpg"
                         class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-[1.5s]"
-                        alt="Diya — the bride, for her 2026 royal Udaipur wedding" loading="lazy" />
+                        alt="Rashmika Mandanna — placeholder bride portrait for the royal wedding template" width="800"
+                        height="1200" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-6 left-6 text-white">
                         <div class="text-[10px] tracking-[.4em] uppercase text-[#EAD9B6]">The Bride</div>

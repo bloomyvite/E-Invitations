@@ -1,18 +1,18 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Sarah's 25th Birthday Party Invitation 🎂 · Sat Dec 28 · Bloomyvite</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Sarah's 25th Birthday Party · Sat Dec 28 | Bloomyvite</title>
     <meta name="description"
-        content="Sarah turns 25! You're invited to a spectacular 3D birthday bash — cake, balloons, confetti and music. Saturday, December 28th, 7-11 PM at The Grand Ballroom, 123 Party Ave. Dress code: Cocktail Attire. Crafted by Bloomyvite.">
-    <meta name="keywords"
-        content="birthday invitation, 25th birthday invitation, 25th birthday party invite, adult birthday invitation, cocktail birthday party, grand ballroom birthday, december birthday invite, 3d birthday invitation, 3d invitation, virtual birthday card, interactive birthday card, 3d interactive party invite, birthday party website, birthday rsvp online, sarah 25th birthday, bloomyvite, blooomyvite, blloomyvite, bloomy vite, bloomyvite invitation, bloomyvite invites, bloomyvite digital invitation, bloomyvite 3d invitation, bloomyvite birthday card, bloomyvite design studio, bloomyvite official website, bloomyvite.de5.net, made by bloomyvite, invitation by bloomyvite">
+        content="Sarah turns 25! Saturday Dec 28, 7–11 PM at The Grand Ballroom, 123 Party Ave. Interactive 3D birthday invite by Bloomyvite. Cocktail attire.">
+
     <meta name="author" content="Bloomyvite">
     <meta name="publisher" content="Bloomyvite">
     <meta name="copyright" content="Bloomyvite — https://bloomyvite.de5.net/">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
     <meta name="theme-color" content="#0a0015">
     <meta name="apple-mobile-web-app-title" content="Sarah Turns 25">
     <meta name="application-name" content="Bloomyvite Invitations">
@@ -21,15 +21,17 @@
     <link rel="publisher" href="https://bloomyvite.de5.net/">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bloomyvite">
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="You're Invited • Sarah's 25th Birthday Bash 🎂 • Saturday Dec 28">
+    <meta property="og:title" content="Sarah's 25th Birthday Party · Sat Dec 28 | Bloomyvite">
     <meta property="og:description"
-        content="A 3D interactive birthday card with pop-up cake, flying balloons, confetti and floating music. Crafted by Bloomyvite.">
+        content="Sarah turns 25! Saturday Dec 28, 7–11 PM at The Grand Ballroom, 123 Party Ave. Interactive 3D birthday invite by Bloomyvite. Cocktail attire.">
     <meta property="og:url" content="https://bloomyvite.de5.net/invitations/sarah-turns-25/">
-    <meta property="og:image" content="https://picsum.photos/seed/sarah-turns-25-og/1200/630.jpg">
+    <meta property="og:image" content="https://bloomyvite.de5.net/assets/og-sarah-turns-25.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Sarah turns 25 — 3D birthday invitation">
@@ -37,10 +39,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@bloomyvite">
     <meta name="twitter:creator" content="@bloomyvite">
-    <meta name="twitter:title" content="Sarah's 25th Birthday 🎂 • A 3D Invitation by Bloomyvite">
+    <meta name="twitter:title" content="Sarah's 25th Birthday Party · Sat Dec 28 | Bloomyvite">
     <meta name="twitter:description"
-        content="An interactive 3D birthday card with cake, candles, balloons and music. Made by Bloomyvite.">
-    <meta name="twitter:image" content="https://picsum.photos/seed/sarah-turns-25-og/1200/630.jpg">
+        content="An interactive 3D birthday card for Sarah's 25th — cake, balloons, confetti, and music. Crafted by Bloomyvite.">
+    <meta name="twitter:image" content="https://bloomyvite.de5.net/assets/og-sarah-turns-25.jpg">
     <meta name="twitter:image:alt" content="Sarah turns 25 — 3D birthday invitation by Bloomyvite">
 
     <script type="application/ld+json">
@@ -53,6 +55,12 @@
                 "name": "Bloomyvite",
                 "alternateName": ["Bloomy Vite", "Blooomyvite", "Blloomyvite", "Blooomy Vite"],
                 "url": "https://bloomyvite.de5.net/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://bloomyvite.de5.net/logo.png",
+                    "width": 512,
+                    "height": 512
+                },
                 "description": "Bloomyvite is a design studio crafting premium 3D digital invitation websites for birthdays, weddings, griha pravesh and celebrations.",
                 "sameAs": ["https://bloomyvite.de5.net/"],
                 "knowsAbout": ["3D invitation cards", "digital birthday invitations", "wedding invitations", "griha pravesh invitations"]
@@ -72,39 +80,67 @@
                 "name": "Sarah's 25th Birthday Party — A 3D Invitation | Bloomyvite",
                 "description": "A 3D interactive birthday invitation for Sarah's 25th birthday bash at The Grand Ballroom, Saturday December 28th.",
                 "isPartOf": { "@id": "https://bloomyvite.de5.net/#website" },
-                "about": { "@id": "https://bloomyvite.de5.net/invitations/sarah-turns-25/#event" },
+                "about": { "@id": "https://bloomyvite.de5.net/invitations/sarah-turns-25/#creativework" },
                 "creator": { "@id": "https://bloomyvite.de5.net/#organization" },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://bloomyvite.de5.net/assets/og-sarah-turns-25.jpg",
+                    "width": 1200,
+                    "height": 630
+                },
+                "breadcrumb": { "@id": "https://bloomyvite.de5.net/invitations/sarah-turns-25/#breadcrumb" },
+                "datePublished": "2024-12-01",
+                "dateModified": "2026-11-03",
                 "inLanguage": "en"
             },
             {
-                "@type": "Event",
-                "@id": "https://bloomyvite.de5.net/invitations/sarah-turns-25/#event",
-                "name": "Sarah's 25th Birthday Bash",
-                "startDate": "2024-12-28T19:00:00-05:00",
-                "endDate": "2024-12-28T23:00:00-05:00",
-                "eventStatus": "https://schema.org/EventScheduled",
-                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-                "description": "Sarah turns 25! Cocktail-attired birthday bash with cake, balloons, confetti and music.",
-                "image": ["https://picsum.photos/seed/sarah-turns-25-og/1200/630.jpg"],
-                "location": {
-                    "@type": "Place",
-                    "name": "The Grand Ballroom",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "123 Party Ave",
-                        "addressCountry": "US"
+                "@type": "BreadcrumbList",
+                "@id": "https://bloomyvite.de5.net/invitations/sarah-turns-25/#breadcrumb",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Bloomyvite", "item": "https://bloomyvite.de5.net/" },
+                    { "@type": "ListItem", "position": 2, "name": "Invitations", "item": "https://bloomyvite.de5.net/invitations/" },
+                    { "@type": "ListItem", "position": 3, "name": "Sarah's 25th Birthday" }
+                ]
+            },
+            {
+                "@type": "CreativeWork",
+                "@id": "https://bloomyvite.de5.net/invitations/sarah-turns-25/#creativework",
+                "name": "Sarah's 25th Birthday Party — 3D Invitation",
+                "headline": "Sarah's 25th Birthday Party — 3D Invitation",
+                "description": "A 3D interactive birthday card with pop-up cake, flying balloons, confetti and floating music.",
+                "author": { "@id": "https://bloomyvite.de5.net/#organization" },
+                "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+                "datePublished": "2024-12-01",
+                "genre": "Birthday Invitation",
+                "inLanguage": "en",
+                "image": "https://bloomyvite.de5.net/assets/og-sarah-turns-25.jpg",
+                "about": {
+                    "@type": "Event",
+                    "name": "Sarah's 25th Birthday Bash",
+                    "startDate": "2024-12-28T19:00:00-05:00",
+                    "endDate": "2024-12-28T23:00:00-05:00",
+                    "eventStatus": "https://schema.org/EventScheduled",
+                    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                    "description": "Sarah turns 25! Cocktail-attired birthday bash with cake, balloons, confetti and music.",
+                    "image": ["https://bloomyvite.de5.net/assets/og-sarah-turns-25.jpg"],
+                    "location": {
+                        "@type": "Place",
+                        "name": "The Grand Ballroom",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "123 Party Ave",
+                            "addressCountry": "US"
+                        }
+                    },
+                    "organizer": { "@type": "Person", "name": "Sarah" },
+                    "offers": {
+                        "@type": "Offer",
+                        "name": "Free entry — RSVP required",
+                        "price": "0",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://bloomyvite.de5.net/invitations/sarah-turns-25/"
                     }
-                },
-                "organizer": { "@type": "Organization", "name": "Sarah" },
-                "sponsor": { "@id": "https://bloomyvite.de5.net/#organization" },
-                "offers": {
-                    "@type": "Offer",
-                    "name": "Free entry — RSVP required",
-                    "price": "0",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock",
-                    "validFrom": "2024-01-01T00:00:00-05:00",
-                    "url": "https://bloomyvite.de5.net/invitations/sarah-turns-25/"
                 }
             }
         ]
@@ -244,10 +280,13 @@
             pointer-events: none;
         }
 
-        .title-overlay h1 {
+        .title-overlay h1,
+        .title-overlay h2 {
             font-family: 'Georgia', serif;
             font-size: 3em;
             color: white;
+            margin: 0;
+            font-weight: 700;
             text-shadow:
                 0 0 20px rgba(255, 105, 180, 0.8),
                 0 0 40px rgba(255, 105, 180, 0.4),
@@ -510,7 +549,7 @@
     <div id="canvas-container"></div>
 
     <div class="title-overlay">
-        <h1>🎉 You're Invited! 🎉</h1>
+        <h2>🎉 You're Invited! 🎉</h2>
     </div>
 
     <div id="overlay">
@@ -535,6 +574,22 @@
 
     <div class="hint">🖱️ Drag to rotate • Scroll to zoom</div>
 
+    <noscript>
+        <style>
+            /* Without JS: the 3D scene won't render (empty canvas), but the invitation card is
+               CSS-animated and fully readable. Hide the empty canvas and the "Drag to rotate" hint,
+               unlock scroll, and give the page a nicer gradient background so the card stands out. */
+            #canvas-container,
+            .hint {
+                display: none !important;
+            }
+
+            body {
+                overflow: auto !important;
+                background: radial-gradient(circle at 50% 40%, #1a0030 0%, #0a0015 70%) !important;
+            }
+        </style>
+    </noscript>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         // Scene setup

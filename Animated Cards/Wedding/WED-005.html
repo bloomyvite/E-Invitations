@@ -5,30 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f2e9db">
-    <title>Isabella &amp; Theodore — A Wedding Invitation | Rosewood Manor · Sonoma 2026</title>
+    <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+    <meta name="application-name" content="Isabella &amp; Theodore — video Wedding E-Invite">
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Sonoma County, California">
+    <meta name="geo.position" content="38.2925;-122.4579">
+    <meta name="ICBM" content="38.2925, -122.4579">
+    <title>Isabella &amp; Theodore — video Wedding E-Invite | Bloomyvite</title>
     <meta name="description"
-        content="You're cordially invited to the wedding of Isabella & Theodore — an interactive 3D envelope with a wax seal, drifting rose petals, and a hand-painted invitation. Saturday, June 14, 2026 at Rosewood Manor, Sonoma County, California.">
-    <meta name="keywords"
-        content="isabella theodore wedding, 3d wedding invitation, interactive wedding invitation, digital wedding invite, rosewood manor sonoma, sonoma county wedding, california wedding invitation, luxury garden wedding, animated wedding card, wedding rsvp online, wedding website, wedding countdown, wax seal envelope, romantic wedding invite, wedding e-invitation, personalized wedding invitation, elegant wedding invite, garden formal wedding, wedding invitation template, isabella and theodore">
+        content="Interactive video wedding e-invitation for Isabella &amp; Theodore — Rosewood Manor, Sonoma County, CA. Wax-sealed envelope, petals, painted card, RSVP.">
+
     <meta name="author" content="Bloomyvite">
+    <link rel="author" href="https://bloomyvite.de5.net/">
+    <link rel="publisher" href="https://bloomyvite.de5.net/">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="https://bloomyvite.de5.net/">
+    <link rel="canonical" href="https://bloomyvite.de5.net/isabella-theodore-wedding-invitation">
+    <link rel="alternate" hreflang="en-US" href="https://bloomyvite.de5.net/isabella-theodore-wedding-invitation" />
+    <link rel="alternate" hreflang="x-default" href="https://bloomyvite.de5.net/isabella-theodore-wedding-invitation" />
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bloomyvite.de5.net/">
-    <meta property="og:title" content="Isabella & Theodore — A Wedding Invitation">
+    <meta property="og:url" content="https://bloomyvite.de5.net/isabella-theodore-wedding-invitation">
+    <meta property="og:title" content="Isabella &amp; Theodore — video Wedding E-Invite">
     <meta property="og:description"
-        content="An interactive 3D envelope invitation for Isabella & Theodore at Rosewood Manor, Sonoma County — June 14, 2026.">
+        content="An interactive video wedding e-invitation for Isabella &amp; Theodore at Rosewood Manor, Sonoma County, CA.">
     <meta property="og:image"
         content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:secure_url"
+        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"
+        content="Isabella &amp; Theodore — interactive video wedding e-invitation, Rosewood Manor Sonoma">
+    <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Bloomyvite">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Isabella & Theodore — A Wedding Invitation">
+    <meta name="twitter:url" content="https://bloomyvite.de5.net/isabella-theodore-wedding-invitation">
+    <meta name="twitter:title" content="Isabella &amp; Theodore — video Wedding E-Invite">
     <meta name="twitter:description"
-        content="An interactive 3D envelope invitation for Isabella & Theodore at Rosewood Manor, Sonoma.">
+        content="An interactive video wedding e-invitation for Isabella &amp; Theodore at Rosewood Manor, Sonoma County, CA.">
     <meta name="twitter:image"
         content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+    <meta name="twitter:image:alt"
+        content="Isabella &amp; Theodore — interactive video wedding e-invitation, Rosewood Manor Sonoma">
+    <meta name="twitter:site" content="@bloomyvite">
+    <meta name="twitter:creator" content="@bloomyvite">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="https://bloomyvite.de5.net/apple-touch-icon.png">
+    <link rel="mask-icon" href="https://bloomyvite.de5.net/favicon.svg" color="#a8823c">
+    <meta name="apple-mobile-web-app-title" content="Isabella &amp; Theodore">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -816,6 +842,7 @@
             }
         }
     </style>
+    <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" crossorigin />
     <script type="importmap">
 {
   "imports": {
@@ -828,7 +855,101 @@
 
 <body>
 
-    <div id="stage" aria-label="Interactive 3D wedding invitation"></div>
+    <noscript>
+        <style>
+            /* Without JS: #veil (z-index 60) covers everything and only hides via JS.
+               .modal uses [hidden] to toggle, but the RSVP button needs JS to work.
+               Force a readable static fallback with all key facts. */
+            #veil,
+            #stage,
+            #hint,
+            #helpers,
+            #replay,
+            #toast,
+            #modal,
+            .bloomy-watermark svg {
+                display: none !important;
+            }
+
+            .bloomy-watermark {
+                display: inline-flex !important;
+            }
+
+            html,
+            body {
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                height: auto !important;
+                background: #f2e9db !important;
+                color: #41352a !important;
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                line-height: 1.8;
+            }
+
+            #brand {
+                position: relative !important;
+                top: auto !important;
+                margin: 24px auto !important;
+            }
+
+            #panel {
+                position: relative !important;
+                right: auto !important;
+                top: auto !important;
+                transform: none !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                margin: 20px auto !important;
+                max-width: 500px !important;
+                width: auto !important;
+            }
+
+            .noscript-fallback {
+                max-width: 640px;
+                margin: 24px auto;
+                padding: 20px 28px;
+                text-align: center;
+            }
+
+            .noscript-fallback h2 {
+                font-family: "Pinyon Script", cursive;
+                font-size: 2.4rem;
+                color: #a8823c;
+                margin-bottom: 12px;
+            }
+
+            .noscript-fallback h3 {
+                font-size: 1rem;
+                letter-spacing: .18em;
+                text-transform: uppercase;
+                color: #a8823c;
+                margin: 18px 0 6px;
+            }
+
+            .noscript-fallback a {
+                color: #a8823c;
+                text-decoration: underline;
+            }
+        </style>
+        <div class="noscript-fallback">
+            <h2>Isabella &amp; Theodore</h2>
+            <p style="font-style: italic;">You are cordially invited to the celebration of our marriage.</p>
+            <h3>Ceremony</h3>
+            <p>Saturday, June 14, 2026 — four o'clock in the afternoon<br>Rosewood Manor, Sonoma County, California</p>
+            <h3>Attire</h3>
+            <p>Garden formal — blush, cream &amp; sage</p>
+            <h3>Reception to follow</h3>
+            <p>Dinner, dancing &amp; garden toasts</p>
+            <p style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #d4c0a3; font-size: .95rem;">
+                This interactive video wedding e-invitation is crafted by <a
+                    href="https://bloomyvite.de5.net/">Bloomyvite</a>. Enable JavaScript to view the animated version.
+            </p>
+            <p style="margin-top: 12px;"><a href="https://bloomyvite.de5.net/">Create your own Bloomyvite video wedding
+                    e-invitation →</a></p>
+        </div>
+    </noscript>
+
+    <div id="stage" aria-label="Interactive video wedding invitation"></div>
 
     <header id="brand">
         <h1 class="n" style="font-weight:400">Isabella &amp; Theodore</h1>
@@ -928,6 +1049,116 @@
             <p class="vsub">The wedding invitation</p>
         </div>
     </div>
+
+    <!-- Details toggle button (top-right, opposite the brand) -->
+    <button id="detailsBtn"
+        onclick="document.getElementById('seo-panel').style.display='block';document.getElementById('seo-panel').setAttribute('aria-hidden','false');"
+        style="position: fixed; top: 26px; right: 30px; z-index: 7; background: rgba(250,245,234,.92); border: 1px solid var(--hairline); color: var(--ink2); padding: 10px 18px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase; cursor: pointer; font-weight: 600;">Details</button>
+
+    <!-- SEO content — hidden by default, toggled by the "Details" button.
+         Same pattern Google has indexed for years (tabs, accordions, modals). -->
+    <section id="seo-panel" aria-hidden="true" role="dialog" aria-label="Invitation details"
+        style="position: fixed; inset: 0; z-index: 5; background: #f2e9db; color: #41352a; overflow-y: auto; padding: 80px 20px 100px; display: none; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; line-height: 1.85;">
+        <div style="max-width: 720px; margin: 0 auto;">
+            <button
+                onclick="document.getElementById('seo-panel').style.display='none';document.getElementById('seo-panel').setAttribute('aria-hidden','true');"
+                style="position: fixed; top: 20px; right: 20px; background: rgba(168,130,60,.15); border: 1px solid #a8823c; color: #41352a; padding: 10px 18px; border-radius: 100px; font-family: inherit; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; cursor: pointer;">Close
+                ✕</button>
+
+            <h2
+                style="font-family: 'Pinyon Script', cursive; font-size: 3rem; color: #a8823c; margin-bottom: 12px; text-align: center;">
+                Bloomyvite video Wedding E-Invitations</h2>
+            <p style="text-align: center; font-style: italic; color: rgba(65,53,42,.7); margin-bottom: 32px;">
+                Interactive, shareable wedding invitations rendered live in video</p>
+
+            <p>Isabella &amp; Theodore's wedding is a live example of a <strong style="color:#a8823c">Bloomyvite video
+                    wedding e-invitation</strong> — an interactive, browser-rendered alternative to traditional printed
+                wedding cards. Instead of a flat PDF or a WhatsApp image, each guest receives a private link that opens
+                a floating envelope with a wax-sealed flap, drifting rose petals, and golden dust. Tap the envelope and
+                the wax seal bursts into golden shards, the flap lifts, and a hand-painted invitation card slides out —
+                with a live countdown to the ceremony.</p>
+
+            <p>Every Bloomyvite video wedding invitation is customized with the couple's names, wedding events, venue,
+                family details, and preferred atmosphere. The result is a luxury <strong style="color:#a8823c">online
+                    wedding invitation</strong> that works beautifully on mobile, tablet, and desktop — and that guests
+                actually save, re-share, and revisit right up to the wedding day.</p>
+
+            <h3
+                style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #a8823c; margin: 32px 0 12px; letter-spacing: .04em;">
+                What's included in every Bloomyvite video e-wedding invitation</h3>
+            <ul style="padding-left: 22px;">
+                <li style="margin-bottom: 6px;">A floating video envelope with a wax-sealed flap and silk-lined interior
+                </li>
+                <li style="margin-bottom: 6px;">A hand-painted invitation card rendered with real typography</li>
+                <li style="margin-bottom: 6px;">Drifting rose petals, floating gold dust, and video wedding rings</li>
+                <li style="margin-bottom: 6px;">A gentle camera glide that reveals the invitation once opened</li>
+                <li style="margin-bottom: 6px;">Orbit + pinch camera controls for a fully interactive view</li>
+                <li style="margin-bottom: 6px;">An online RSVP form (attendance + guest count) and add-to-calendar .ics
+                    download</li>
+                <li style="margin-bottom: 6px;">A private URL to share via WhatsApp, email, or SMS</li>
+            </ul>
+
+            <h3
+                style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #a8823c; margin: 32px 0 12px; letter-spacing: .04em;">
+                Why choose a video digital wedding invitation over a printed card?</h3>
+            <p>Printed wedding cards cost hundreds of rupees per guest, take weeks to print, and cannot be updated after
+                delivery. A Bloomyvite <strong style="color:#a8823c">video digital wedding invitation</strong> can be
+                sent
+                to every guest in minutes, updated any time before the wedding, and re-shared as many times as needed —
+                with zero printing costs. Guests can save the date to their calendar, RSVP instantly, and revisit the
+                invitation right up to the wedding day.</p>
+
+            <h3
+                style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #a8823c; margin: 32px 0 12px; letter-spacing: .04em;">
+                How much does a Bloomyvite video wedding invitation cost?</h3>
+            <p>Standard <strong style="color:#a8823c">video e-wedding invitation templates</strong> start at ₹99 with
+                free
+                customization included. Fully bespoke designs with new video scenes, custom illustrations, and animated
+                wax
+                seals start at ₹999. Bulk pricing is available for 50 or more invitations.</p>
+
+            <h3
+                style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #a8823c; margin: 32px 0 12px; letter-spacing: .04em;">
+                Frequently Asked Questions</h3>
+
+            <h4 style="font-size: 1.15rem; color: #6d5c49; margin: 22px 0 6px;">Can I customize the Isabella &amp;
+                Theodore template for my own wedding?</h4>
+            <p>Yes — every Bloomyvite e-invitation is fully customizable. We swap in your couple names, dates, venue,
+                wedding events, and family details, then deliver a private link ready to share. Turnaround is typically
+                24 hours.</p>
+
+            <h4 style="font-size: 1.15rem; color: #6d5c49; margin: 22px 0 6px;">Does the video invitation work on
+                mobile?
+            </h4>
+            <p>Yes. Every Bloomyvite video wedding invitation is mobile-first and tested on iOS, Android, and modern
+                desktop browsers. Touch, drag, and pinch gestures are fully supported. No app is required — guests just
+                open the link.</p>
+
+            <h4 style="font-size: 1.15rem; color: #6d5c49; margin: 22px 0 6px;">Can guests RSVP directly on the
+                invitation?</h4>
+            <p>Yes. Every Bloomyvite wedding e-invitation can include an online RSVP form. Guest responses are emailed
+                to the couple automatically, so there's no back-and-forth via WhatsApp.</p>
+
+            <div style="text-align: center; margin: 40px 0 60px;">
+                <a href="https://bloomyvite.de5.net/"
+                    style="display: inline-block; background: #a8823c; color: #fbf6ec; padding: 16px 40px; border-radius: 100px; font-size: 0.85rem; letter-spacing: .25em; text-transform: uppercase; text-decoration: none; font-weight: 600;">Create
+                    Your video Wedding E-Invitation →</a>
+            </div>
+
+            <div
+                style="text-align: center; font-size: 0.75rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(65,53,42,.5); margin-bottom: 40px;">
+                <a href="https://bloomyvite.de5.net/"
+                    style="color: #a8823c; text-decoration: none; margin: 0 10px;">Bloomyvite</a> ·
+                <a href="https://bloomyvite.de5.net/"
+                    style="color: #a8823c; text-decoration: none; margin: 0 10px;">video
+                    Wedding Invitations</a> ·
+                <a href="https://bloomyvite.de5.net/"
+                    style="color: #a8823c; text-decoration: none; margin: 0 10px;">E-Invite Templates</a> ·
+                <a href="https://bloomyvite.de5.net/"
+                    style="color: #a8823c; text-decoration: none; margin: 0 10px;">RSVP Websites</a>
+            </div>
+        </div>
+    </section>
 
     <!-- ══════════════════════════════════════════════════════════
      BLOOMYVITE WATERMARK — BOTTOM RIGHT CORNER
@@ -1099,7 +1330,7 @@
                 i ? blob.lineTo(px, py) : blob.moveTo(px, py);
             }
             blob.closePath();
-            g.fillStyle = '#8f2f3d'; g.fill(blob);
+            g.fillStyle = '#8f2fvideo'; g.fill(blob);
             g.save(); g.clip(blob);
             const rg = g.createRadialGradient(116, 104, 8, 128, 128, 126);
             rg.addColorStop(0, 'rgba(255,196,182,0.20)');
@@ -1629,11 +1860,68 @@
 
     <!-- JSON-LD Structured Data for Google Rich Results -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://bloomyvite.de5.net/#organization",
+      "name": "Bloomyvite",
+      "alternateName": ["Bloomyvite Digital Invitations", "Bloomyvite Wedding E-Invites", "Bloomyvite video Wedding Invitations"],
+      "url": "https://bloomyvite.de5.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bloomyvite.de5.net/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Bloomyvite designs luxury interactive video wedding e-invitations, wedding websites, and online RSVP experiences for modern destination weddings worldwide.",
+      "sameAs": ["https://bloomyvite.de5.net/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bloomyvite.de5.net/#website",
+      "url": "https://bloomyvite.de5.net/",
+      "name": "Bloomyvite — Luxury video Wedding Invitations",
+      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#isabella",
+      "name": "Isabella"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#theodore",
+      "name": "Theodore"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#webpage",
+      "url": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation",
+      "name": "Isabella & Theodore — video Wedding E-Invite | Bloomyvite",
+      "description": "Interactive video wedding e-invitation for Isabella & Theodore — Rosewood Manor, Sonoma County, CA.",
+      "isPartOf": { "@id": "https://bloomyvite.de5.net/#website" },
+      "about": { "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#event" },
+      "mainEntity": { "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#event" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": { "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#breadcrumb" },
+      "inLanguage": "en-US",
+      "creator": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-11-03"
+    },
+    {
       "@type": "Event",
-      "name": "Isabella & Theodore — Wedding Celebration",
-      "description": "An interactive 3D wedding invitation for Isabella & Theodore at Rosewood Manor, Sonoma County, California — with dinner, dancing & garden toasts.",
+      "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#event",
+      "name": "Isabella & Theodore Wedding Celebration",
+      "description": "An interactive video wedding invitation for Isabella & Theodore at Rosewood Manor, Sonoma County, California — with dinner, dancing, and garden toasts.",
       "startDate": "2026-06-14T16:00:00-07:00",
       "endDate": "2026-06-14T23:00:00-07:00",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -1646,16 +1934,117 @@
           "addressLocality": "Sonoma County",
           "addressRegion": "CA",
           "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 38.2925,
+          "longitude": -122.4579
         }
       },
-      "organizer": {
-        "@type": "Organization",
-        "name": "Bloomyvite",
-        "url": "https://bloomyvite.de5.net/"
+      "image": [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85"
+      ],
+      "organizer": [
+        { "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#isabella" },
+        { "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#theodore" }
+      ],
+      "performer": [
+        { "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#isabella" },
+        { "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#theodore" }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Family and friends of the couple"
       },
-      "url": "https://bloomyvite.de5.net/",
-      "inLanguage": "en"
+      "isAccessibleForFree": true,
+      "url": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation",
+      "offers": {
+        "@type": "Offer",
+        "name": "Wedding RSVP",
+        "url": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#rsvp",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "contributor": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "mainEntityOfPage": { "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#webpage" }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#product",
+      "name": "Luxury video Interactive Wedding E-Invitation Template",
+      "description": "Bloomyvite's video interactive e-wedding invitation template with a golden wax-sealed envelope, silk-lined flap, hand-painted invitation card, drifting rose petals, floating gold dust, and video wedding rings. Customizable for any garden, destination, or Indian wedding.",
+      "image": [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85"
+      ],
+      "brand": { "@type": "Brand", "name": "Bloomyvite" },
+      "category": "Digital Wedding Invitations",
+      "offers": {
+        "@type": "Offer",
+        "price": "99",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://bloomyvite.de5.net/",
+        "priceValidUntil": "2027-12-31"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Bloomyvite video wedding e-invitation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Bloomyvite video wedding e-invitation is an interactive, shareable online version of a traditional printed wedding card, rendered live in WebGL. Guests receive a private link that opens a floating envelope with a wax-sealed flap, drifting rose petals, and golden dust. Tapping the envelope breaks the wax seal and lifts out a hand-painted invitation card."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a Bloomyvite wedding e-invitation cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard wedding e-invitation templates start at ₹99 with free customization included. Fully bespoke designs with new video scenes, custom illustrations, and animated wax seals start at ₹999. Bulk pricing is available for 50 or more invitations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize the Isabella & Theodore template for my own wedding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every Bloomyvite e-invitation is fully customizable — we swap in your couple names, dates, venue, wedding events, and family details, then deliver a private link ready to share. Turnaround is typically 24 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the video wedding invitation work on mobile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every Bloomyvite video wedding invitation is mobile-first and tested on iOS, Android, and modern desktop browsers. Touch, drag, and pinch gestures are fully supported. No app is required — guests just open the link."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can guests RSVP directly on the video invitation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every Bloomyvite wedding e-invitation can include an online RSVP form. Guest responses are emailed to the couple automatically, eliminating WhatsApp back-and-forth."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://bloomyvite.de5.net/isabella-theodore-wedding-invitation#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bloomyvite", "item": "https://bloomyvite.de5.net/" },
+        { "@type": "ListItem", "position": 2, "name": "video Wedding E-Invitations", "item": "https://bloomyvite.de5.net/" },
+        { "@type": "ListItem", "position": 3, "name": "Isabella & Theodore — video Wedding Invitation" }
+      ]
     }
+  ]
+}
     </script>
 </body>
 

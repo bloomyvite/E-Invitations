@@ -5,30 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#05070d">
-    <title>Maison Lumière — Premium 3D Wedding Invitation | Amelia & James · Florence 2026</title>
+    <title>Amelia &amp; James Wedding · Florence 2026 | Maison Lumière</title>
     <meta name="description"
-        content="A bespoke 3D wedding invitation from Maison Lumière — a wax-sealed envelope that opens into a hand-painted invitation for Amelia & James. Four elegant themes, live countdown, personalized engraving, and RSVP. September 19, 2026 at The Grand Orangery, Florence, Italy.">
-    <meta name="keywords"
-        content="maison lumiere, 3d wedding invitation, interactive wedding invitation, digital wedding invite, amelia james wedding, wedding florence italy, grand orangery wedding, villa medici gardens, luxury italian wedding, animated wedding card, wedding rsvp online, wedding website, wedding countdown, wax seal invitation, romantic wedding invite, wedding e-invitation, personalized wedding invitation, elegant wedding invite, italian garden wedding, premium wedding invitation">
+        content="An interactive 3D wedding invitation for Amelia &amp; James — September 19, 2026 at The Grand Orangery, Florence. Explore the story, venue, and RSVP online.">
+
     <meta name="author" content="Bloomyvite">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://bloomyvite.de5.net/">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bloomyvite.de5.net/">
-    <meta property="og:title" content="Maison Lumière — Premium 3D Wedding Invitation">
+    <meta property="og:url" content="https://bloomyvite.de5.net/maison-lumiere/">
+    <meta property="og:title" content="Amelia &amp; James Wedding · Florence 2026 | Maison Lumière">
     <meta property="og:description"
-        content="A bespoke 3D wedding invitation for Amelia & James at The Grand Orangery, Florence — September 19, 2026.">
-    <meta property="og:image"
-        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
+        content="An interactive 3D wedding invitation for Amelia &amp; James — September 19, 2026 at The Grand Orangery, Florence. Explore the story, venue, and RSVP online.">
+    <meta property="og:image" content="https://bloomyvite.de5.net/assets/og-maison-lumiere.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Amelia &amp; James — Maison Lumière 3D wedding invitation, Florence 2026">
     <meta property="og:site_name" content="Bloomyvite">
+    <meta property="og:locale" content="en_US">
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Maison Lumière — Premium 3D Wedding Invitation">
+    <meta name="twitter:title" content="Amelia &amp; James Wedding · Florence 2026 | Maison Lumière">
     <meta name="twitter:description"
-        content="A wax-sealed envelope that opens into a hand-painted 3D invitation for Amelia & James at The Grand Orangery, Florence.">
-    <meta name="twitter:image"
-        content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+        content="A wax-sealed envelope that opens into a hand-painted 3D invitation for Amelia &amp; James at The Grand Orangery, Florence — September 19, 2026.">
+    <meta name="twitter:image" content="https://bloomyvite.de5.net/assets/og-maison-lumiere.jpg">
+    <meta name="twitter:image:alt" content="Amelia &amp; James — Maison Lumière 3D wedding invitation, Florence 2026">
+    <meta name="twitter:site" content="@bloomyvite">
+    <meta name="twitter:creator" content="@bloomyvite">
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -751,10 +756,28 @@
                 height: 16px;
             }
         }
+
+        /* SEO: crawlable content — hidden from sighted users, read by Googlebot + screen readers.
+           Revealed as a full-page HTML invitation when JS is disabled (see <noscript> below). */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
     <script type="importmap">
 {"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
 </script>
+    <link rel="modulepreload" href="https://unpkg.com/three@0.160.0/build/three.module.js" crossorigin>
+    <link rel="modulepreload" href="https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js" crossorigin>
+    <link rel="modulepreload" href="https://unpkg.com/three@0.160.0/examples/jsm/environments/RoomEnvironment.js"
+        crossorigin>
 </head>
 
 <body>
@@ -766,7 +789,9 @@
     </div>
 
     <div id="brand">
-        <h1>MAISON LUMIÈRE</h1><span>Bespoke three-dimensional invitations</span>
+        <div class="brand-title" aria-hidden="true"
+            style="font-family:'Cinzel',serif;font-weight:500;font-size:18px;letter-spacing:.32em;color:var(--gold-hi)">
+            MAISON LUMIÈRE</div><span>Bespoke three-dimensional invitations</span>
     </div>
 
     <div id="countdown" class="glass">
@@ -860,6 +885,113 @@
         <span class="heart">🩷</span>
     </a>
 
+    <!-- SEO: crawlable wedding content — hidden from sighted users, read by Googlebot + screen readers.
+         Revealed as a full-page HTML invitation when JS is disabled (see <noscript> block below). -->
+    <div class="sr-only" id="crawlable-content">
+        <h1>Amelia &amp; James Wedding — September 19, 2026, Florence</h1>
+        <p>Amelia and James request the honour of your presence at the celebration of their marriage on Saturday,
+            the nineteenth of September, two thousand twenty-six, at half past four in the afternoon, at
+            The Grand Orangery, Villa Medici Gardens, Florence, Italy.</p>
+
+        <h2>The Celebration</h2>
+        <ul>
+            <li>Ceremony at 4:30 PM — Chapel of San Miniato</li>
+            <li>Reception at 6:30 PM — The Grand Orangery</li>
+            <li>Dancing at 9:00 PM — The Moonlit Terrace</li>
+        </ul>
+        <p>Dress code: Black Tie · Garden Elegance.</p>
+
+        <h2>RSVP</h2>
+        <p>Kindly respond by the first of August, 2026. Reply online using the RSVP form or by email at
+            <a href="mailto:ameliaandjames@maisonlumiere.com">ameliaandjames@maisonlumiere.com</a>.
+        </p>
+
+        <h2>About this invitation</h2>
+        <p>An interactive 3D wedding invitation from Maison Lumière — a wax-sealed envelope that opens into a
+            hand-painted invitation for Amelia &amp; James, with four elegant themes (Royal Navy, Rose Blush,
+            Emerald Estate, Noir Ivory), live countdown, personalized guest engraving, and RSVP.
+            Crafted by <a href="https://bloomyvite.de5.net/">Bloomyvite — luxury digital wedding e-invitations</a>.</p>
+    </div>
+
+    <noscript>
+        <style>
+            /* Without JS: the .hide class on #loader is added only inside init() (JS), so #loader never
+               disappears. #brand, #countdown, #themes, #personal, #hint, #controls are all decorative
+               chrome around a WebGL canvas that never renders. Reveal the crawlable content as a
+               full-page HTML invitation instead. */
+            #loader,
+            #scene,
+            #brand,
+            #countdown,
+            #themes,
+            #personal,
+            #hint,
+            #controls,
+            #modal,
+            #toast,
+            .bloomy-watermark {
+                display: none !important;
+            }
+
+            #crawlable-content {
+                position: static !important;
+                width: auto !important;
+                height: auto !important;
+                padding: 60px 24px !important;
+                margin: 0 !important;
+                overflow: visible !important;
+                clip: auto !important;
+                white-space: normal !important;
+                text-align: center !important;
+                background: #05070d !important;
+                color: #f5efe3 !important;
+                font-family: 'Cormorant Garamond', serif !important;
+                min-height: 100vh !important;
+            }
+
+            #crawlable-content h1 {
+                font-family: 'Great Vibes', cursive !important;
+                font-size: clamp(2rem, 8vw, 4rem) !important;
+                margin: 0 0 24px !important;
+                line-height: 1.1 !important;
+                color: #f3dd9b !important;
+            }
+
+            #crawlable-content h2 {
+                font-family: 'Cinzel', serif !important;
+                font-size: clamp(1.1rem, 3vw, 1.4rem) !important;
+                letter-spacing: .15em !important;
+                margin: 32px 0 12px !important;
+                color: #c9a14a !important;
+            }
+
+            #crawlable-content p,
+            #crawlable-content li {
+                max-width: 640px;
+                margin: 0 auto 16px;
+                font-size: 1.1rem;
+                line-height: 1.7;
+                color: #e8dcc4;
+            }
+
+            #crawlable-content ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            #crawlable-content a {
+                color: #f3dd9b;
+                text-decoration: underline;
+            }
+
+            html,
+            body {
+                overflow: auto !important;
+                height: auto !important;
+            }
+        </style>
+    </noscript>
+
     <script type="module">
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -868,7 +1000,7 @@
         /* ---------------- Data ---------------- */
         const INV = {
             bride: 'Amelia', groom: 'James', mono: 'AJ',
-            date: new Date('2026-09-19T16:30:00'),
+            date: new Date('2026-09-19T16:30:00+02:00'),
         };
         const THEMES = {
             royal: { paper: '#f8f2e4', gold: '#c9a14a', goldHi: '#f5e0a0', ink: '#2c2833', env: '#1b2440', envDark: '#121a31', seal: '#7d1426', sealMetal: false, bg1: '#1d2640', bg2: '#04060c', petal: '#f4e9d6', accent: '#f0cf7e' },
@@ -1486,33 +1618,137 @@
 
     <!-- JSON-LD Structured Data for Google Rich Results -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Amelia & James — Wedding Celebration",
-      "description": "A bespoke 3D wedding invitation from Maison Lumière — the wedding of Amelia & James at The Grand Orangery, Villa Medici Gardens, Florence, Italy.",
-      "startDate": "2026-09-19T16:30:00+02:00",
-      "endDate": "2026-09-20T01:00:00+02:00",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "The Grand Orangery · Villa Medici Gardens",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Florence",
-          "addressCountry": "IT"
-        }
-      },
-      "organizer": {
-        "@type": "Organization",
-        "name": "Maison Lumière",
-        "url": "https://bloomyvite.de5.net/"
-      },
+      "@type": "Organization",
+      "@id": "https://bloomyvite.de5.net/#organization",
+      "name": "Bloomyvite",
       "url": "https://bloomyvite.de5.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bloomyvite.de5.net/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Bloomyvite designs luxury interactive digital wedding e-invitations, wedding websites, and online RSVP experiences for modern couples worldwide.",
+      "sameAs": [
+        "https://twitter.com/bloomyvite",
+        "https://www.instagram.com/bloomyvite"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bloomyvite.de5.net/#website",
+      "url": "https://bloomyvite.de5.net/",
+      "name": "Bloomyvite",
+      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
       "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://bloomyvite.de5.net/maison-lumiere/#webpage",
+      "url": "https://bloomyvite.de5.net/maison-lumiere/",
+      "name": "Amelia & James Wedding · Florence 2026 | Maison Lumière",
+      "description": "An interactive 3D wedding invitation for Amelia & James — September 19, 2026 at The Grand Orangery, Florence.",
+      "isPartOf": { "@id": "https://bloomyvite.de5.net/#website" },
+      "about": { "@id": "https://bloomyvite.de5.net/maison-lumiere/#creativework" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://bloomyvite.de5.net/assets/og-maison-lumiere.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": { "@id": "https://bloomyvite.de5.net/maison-lumiere/#breadcrumb" },
+      "inLanguage": "en",
+      "creator": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "datePublished": "2026-04-01",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://bloomyvite.de5.net/maison-lumiere/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bloomyvite", "item": "https://bloomyvite.de5.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Maison Lumière — Amelia & James" }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://bloomyvite.de5.net/maison-lumiere/#creativework",
+      "name": "Maison Lumière — Amelia & James Wedding Invitation",
+      "headline": "Maison Lumière — Amelia & James Wedding Invitation",
+      "description": "A bespoke 3D wedding invitation — a wax-sealed envelope that opens into a hand-painted invitation for Amelia & James. Four elegant themes, live countdown, personalized guest engraving, and RSVP.",
+      "author": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "publisher": { "@id": "https://bloomyvite.de5.net/#organization" },
+      "datePublished": "2026-04-01",
+      "genre": "Wedding Invitation",
+      "inLanguage": "en",
+      "image": "https://bloomyvite.de5.net/assets/og-maison-lumiere.jpg",
+      "about": {
+        "@type": "Event",
+        "name": "Amelia & James — Wedding Celebration",
+        "startDate": "2026-09-19T16:30:00+02:00",
+        "endDate": "2026-09-20T01:00:00+02:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "The Grand Orangery · Villa Medici Gardens",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Florence",
+            "addressCountry": "IT"
+          }
+        },
+        "performer": [
+          { "@type": "Person", "name": "Amelia" },
+          { "@type": "Person", "name": "James" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bloomyvite.de5.net/maison-lumiere/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When and where is Amelia & James' wedding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Saturday, September 19, 2026 at The Grand Orangery, Villa Medici Gardens, Florence, Italy. Ceremony at 4:30 PM, Reception at 6:30 PM, Dancing at 9:00 PM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the dress code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Black Tie · Garden Elegance. Formal evening wear with a touch of garden elegance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the RSVP deadline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kindly respond by the first of August, 2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the invitation be personalized for each guest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — this interactive 3D invitation includes a personalized guest engraving feature. Enter a name in the Personalize field and share the generated link with your guest."
+          }
+        }
+      ]
     }
-    </script>
+  ]
+}
+</script>
 </body>
 
 </html>
