@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0a0c">
+
+    <!-- ═══════════ SEO & META ═══════════ -->
+    <title>The Golden Hour Gala | Premium Party Invitation | Bloomyvite</title>
+    <meta name="description"
+        content="You are cordially invited to The Golden Hour Gala. An exclusive evening of champagne, jazz, and high society. Join us to celebrate a milestone birthday.">
+    <meta name="author" content="Bloomyvite">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://bloomyvite.de5.net/golden-hour-gala">
+
+    <!-- ═══════════ OPEN GRAPH / SOCIAL ═══════════ -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloomyvite.de5.net/golden-hour-gala">
+    <meta property="og:title" content="The Golden Hour Gala | Exclusive Party Invitation">
+    <meta property="og:description" content="An exclusive evening of champagne, jazz, and high society. RSVP required.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&h=630&fit=crop">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Bloomyvite">
+
+    <!-- ═══════════ TWITTER ═══════════ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Golden Hour Gala | Exclusive Party Invitation">
+    <meta name="twitter:description"
+        content="An exclusive evening of champagne, jazz, and high society. RSVP required.">
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&h=630&fit=crop">
+    <meta name="twitter:site" content="@bloomyvite">
+
+    <!-- ═══════════ FONTS & ICONS ═══════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%82%3C/text%3E%3C/svg%3E">
+
+    <!-- ═══════════ THREE.JS & GSAP ═══════════ -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* ═══════════ VARIABLES & RESET ═══════════ */
+        :root {
+            --bg: #050505;
+            --bg-off: #0d0d0f;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa8c2c;
+            --text-main: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --font-display: 'Cinzel', serif;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ═══════════ UTILS & TYPOGRAPHY ═══════════ */
+        .script {
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        .gold-text {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shimmer 5s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 2rem auto;
+            color: var(--gold);
+            opacity: 0.8;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            height: 1px;
+            width: 60px;
+            background: linear-gradient(90deg, transparent, var(--gold));
+        }
+
+        .divider::after {
+            background: linear-gradient(-90deg, transparent, var(--gold));
+        }
+
+        .section-pad {
+            padding: 8rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.15s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.3s;
+        }
+
+        /* ═══════════ PRELOADER ═══════════ */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease, visibility 1s;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-ring {
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-top: 1px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loader-text {
+            font-family: var(--font-display);
+            letter-spacing: 0.3em;
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        /* ═══════════ 3D CANVAS & CURTAINS ═══════════ */
+        #webgl-container {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        #curtains {
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+            display: flex;
+            pointer-events: none;
+        }
+
+        .curtain {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, #1a1a1a, #0a0a0a);
+            position: relative;
+            transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+        }
+
+        .curtain.left {
+            transform-origin: left center;
+            justify-content: flex-end;
+            border-right: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .curtain.right {
+            transform-origin: right center;
+            justify-content: flex-start;
+            border-left: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Golden folds effect */
+        .curtain::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212, 175, 55, 0.05) 50px, transparent 60px);
+        }
+
+        .curtain.open.left {
+            transform: translateX(-100%);
+        }
+
+        .curtain.open.right {
+            transform: translateX(100%);
+        }
+
+        #intro-content {
+            position: fixed;
+            inset: 0;
+            z-index: 45;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        #intro-content.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .intro-sub {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .intro-title {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--text-main);
+            margin-bottom: 3rem;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold);
+            color: var(--bg);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-gold:hover::after {
+            left: 100%;
+        }
+
+        /* ═══════════ MAIN CONTENT ═══════════ */
+        #main-content {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        #main-content.visible {
+            opacity: 1;
+        }
+
+        /* Hero */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, rgba(5, 5, 5, 0.3) 0%, rgba(5, 5, 5, 0.9) 100%);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 7rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-date {
+            font-size: 1.2rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        /* Countdown */
+        #countdown-sec {
+            background: var(--bg-off);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 5rem 2rem;
+        }
+
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .cd-box {
+            text-align: center;
+        }
+
+        .cd-num {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--gold-light);
+            line-height: 1;
+        }
+
+        .cd-lbl {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Details */
+        #details {
+            background: var(--bg);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: transform 0.4s, border-color 0.4s;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .detail-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .detail-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .detail-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Gallery */
+        #gallery {
+            background: var(--bg-off);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            grid-auto-rows: 250px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            pointer-events: none;
+            transition: border-color 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            border-color: var(--gold);
+        }
+
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+
+        .gallery-item.wide {
+            grid-column: span 2;
+        }
+
+        /* RSVP & Venue */
+        #rsvp {
+            background: var(--bg);
+        }
+
+        .rsvp-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .venue-info {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 8px;
+        }
+
+        .venue-info h3 {
+            font-family: var(--font-display);
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .venue-info p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(100%) invert(90%) contrast(90%);
+        }
+
+        .rsvp-form {
+            background: rgba(10, 10, 12, 0.6);
+            padding: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 0 0.5rem;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .form-group input:focus~label,
+        .form-group input:not(:placeholder-shown)~label,
+        .form-group textarea:focus~label,
+        .form-group textarea:not(:placeholder-shown)~label {
+            top: -0.5rem;
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .form-group select {
+            appearance: none;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .form-group select:focus,
+        .form-group select:valid {
+            color: var(--text-main);
+        }
+
+        .form-group select option {
+            background: var(--bg-off);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .radio-group label:hover {
+            color: var(--text-main);
+        }
+
+        .radio-group input[type="radio"] {
+            accent-color: var(--gold);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gold);
+            color: var(--bg);
+            border: none;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-light);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        #rsvpSuccess {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        #rsvpSuccess h3 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        #rsvpSuccess p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Closing */
+        #closing {
+            background: var(--bg-off);
+            text-align: center;
+            padding: 10rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .closing-text {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--bg);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* ═══════════ RESPONSIVE ═══════════ */
+        @media (max-width: 992px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .rsvp-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 300px;
+            }
+
+            .gallery-item.wide {
+                grid-column: span 1;
+            }
+
+            .countdown-grid {
+                gap: 1.5rem;
+            }
+
+            .rsvp-form,
+            .venue-info {
+                padding: 2rem 1.5rem;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-pad {
+                padding: 5rem 1.5rem;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            #webgl-container,
+            #curtains {
+                display: none !important;
+            }
+
+            #main-content {
+                opacity: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════ PRELOADER ═══════════ -->
+    <div id="preloader">
+        <div class="loader-ring"></div>
+        <div class="loader-text">Preparing the Gala</div>
+    </div>
+
+    <!-- ═══════════ 3D WEBGL CANVAS ═══════════ -->
+    <div id="webgl-container"></div>
+
+    <!-- ═══════════ CINEMATIC CURTAINS ═══════════ -->
+    <div id="curtains">
+        <div class="curtain left" id="curtain-left"></div>
+        <div class="curtain right" id="curtain-right"></div>
+    </div>
+
+    <!-- ═══════════ INTRO OVERLAY ═══════════ -->
+    <div id="intro-content">
+        <div class="intro-sub">You are cordially invited to</div>
+        <div class="intro-title">The Golden Hour Gala</div>
+        <button class="btn-gold" id="enterBtn">Enter the Celebration</button>
+    </div>
+
+    <!-- ═══════════ MAIN CONTENT ═══════════ -->
+    <div id="main-content">
+
+        <!-- HERO -->
+        <section id="hero">
+            <h1 class="hero-title gold-text reveal">The Golden Hour Gala</h1>
+            <div class="hero-date reveal delay-1">December 31, 2026 · 8:00 PM</div>
+            <p class="hero-desc reveal delay-2">Join us for an unforgettable evening of champagne, jazz, and high
+                society as we celebrate a milestone birthday. Black tie & evening gowns required.</p>
+            <a href="#rsvp" class="btn-gold reveal delay-2">Secure Your Invitation</a>
+        </section>
+
+        <!-- COUNTDOWN -->
+        <section id="countdown-sec">
+            <h2 class="section-title reveal" style="font-size: 1.5rem; letter-spacing: 0.2em; color: var(--gold);">The
+                Countdown Begins</h2>
+            <div class="countdown-grid reveal delay-1" id="countdown">
+                <div class="cd-box">
+                    <div class="cd-num" id="cd-days">00</div>
+                    <div class="cd-lbl">Days</div>
+                </div>
+                <div class="cd-box">
+                    <div class="cd-num" id="cd-hours">00</div>
+                    <div class="cd-lbl">Hours</div>
+                </div>
+                <div class="cd-box">
+                    <div class="cd-num" id="cd-mins">00</div>
+                    <div class="cd-lbl">Minutes</div>
+                </div>
+                <div class="cd-box">
+                    <div class="cd-num" id="cd-secs">00</div>
+                    <div class="cd-lbl">Seconds</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAILS -->
+        <section id="details" class="section-pad">
+            <div class="container">
+                <h2 class="section-title reveal">The Evening</h2>
+                <p class="section-sub reveal delay-1">Everything you need to know for a night of elegance.</p>
+                <div class="details-grid">
+                    <div class="detail-card reveal">
+                        <div class="detail-icon">📍</div>
+                        <h3>The Venue</h3>
+                        <p>The Grand Ballroom<br>The Ritz-Carlton<br>50 Central Park S, New York</p>
+                    </div>
+                    <div class="detail-card reveal delay-1">
+                        <div class="detail-icon">🕰️</div>
+                        <h3>The Time</h3>
+                        <p>December 31, 2026<br>Doors Open: 7:30 PM<br>Dinner Served: 8:30 PM</p>
+                    </div>
+                    <div class="detail-card reveal delay-2">
+                        <div class="detail-icon">🥂</div>
+                        <h3>Dress Code</h3>
+                        <p>Black Tie &amp; Evening Gowns<br>Gold accents strongly encouraged<br>Valet parking available
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="section-pad">
+            <div class="container">
+                <h2 class="section-title reveal">A Glimpse of the Magic</h2>
+                <p class="section-sub reveal delay-1">Moments from previous celebrations.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal"><img
+                            src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=800&auto=format&fit=crop"
+                            alt="Champagne toast" loading="lazy"></div>
+                    <div class="gallery-item reveal delay-1 tall"><img
+                            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop"
+                            alt="Elegant table setting" loading="lazy"></div>
+                    <div class="gallery-item reveal delay-2"><img
+                            src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?q=80&w=800&auto=format&fit=crop"
+                            alt="Guests dancing" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img
+                            src="https://images.unsplash.com/photo-1496843916299-590492c751f4?q=80&w=800&auto=format&fit=crop"
+                            alt="Gala atmosphere" loading="lazy"></div>
+                    <div class="gallery-item reveal delay-1 wide"><img
+                            src="https://images.unsplash.com/photo-1519156593439-27e37b4b6173?q=80&w=1200&auto=format&fit=crop"
+                            alt="Luxury ballroom" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP & VENUE -->
+        <section id="rsvp" class="section-pad">
+            <div class="container">
+                <h2 class="section-title reveal">RSVP</h2>
+                <p class="section-sub reveal delay-1">Kindly respond by December 15th to secure your seat.</p>
+
+                <div class="rsvp-layout">
+                    <!-- Venue Info -->
+                    <div class="venue-info reveal">
+                        <h3>The Ritz-Carlton New York</h3>
+                        <p>50 Central Park S<br>New York, NY 10019<br><br>We have reserved the entire Grand Ballroom for
+                            the evening. Valet parking will be provided complimentary.</p>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.8485629839424!2d-73.97851368459392!3d40.765290979326496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f9f7f3e4b7%3A0x6b7e6b7c6b7e6b7c!2sThe%20Ritz-Carlton%20New%20York%2C%20Central%20Park!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <a href="https://maps.google.com/?q=The+Ritz-Carlton+New+York+Central+Park" target="_blank"
+                            class="btn-gold" style="margin-top: 1.5rem; display: block; text-align: center;">Get
+                            Directions</a>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="rsvp-form reveal delay-1">
+                        <form id="rsvpForm">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder=" " required>
+                                <label for="name">Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder=" " required>
+                                <label for="email">Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="guests" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                                <label for="guests"
+                                    style="top:-0.5rem; font-size:0.7rem; color:var(--gold); letter-spacing:0.1em; text-transform:uppercase;">Number
+                                    of Guests</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="3" placeholder=" "></textarea>
+                                <label for="message">A Note for the Host (Optional)</label>
+                            </div>
+                            <div class="radio-group">
+                                <label><input type="radio" name="attending" value="yes" checked> Joyfully
+                                    Accepts</label>
+                                <label><input type="radio" name="attending" value="no"> Regretfully Declines</label>
+                            </div>
+                            <button type="submit" class="btn-submit">Send RSVP</button>
+                        </form>
+                        <div id="rsvpSuccess">
+                            <h3>Thank You</h3>
+                            <p>Your response has been received. We look forward to celebrating with you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING -->
+        <section id="closing" class="reveal">
+            <h2 class="closing-title gold-text">We Can't Wait to Celebrate With You</h2>
+            <p class="closing-text">Thank you for being a part of this special milestone. Your presence will make the
+                evening truly unforgettable.</p>
+            <a href="https://wa.me/?text=You%20are%20invited%20to%20The%20Golden%20Hour%20Gala!%20Join%20us%20on%20Dec%2031st%20at%20The%20Ritz-Carlton%20NYC."
+                target="_blank" class="btn-gold">Share via WhatsApp</a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2026 The Golden Hour Gala. Crafted with love by <a href="https://bloomyvite.de5.net/"
+                    target="_blank" rel="noopener">Bloomyvite</a>.</p>
+        </footer>
+    </div>
+
+    <!-- ═══════════ NOSCRIPT FALLBACK ═══════════ -->
+    <noscript>
+        <style>
+            #preloader,
+            #webgl-container,
+            #curtains,
+            #intro-content,
+            #main-content {
+                display: none !important;
+            }
+
+            .noscript-fallback {
+                display: block !important;
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 40px;
+                background: #111;
+                border: 1px solid #d4af37;
+                color: #fff;
+                text-align: center;
+                font-family: sans-serif;
+            }
+        </style>
+        <div class="noscript-fallback">
+            <h1 style="color:#d4af37; font-family: serif; font-size: 3rem;">The Golden Hour Gala</h1>
+            <p style="margin: 20px 0; letter-spacing: 2px;">YOU ARE CORDIALLY INVITED</p>
+            <div style="margin: 30px 0; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 20px 0;">
+                <p><strong>Date:</strong> December 31, 2026</p>
+                <p><strong>Venue:</strong> The Ritz-Carlton, New York</p>
+                <p><strong>Time:</strong> 8:00 PM onwards</p>
+                <p><strong>Dress Code:</strong> Black Tie</p>
+            </div>
+            <p style="font-size: 14px; color: #888;">Please enable JavaScript to view the interactive 3D opening
+                sequence and RSVP form.</p>
+        </div>
+    </noscript>
+
+    <!-- ═══════════ SCRIPTS ═══════════ -->
+    <script type="module">
+        import * as THREE from 'three';
+
+        // ═══════════ 1. UI & GSAP LOGIC ═══════════
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Preloader Hide
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Countdown Timer
+        const targetDate = new Date('December 31, 2026 20:00:00').getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<p style='color:var(--gold); font-size:1.5rem;'>The Gala has begun.</p>";
+                return;
+            }
+            document.getElementById('cd-days').innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById('cd-hours').innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById('cd-mins').innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById('cd-secs').innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Form
+        document.getElementById('rsvpForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('rsvpForm').style.display = 'none';
+            document.getElementById('rsvpSuccess').style.display = 'block';
+        });
+
+        // ═══════════ 2. INTRO ANIMATION ═══════════
+        document.getElementById('enterBtn').addEventListener('click', () => {
+            // Fade out intro text
+            document.getElementById('intro-content').classList.add('hidden');
+
+            // Open curtains
+            setTimeout(() => {
+                document.getElementById('curtain-left').classList.add('open');
+                document.getElementById('curtain-right').classList.add('open');
+            }, 500);
+
+            // Show main content
+            setTimeout(() => {
+                document.getElementById('main-content').classList.add('visible');
+                // Remove curtains from DOM after animation to prevent interaction blocking
+                setTimeout(() => {
+                    document.getElementById('curtains').style.display = 'none';
+                }, 2000);
+            }, 2500);
+        });
+
+        // ═══════════ 3. THREE.JS 3D SCENE ═══════════
+        const container = document.getElementById('webgl-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0, 10);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const dirLight = new THREE.DirectionalLight(0xffd700, 1.5);
+        dirLight.position.set(5, 5, 5);
+        scene.add(dirLight);
+        const pointLight = new THREE.PointLight(0xffaa00, 50, 20);
+        pointLight.position.set(-5, 5, 5);
+        scene.add(pointLight);
+
+        // 3D Objects (Floating Diamonds/Champagne Glasses)
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Create a diamond shape
+        const diamondGeo = new THREE.OctahedronGeometry(1, 0);
+        const diamondMat = new THREE.MeshStandardMaterial({
+            color: 0xffffff,
+            metalness: 1,
+            roughness: 0.1,
+            envMapIntensity: 2,
+            transparent: true,
+            opacity: 0.8
+        });
+
+        for (let i = 0; i < 15; i++) {
+            const diamond = new THREE.Mesh(diamondGeo, diamondMat);
+            diamond.position.set(
+                (Math.random() - 0.5) * 15,
+                (Math.random() - 0.5) * 15,
+                (Math.random() - 0.5) * 10 - 5
+            );
+            diamond.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+            diamond.scale.setScalar(Math.random() * 0.5 + 0.2);
+            diamond.userData = {
+                speed: Math.random() * 0.02 + 0.01,
+                rotSpeed: Math.random() * 0.02 + 0.01
+            };
+            group.add(diamond);
+        }
+
+        // Gold Dust Particles
+        const particleCount = 300;
+        const particleGeo = new THREE.BufferGeometry();
+        const particlePos = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount * 3; i++) {
+            particlePos[i] = (Math.random() - 0.5) * 30;
+        }
+        particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos, 3));
+        const particleMat = new THREE.PointsMaterial({
+            color: 0xd4af37,
+            size: 0.08,
+            transparent: true,
+            opacity: 0.6,
+            blending: THREE.AdditiveBlending
+        });
+        const particles = new THREE.Points(particleGeo, particleMat);
+        scene.add(particles);
+
+        // Animation Loop
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.01;
+
+            group.children.forEach(diamond => {
+                diamond.rotation.y += diamond.userData.rotSpeed;
+                diamond.rotation.x += diamond.userData.rotSpeed;
+                diamond.position.y += Math.sin(time + diamond.position.x) * 0.005;
+            });
+
+            particles.rotation.y = time * 0.05;
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Resize Handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+
+    <!-- ═══════════ SCHEMA.ORG STRUCTURED DATA ═══════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://bloomyvite.de5.net/#organization",
+          "name": "Bloomyvite",
+          "url": "https://bloomyvite.de5.net/",
+          "logo": "https://bloomyvite.de5.net/logo.png",
+          "description": "Luxury interactive digital invitations and experiences."
+        },
+        {
+          "@type": "Event",
+          "@id": "https://bloomyvite.de5.net/golden-hour-gala#event",
+          "name": "The Golden Hour Gala",
+          "description": "An exclusive evening of champagne, jazz, and high society. Join us to celebrate a milestone birthday.",
+          "startDate": "2026-12-31T20:00:00-05:00",
+          "endDate": "2027-01-01T02:00:00-05:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "The Ritz-Carlton",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "50 Central Park S",
+              "addressLocality": "New York",
+              "addressRegion": "NY",
+              "postalCode": "10019",
+              "addressCountry": "US"
+            }
+          },
+          "image": [
+            "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&h=630&fit=crop"
+          ],
+          "organizer": {
+            "@id": "https://bloomyvite.de5.net/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "name": "General Admission",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://bloomyvite.de5.net/golden-hour-gala#rsvp",
+            "validFrom": "2026-01-01T00:00:00-05:00"
+          }
+        }
+      ]
+    }
+    </script>
+</body>
+
+</html>
